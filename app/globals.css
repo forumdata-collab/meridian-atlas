@@ -2006,6 +2006,108 @@ footer,
   border-radius: 6px;
   font-size: 14px;
 }
+/* 魔法骰 — random acupoint draw */
+.pronunciation-dice {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 0 0 18px;
+  padding: 12px 14px;
+  border: 1px dashed #3d5a66;
+  border-radius: 10px;
+  background: #0f2028;
+}
+.dice-roll {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 38px;
+  padding: 8px 17px;
+  border-radius: 999px;
+  border: 1px solid #6d5ba8;
+  background: linear-gradient(135deg, #3a2f63, #2b2a4d);
+  color: #ded1ff;
+  font-size: 14px;
+  font-weight: 600;
+}
+.dice-roll:hover:not(:disabled) {
+  background: linear-gradient(135deg, #4a3c7d, #36345f);
+  color: #f2ecff;
+}
+.dice-roll:disabled {
+  opacity: 0.55;
+}
+.dice-icon {
+  transition: transform 0.2s;
+}
+.dice-icon.rolling {
+  animation: dice-spin 0.45s linear infinite;
+}
+@keyframes dice-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.dice-picks {
+  flex: 1 1 240px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+.dice-pick {
+  display: inline-flex;
+  align-items: stretch;
+  overflow: hidden;
+  border: 1px solid #36505c;
+  border-radius: 8px;
+  background: #14262f;
+}
+.dice-pick > button {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+  padding: 7px 11px;
+  color: #e4eff3;
+}
+.dice-pick > button b {
+  font-size: 15px;
+  font-weight: 600;
+}
+.dice-pick > button small {
+  font-size: 10.5px;
+  letter-spacing: 0.4px;
+  color: #86a3ae;
+}
+.dice-pick > button:hover {
+  background: #1d3a45;
+}
+.dice-pick > a {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 10px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #0a2226;
+  background: #7cd1cd;
+}
+.dice-pick > a:hover {
+  background: #a2fff1;
+  color: #0a2226;
+}
+.dice-hint {
+  margin: 0;
+  font-size: 12.5px;
+  line-height: 1.7;
+  color: #9dbac8;
+}
+@media (prefers-reduced-motion: reduce) {
+  .dice-icon.rolling {
+    animation: none;
+  }
+}
 .pronunciation-result {
   padding: 20px 16px;
   border: 1px solid #2f505a;

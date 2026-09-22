@@ -1,12 +1,13 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
-import { Volume2, X } from 'lucide-react';
+import { Dices, Volume2, X } from 'lucide-react';
 import type { PronunciationResult } from '@/lib/pronunciation';
 import { createReadAloudSession } from '@/lib/read-aloud';
 
 type LookupModule = typeof import('@/lib/pronunciation');
 type CantoneseModule = typeof import('@/lib/cantonese');
 type CantoneseResult = ReturnType<CantoneseModule['lookupJyutping']>;
+type DicePicks = ReturnType<LookupModule['randomPointPicks']>;
 
 const isCantoneseVoice = (lang: string) =>
   /^yue([-_]|$)/i.test(lang) || /^zh[-_]?(HK|MO)$/i.test(lang);
@@ -34,6 +35,8 @@ export default function Pronunciation({
   const [voices, setVoices] = useState<SpeechSynthesisVoice[]>([]);
   const [speaking, setSpeaking] = useState<'cmn' | 'yue' | null>(null);
   const [speechStatus, setSpeechStatus] = useState('');
+  const [dice, setDice] = useState<DicePicks>([]);
+  const [rolling, setRolling] = useState(false);
   const stop = () => {
     playback.current?.stop();
     playback.current = null;
@@ -94,6 +97,31 @@ export default function Pronunciation({
     setResult(null);
     setJyutping(null);
     setQuery(Array.from(text).slice(0, 500).join(''));
+  };
+  const rollTimer = useRef<ReturnType<typeof setInterval> | null>(null);
+  useEffect(
+    () => () => {
+      if (rollTimer.current) clearInterval(rollTimer.current);
+    },
+    [],
+  );
+  /** 魔法骰：shuffle a few times so it feels like a roll, then settle. */
+  const roll = () => {
+    if (!lookup) return;
+    const previous = dice.map((d) => d.id);
+    if (rollTimer.current) clearInterval(rollTimer.current);
+    setRolling(true);
+    let ticks = 0;
+    rollTimer.current = setInterval(() => {
+      ticks += 1;
+      const last = ticks >= 6;
+      setDice(lookup.randomPointPicks(4, last ? previous : []));
+      if (last) {
+        if (rollTimer.current) clearInterval(rollTimer.current);
+        rollTimer.current = null;
+        setRolling(false);
+      }
+    }, 85);
   };
   const cantoneseVoices = voices.filter((v) => isCantoneseVoice(v.lang));
   const mandarinVoices = voices.filter((v) => !isCantoneseVoice(v.lang));
@@ -169,6 +197,44 @@ export default function Pronunciation({
             {text}
           </button>
         ))}
+      </div>
+      <div className="pronunciation-dice">
+        <button
+          type="button"
+          className="dice-roll"
+          onClick={roll}
+          disabled={!lookup || rolling}
+          aria-live="polite"
+        >
+          <Dices size={17} className={rolling ? 'dice-icon rolling' : 'dice-icon'} />
+          {dice.length ? '再擲' : '魔法骰'}
+        </button>
+        {dice.length > 0 ? (
+          <div className="dice-picks">
+            <span className="dice-hint">抽中以下穴位，點一個查讀音：</span>
+            {dice.map((p) => (
+              <span className="dice-pick" key={p.id}>
+                <button type="button" onClick={() => change(p.name)}>
+                  <b>{p.name}</b>
+                  <small>{p.id}</small>
+                </button>
+                <a
+                  href={`/?points=${encodeURIComponent(p.id)}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  title={`在 3D 人體查看${p.name}`}
+                  aria-label={`在 3D 人體查看${p.name}`}
+                >
+                  3D
+                </a>
+              </span>
+            ))}
+          </div>
+        ) : (
+          <p className="dice-hint">
+            唔知查邊個好？擲吓骰，隨機抽幾個穴位試讀（抽中後可跳去 3D 人體睇位置）。
+          </p>
+        )}
       </div>
       <div
         className="pronunciation-result"

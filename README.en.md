@@ -38,6 +38,7 @@ Meridian Atlas is a Chinese-first, interactive learning application for traditio
 - **Polyphones list their other readings** instead of silently picking one (`中` zung1/zung3, `差` caa1/caai1/ci1).
 - **Acupoint reading corrections:** the dictionary's most common reading is not always the acupoint reading. Readings are pinned by the **GB/T 12346-2021 Mandarin syllable** (膻中 = daan6 zung1, not zin1; 少商 = siu3, not siu2; 大椎 = zeoi1; 膀胱俞 = pong4). The 27 rules live in [`lib/jyutping-overrides.json`](lib/jyutping-overrides.json); tables are built by [`scripts/build-jyutping.py`](scripts/build-jyutping.py) from Unicode Unihan `kCantonese`.
 - **Two read-aloud buttons:** `普通話朗讀` and `粵語朗讀` pick the system Mandarin or Cantonese (yue-HK / zh-HK) voice; Jyutping still displays when the device has no Cantonese voice.
+- **Magic dice (魔法骰):** one tap draws 4 random standard acupoints; click a name to look up both readings, or hit `3D` to open it on the human model.
 - **Daily-cycle learning:** per-channel animation, a 24-hour slider, two-hour period selection, playback and cross-midnight handling.
 - **Internal courses and branches:** regional illustrations alongside selected passages from the *Lingshu*, distinct from the surface point sequence.
 - **Point-combination studies:** documented traditional combinations, host–guest Yuan–Luo relations and four pairs of extraordinary-vessel confluent points, with links back to the 3D comparison view.

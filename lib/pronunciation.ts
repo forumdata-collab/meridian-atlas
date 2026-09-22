@@ -73,3 +73,32 @@ export function pronunciationSourceUrl(standard: string, page: number) {
       : "202306192147233032";
   return `https://www.ntcamsac.ac.cn/upload/std_info/${file}.pdf#page=${page}`;
 }
+export type RandomPointPick = {
+  id: string;
+  name: string;
+  sourcePinyin: string;
+};
+/**
+ * Pick `count` distinct standard points for the 魔法骰. Excludes `avoid` so a
+ * re-roll moves on instead of repeating what the user just saw.
+ */
+export function randomPointPicks(
+  count = 4,
+  avoid: string[] = [],
+): RandomPointPick[] {
+  const pool = pointReadings.filter((r) => !avoid.includes(r.id));
+  const picks: RandomPointPick[] = [];
+  const taken = new Set<number>();
+  const size = Math.min(count, pool.length);
+  while (picks.length < size) {
+    const i = Math.floor(Math.random() * pool.length);
+    if (taken.has(i)) continue;
+    taken.add(i);
+    picks.push({
+      id: pool[i].id,
+      name: pool[i].name,
+      sourcePinyin: pool[i].sourcePinyin,
+    });
+  }
+  return picks;
+}
