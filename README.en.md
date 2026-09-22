@@ -71,6 +71,10 @@ No account or external AI API key is required. The runtime dataset and CC0 body 
 <img src="docs/images/mobile-care.png" width="250" alt="Mobile wellness page">
 </div>
 
+## Mobile and iOS project (inherited from upstream)
+
+This repository keeps the upstream native iPhone project (`mobile/`): the model and learning data are bundled, and the core atlas runs on the user's device. That part is **inherited and not validated in this edition**; this edition focuses on the web app. See [iPhone build guide](docs/IOS.md), [privacy notes](docs/IOS-PRIVACY.md) and [submission notes](docs/IOS-SUBMISSION.md).
+
 ## Changes in this edition
 
 | Area | Change |
