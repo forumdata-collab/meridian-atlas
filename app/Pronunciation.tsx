@@ -5,6 +5,12 @@ import type { PronunciationResult } from '@/lib/pronunciation';
 import { createReadAloudSession } from '@/lib/read-aloud';
 
 type LookupModule = typeof import('@/lib/pronunciation');
+type CantoneseModule = typeof import('@/lib/cantonese');
+type CantoneseResult = ReturnType<CantoneseModule['lookupJyutping']>;
+
+const isCantoneseVoice = (lang: string) =>
+  /^yue([-_]|$)/i.test(lang) || /^zh[-_]?(HK|MO)$/i.test(lang);
+
 export default function Pronunciation({
   initialText,
   onClose,
@@ -21,15 +27,17 @@ export default function Pronunciation({
     Array.from(initialText).slice(0, 500).join(''),
   );
   const [result, setResult] = useState<PronunciationResult | null>(null);
+  const [jyutping, setJyutping] = useState<CantoneseResult | null>(null);
   const [lookup, setLookup] = useState<LookupModule | null>(null);
+  const [cantonese, setCantonese] = useState<CantoneseModule | null>(null);
   const [error, setError] = useState('');
   const [voices, setVoices] = useState<SpeechSynthesisVoice[]>([]);
-  const [speaking, setSpeaking] = useState(false);
+  const [speaking, setSpeaking] = useState<'cmn' | 'yue' | null>(null);
   const [speechStatus, setSpeechStatus] = useState('');
   const stop = () => {
     playback.current?.stop();
     playback.current = null;
-    setSpeaking(false);
+    setSpeaking(null);
   };
   useEffect(() => {
     const previous = document.activeElement as HTMLElement | null;
@@ -41,7 +49,8 @@ export default function Pronunciation({
       setVoices(
         synth
           ?.getVoices()
-          .filter((v) => /^zh([_-]|$)|^cmn([_-]|$)/i.test(v.lang)) || [],
+          .filter((v) => /^zh([_-]|$)|^cmn([_-]|$)|^yue([_-]|$)/i.test(v.lang)) ||
+          [],
       );
     update();
     synth?.addEventListener('voiceschanged', update);
@@ -55,11 +64,13 @@ export default function Pronunciation({
   }, []);
   useEffect(() => {
     let active = true;
-    import('@/lib/pronunciation')
-      .then((module) => {
+    Promise.all([import('@/lib/pronunciation'), import('@/lib/cantonese')])
+      .then(([mandarin, yue]) => {
         if (!active) return;
-        setLookup(module);
-        setResult(module.lookupPronunciation(query));
+        setLookup(mandarin);
+        setResult(mandarin.lookupPronunciation(query));
+        setCantonese(yue);
+        setJyutping(yue.lookupJyutping(query));
         setError('');
       })
       .catch(() => {
@@ -73,34 +84,42 @@ export default function Pronunciation({
     stop();
     setSpeechStatus('');
     setResult(null);
+    setJyutping(null);
     setQuery(Array.from(text).slice(0, 500).join(''));
   };
-  const speak = () => {
+  const cantoneseVoices = voices.filter((v) => isCantoneseVoice(v.lang));
+  const mandarinVoices = voices.filter((v) => !isCantoneseVoice(v.lang));
+  const speak = (target: 'cmn' | 'yue') => {
     if (speaking) {
       stop();
       return;
     }
-    if (!result || !voices.length) return;
+    const pool = target === 'yue' ? cantoneseVoices : mandarinVoices;
+    if (!result?.text || !pool.length) return;
     const speech = new SpeechSynthesisUtterance(result.text);
-    speech.voice = voices.find((v) => /^zh[-_]CN$/i.test(v.lang)) || voices[0];
+    speech.voice = pool[0];
     speech.lang = speech.voice.lang;
-    speech.rate = 0.8;
+    speech.rate = target === 'yue' ? 0.75 : 0.8;
     const session = createReadAloudSession(
       window.speechSynthesis,
       speech,
       (reason) => {
         playback.current = null;
-        setSpeaking(false);
+        setSpeaking(null);
         if (reason === 'error')
           setSpeechStatus('系統朗讀未能完成，仍可查看拼音。');
       },
     );
     playback.current = session;
     setSpeechStatus('');
-    setSpeaking(true);
+    setSpeaking(target);
     session.start();
   };
   const single = result?.units.length === 1 ? result.units[0] : null;
+  const canReadCmn =
+    !!result?.units.some((u) => u.reading) && mandarinVoices.length > 0;
+  const canReadYue =
+    !!jyutping?.units.some((u) => u.reading) && cantoneseVoices.length > 0;
   return (
     <dialog
       ref={dialog}
@@ -124,7 +143,7 @@ export default function Pronunciation({
         </button>
       </div>
       <p id="pronunciation-help">
-        輸入不認識的字、穴位名或歌訣，即可查看拼音。
+        輸入不認識的字、穴位名或歌訣，即可查看普通話拼音與粵語粵拼（Jyutping）。
       </p>
       <label htmlFor="pronunciation-input">要查詢的文字</label>
       <textarea
@@ -156,21 +175,51 @@ export default function Pronunciation({
           <p>輸入文字，或點擊上面的示例試一試。</p>
         ) : (
           <>
-            <div className="pronunciation-ruby" aria-label="注音結果">
-              {result.units.map((unit, i) =>
-                unit.reading ? (
-                  <ruby key={i}>
-                    {unit.text}
-                    <rp>（</rp>
-                    <rt>{unit.reading}</rt>
-                    <rp>）</rp>
-                  </ruby>
-                ) : (
-                  <span key={i}>
-                    {unit.text}
-                    {unit.unknown && <small>（讀音待查）</small>}
-                  </span>
-                ),
+            <div className="pronunciation-lines">
+              <div className="pronunciation-line">
+                <span className="pronunciation-line-tag">普通話</span>
+                <div className="pronunciation-ruby" aria-label="普通話注音">
+                  {result.units.map((unit, i) =>
+                    unit.reading ? (
+                      <ruby key={i}>
+                        {unit.text}
+                        <rp>（</rp>
+                        <rt>{unit.reading}</rt>
+                        <rp>）</rp>
+                      </ruby>
+                    ) : (
+                      <span key={i}>
+                        {unit.text}
+                        {unit.unknown && <small>（讀音待查）</small>}
+                      </span>
+                    ),
+                  )}
+                </div>
+              </div>
+              {jyutping?.text && (
+                <div className="pronunciation-line">
+                  <span className="pronunciation-line-tag yue">粵語</span>
+                  <div
+                    className="pronunciation-ruby jyutping"
+                    aria-label="粵語注音（粵拼）"
+                  >
+                    {jyutping.units.map((unit, i) =>
+                      unit.reading ? (
+                        <ruby key={i}>
+                          {unit.text}
+                          <rp>（</rp>
+                          <rt>{unit.reading}</rt>
+                          <rp>）</rp>
+                        </ruby>
+                      ) : (
+                        <span key={i}>
+                          {unit.text}
+                          {unit.unknown && <small>（粵拼待查）</small>}
+                        </span>
+                      ),
+                    )}
+                  </div>
+                </div>
               )}
             </div>
             {single && single.readings.length > 1 && (
@@ -187,17 +236,31 @@ export default function Pronunciation({
             {!result.units.some((u) => u.reading || u.unknown) && (
               <p className="pronunciation-note">未檢測到可注音的漢字。</p>
             )}
+            {jyutping?.jyutping && (
+              <p className="pronunciation-note pronunciation-jyutping-string">
+                粵拼：<b>{jyutping.jyutping}</b>
+              </p>
+            )}
           </>
         )}
       </div>
       <div className="pronunciation-actions">
         <button
           type="button"
-          onClick={speak}
-          disabled={!voices.length || !result?.units.some((u) => u.reading)}
+          onClick={() => speak('cmn')}
+          disabled={!canReadCmn && speaking !== 'cmn'}
         >
           <Volume2 size={17} />
-          {speaking ? '停止朗讀' : '朗讀'}
+          {speaking === 'cmn' ? '停止朗讀' : '普通話朗讀'}
+        </button>
+        <button
+          type="button"
+          className="yue"
+          onClick={() => speak('yue')}
+          disabled={!canReadYue && speaking !== 'yue'}
+        >
+          <Volume2 size={17} />
+          {speaking === 'yue' ? '停止粵讀' : '粵語朗讀'}
         </button>
         {result?.text && (
           <a
@@ -212,9 +275,28 @@ export default function Pronunciation({
       <output className="pronunciation-note pronunciation-voice-status">
         {speechStatus ||
           (voices.length
-            ? '系統朗讀僅作輔助，多音字可能與標註不同，請以顯示的拼音及來源説明為準。'
+            ? mandarinVoices.length && cantoneseVoices.length
+              ? '系統朗讀僅作輔助，多音字可能與標註不同，請以顯示的拼音及來源説明為準。'
+              : cantoneseVoices.length
+                ? '本機提供粵語語音，未提供普通話語音；仍可查看兩種注音。'
+                : mandarinVoices.length
+                  ? '本機未提供粵語語音，粵拼仍可顯示；如系統「設定 → 語言」加入粵語／香港中文語音即可朗讀。'
+                  : '當前設備尚未提供中文語音，仍可查看拼音。'
             : '當前設備尚未提供中文語音，仍可查看拼音。')}
       </output>
+      {cantonese && (
+        <p className="pronunciation-note">
+          粵拼依據：{cantonese.jyutpingAttribution.label}。
+          <a
+            href={cantonese.jyutpingAttribution.url}
+            target="_blank"
+            rel="noreferrer"
+          >
+            來源 ↗
+          </a>
+          GB/T 12346-2021 只規定普通話讀音；粵語讀音屬參考，個別穴位讀法或有不同。
+        </p>
+      )}
       {result && lookup && result.sources.length > 0 && (
         <details className="pronunciation-sources">
           <summary>穴名讀音依據 · {result.sources.length} 項</summary>
@@ -268,7 +350,7 @@ export default function Pronunciation({
         </details>
       )}
       <p className="pronunciation-note">
-        穴名優先採用國標標音（差異見依據）；其餘文字由拼音字庫自動注音，古文和多音詞可結合上下文查字典。查詢在頁面內完成。
+        穴名優先採用國標標音（差異見依據）；其餘文字由拼音字庫自動注音，粵拼則按字／穴名查表。古文和多音詞可結合上下文查字典。查詢在頁面內完成。
       </p>
     </dialog>
   );

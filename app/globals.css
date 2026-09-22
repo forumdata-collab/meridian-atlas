@@ -2032,6 +2032,57 @@ footer,
 .pronunciation-ruby small {
   font-size: 13px;
 }
+/* Dual reading lines: Mandarin pinyin + Cantonese Jyutping */
+.pronunciation-lines {
+  display: grid;
+  gap: 4px;
+}
+.pronunciation-line {
+  display: grid;
+  grid-template-columns: 54px minmax(0, 1fr);
+  align-items: start;
+  gap: 10px;
+}
+.pronunciation-line-tag {
+  margin-top: 15px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  color: #9ce2d9;
+  border: 1px solid #2f505a;
+  border-radius: 4px;
+  padding: 2px 4px;
+  text-align: center;
+  white-space: nowrap;
+}
+.pronunciation-line-tag.yue {
+  color: #e8c264;
+  border-color: #574a2c;
+}
+.pronunciation-ruby.jyutping {
+  font-size: 25px;
+  line-height: 2.7;
+}
+.pronunciation-ruby.jyutping rt {
+  color: #e8c264;
+  font-size: 13.5px;
+  letter-spacing: 0.2px;
+}
+.pronunciation-jyutping-string {
+  margin-top: 12px;
+}
+.pronunciation-jyutping-string b {
+  color: #e8c264;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+.pronunciation-actions button.yue {
+  border-color: #6b5a34;
+  background: #37311d;
+}
+.pronunciation-actions button.yue:hover:not(:disabled) {
+  background: #4a4126;
+}
 .pronunciation-note {
   color: #aec3ca;
   font-size: 13px;
@@ -2039,6 +2090,7 @@ footer,
 }
 .pronunciation-actions {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   gap: 12px;
@@ -2099,6 +2151,13 @@ footer,
   }
   .pronunciation-dialog {
     padding: 18px;
+  }
+  .pronunciation-line {
+    grid-template-columns: 46px minmax(0, 1fr);
+    gap: 8px;
+  }
+  .pronunciation-ruby.jyutping {
+    font-size: 22px;
   }
 }
 
