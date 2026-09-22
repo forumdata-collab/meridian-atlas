@@ -1,11 +1,12 @@
 import type { Metadata } from 'next';
 import './globals.css';
 export const metadata: Metadata = {
-  title: '经络图谱 · Meridian Atlas',
-  description: '可交互的三维经络与腧穴学习空间。',
+  title: '經絡穴位 3D 教學 · Meridian Atlas',
+  description:
+    '以三維人體圖譜認識中醫經絡穴位：了解什麼是穴位、如何取穴，以及壓力、失眠、水腫、小兒助長等都市人保健常用穴位。',
   manifest: '/manifest.webmanifest',
   icons: { icon: '/app-icon.svg' },
-  appleWebApp: { capable: true, title: '经络图谱', statusBarStyle: 'default' },
+  appleWebApp: { capable: true, title: '經絡穴位3D', statusBarStyle: 'default' },
 };
 export default function RootLayout({
   children,
@@ -13,7 +14,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="zh-CN">
+    <html lang="zh-Hant">
       <body>{children}</body>
     </html>
   );

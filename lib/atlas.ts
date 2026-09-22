@@ -91,157 +91,157 @@ type Seed = [
 const seeds: Seed[] = [
   [
     'LU',
-    '手太阴肺经',
+    '手太陰肺經',
     '肺',
-    '手三阴',
+    '手三陰',
     '#65d9eb',
     3,
     '寅',
     'LI',
-    '中府 云门 天府 侠白 尺泽 孔最 列缺 经渠 太渊 鱼际 少商',
+    '中府 雲門 天府 俠白 尺澤 孔最 列缺 經渠 太淵 魚際 少商',
   ],
   [
     'LI',
-    '手阳明大肠经',
-    '大肠',
-    '手三阳',
+    '手陽明大腸經',
+    '大腸',
+    '手三陽',
     '#efb36a',
     5,
     '卯',
     'LU',
-    '商阳 二间 三间 合谷 阳溪 偏历 温溜 下廉 上廉 手三里 曲池 肘髎 手五里 臂臑 肩髃 巨骨 天鼎 扶突 口禾髎 迎香',
+    '商陽 二間 三間 合谷 陽溪 偏歷 温溜 下廉 上廉 手三里 曲池 肘髎 手五里 臂臑 肩髃 巨骨 天鼎 扶突 口禾髎 迎香',
   ],
   [
     'ST',
-    '足阳明胃经',
+    '足陽明胃經',
     '胃',
-    '足三阳',
+    '足三陽',
     '#e8c264',
     7,
     '辰',
     'SP',
-    '承泣 四白 巨髎 地仓 大迎 颊车 下关 头维 人迎 水突 气舍 缺盆 气户 库房 屋翳 膺窗 乳中 乳根 不容 承满 梁门 关门 太乙 滑肉门 天枢 外陵 大巨 水道 归来 气冲 髀关 伏兔 阴市 梁丘 犊鼻 足三里 上巨虚 条口 下巨虚 丰隆 解溪 冲阳 陷谷 内庭 厉兑',
+    '承泣 四白 巨髎 地倉 大迎 頰車 下關 頭維 人迎 水突 氣舍 缺盆 氣户 庫房 屋翳 膺窗 乳中 乳根 不容 承滿 梁門 關門 太乙 滑肉門 天樞 外陵 大巨 水道 歸來 氣衝 髀關 伏兔 陰市 梁丘 犢鼻 足三里 上巨虛 條口 下巨虛 豐隆 解溪 衝陽 陷谷 內庭 厲兑',
   ],
   [
     'SP',
-    '足太阴脾经',
+    '足太陰脾經',
     '脾',
-    '足三阴',
+    '足三陰',
     '#e49a72',
     9,
     '巳',
     'ST',
-    '隐白 大都 太白 公孙 商丘 三阴交 漏谷 地机 阴陵泉 血海 箕门 冲门 府舍 腹结 大横 腹哀 食窦 天溪 胸乡 周荣 大包',
+    '隱白 大都 太白 公孫 商丘 三陰交 漏谷 地機 陰陵泉 血海 箕門 衝門 府舍 腹結 大橫 腹哀 食竇 天溪 胸鄉 周榮 大包',
   ],
   [
     'HT',
-    '手少阴心经',
+    '手少陰心經',
     '心',
-    '手三阴',
+    '手三陰',
     '#f184a0',
     11,
     '午',
     'SI',
-    '极泉 青灵 少海 灵道 通里 阴郄 神门 少府 少冲',
+    '極泉 青靈 少海 靈道 通裏 陰郄 神門 少府 少衝',
   ],
   [
     'SI',
-    '手太阳小肠经',
-    '小肠',
-    '手三阳',
+    '手太陽小腸經',
+    '小腸',
+    '手三陽',
     '#dc85b8',
     13,
     '未',
     'HT',
-    '少泽 前谷 后溪 腕骨 阳谷 养老 支正 小海 肩贞 臑俞 天宗 秉风 曲垣 肩外俞 肩中俞 天窗 天容 颧髎 听宫',
+    '少澤 前谷 後溪 腕骨 陽穀 養老 支正 小海 肩貞 臑俞 天宗 秉風 曲垣 肩外俞 肩中俞 天窗 天容 顴髎 聽宮',
   ],
   [
     'BL',
-    '足太阳膀胱经',
+    '足太陽膀胱經',
     '膀胱',
-    '足三阳',
+    '足三陽',
     '#83a6f1',
     15,
     '申',
     'KI',
-    '睛明 攒竹 眉冲 曲差 五处 承光 通天 络却 玉枕 天柱 大杼 风门 肺俞 厥阴俞 心俞 督俞 膈俞 肝俞 胆俞 脾俞 胃俞 三焦俞 肾俞 气海俞 大肠俞 关元俞 小肠俞 膀胱俞 中膂俞 白环俞 上髎 次髎 中髎 下髎 会阳 承扶 殷门 浮郄 委阳 委中 附分 魄户 膏肓 神堂 譩譆 膈关 魂门 阳纲 意舍 胃仓 肓门 志室 胞肓 秩边 合阳 承筋 承山 飞扬 跗阳 昆仑 仆参 申脉 金门 京骨 束骨 足通谷 至阴',
+    '睛明 攢竹 眉衝 曲差 五處 承光 通天 絡卻 玉枕 天柱 大杼 風門 肺俞 厥陰俞 心俞 督俞 膈俞 肝俞 膽俞 脾俞 胃俞 三焦俞 腎俞 氣海俞 大腸俞 關元俞 小腸俞 膀胱俞 中膂俞 白環俞 上髎 次髎 中髎 下髎 會陽 承扶 殷門 浮郄 委陽 委中 附分 魄户 膏肓 神堂 譩譆 膈關 魂門 陽綱 意舍 胃倉 肓門 志室 胞肓 秩邊 合陽 承筋 承山 飛揚 跗陽 崑崙 僕參 申脈 金門 京骨 束骨 足通谷 至陰',
   ],
   [
     'KI',
-    '足少阴肾经',
-    '肾',
-    '足三阴',
+    '足少陰腎經',
+    '腎',
+    '足三陰',
     '#9e9dea',
     17,
     '酉',
     'BL',
-    '涌泉 然谷 太溪 大钟 水泉 照海 复溜 交信 筑宾 阴谷 横骨 大赫 气穴 四满 中注 肓俞 商曲 石关 阴都 腹通谷 幽门 步廊 神封 灵墟 神藏 彧中 俞府',
+    '湧泉 然谷 太溪 大鐘 水泉 照海 復溜 交信 築賓 陰谷 橫骨 大赫 氣穴 四滿 中注 肓俞 商曲 石關 陰都 腹通谷 幽門 步廊 神封 靈墟 神藏 彧中 俞府',
   ],
   [
     'PC',
-    '手厥阴心包经',
+    '手厥陰心包經',
     '心包',
-    '手三阴',
+    '手三陰',
     '#ba8ce6',
     19,
     '戌',
     'TE',
-    '天池 天泉 曲泽 郄门 间使 内关 大陵 劳宫 中冲',
+    '天池 天泉 曲澤 郄門 間使 內關 大陵 勞宮 中衝',
   ],
   [
     'TE',
-    '手少阳三焦经',
+    '手少陽三焦經',
     '三焦',
-    '手三阳',
+    '手三陽',
     '#d4a0e1',
     21,
     '亥',
     'PC',
-    '关冲 液门 中渚 阳池 外关 支沟 会宗 三阳络 四渎 天井 清泠渊 消泺 臑会 肩髎 天髎 天牖 翳风 瘈脉 颅息 角孙 耳门 耳和髎 丝竹空',
+    '關衝 液門 中渚 陽池 外關 支溝 會宗 三陽絡 四瀆 天井 清泠淵 消濼 臑會 肩髎 天髎 天牖 翳風 瘈脈 顱息 角孫 耳門 耳和髎 絲竹空',
   ],
   [
     'GB',
-    '足少阳胆经',
-    '胆',
-    '足三阳',
+    '足少陽膽經',
+    '膽',
+    '足三陽',
     '#91c97a',
     23,
     '子',
     'LR',
-    '瞳子髎 听会 上关 颔厌 悬颅 悬厘 曲鬓 率谷 天冲 浮白 头窍阴 完骨 本神 阳白 头临泣 目窗 正营 承灵 脑空 风池 肩井 渊腋 辄筋 日月 京门 带脉 五枢 维道 居髎 环跳 风市 中渎 膝阳关 阳陵泉 阳交 外丘 光明 阳辅 悬钟 丘墟 足临泣 地五会 侠溪 足窍阴',
+    '瞳子髎 聽會 上關 頷厭 懸顱 懸釐 曲鬢 率谷 天衝 浮白 頭竅陰 完骨 本神 陽白 頭臨泣 目窗 正營 承靈 腦空 風池 肩井 淵腋 輒筋 日月 京門 帶脈 五樞 維道 居髎 環跳 風市 中瀆 膝陽關 陽陵泉 陽交 外丘 光明 陽輔 懸鐘 丘墟 足臨泣 地五會 俠溪 足竅陰',
   ],
   [
     'LR',
-    '足厥阴肝经',
+    '足厥陰肝經',
     '肝',
-    '足三阴',
+    '足三陰',
     '#63c9ac',
     1,
-    '丑',
+    '醜',
     'GB',
-    '大敦 行间 太冲 中封 蠡沟 中都 膝关 曲泉 阴包 足五里 阴廉 急脉 章门 期门',
+    '大敦 行間 太沖 中封 蠡溝 中都 膝關 曲泉 陰包 足五里 陰廉 急脈 章門 期門',
   ],
   [
     'CV',
-    '任脉',
-    '任脉',
-    '奇经八脉',
+    '任脈',
+    '任脈',
+    '奇經八脈',
     '#eebd93',
     -1,
     '',
     '',
-    '会阴 曲骨 中极 关元 石门 气海 阴交 神阙 水分 下脘 建里 中脘 上脘 巨阙 鸠尾 中庭 膻中 玉堂 紫宫 华盖 璇玑 天突 廉泉 承浆',
+    '會陰 曲骨 中極 關元 石門 氣海 陰交 神闕 水分 下脘 建裏 中脘 上脘 巨闕 鳩尾 中庭 膻中 玉堂 紫宮 華蓋 璇璣 天突 廉泉 承漿',
   ],
   [
     'GV',
-    '督脉',
-    '督脉',
-    '奇经八脉',
+    '督脈',
+    '督脈',
+    '奇經八脈',
     '#a0c9e6',
     -1,
     '',
     '',
-    '长强 腰俞 腰阳关 命门 悬枢 脊中 中枢 筋缩 至阳 灵台 神道 身柱 陶道 大椎 哑门 风府 脑户 强间 后顶 百会 前顶 囟会 上星 神庭 素髎 水沟 兑端 龈交',
+    '長強 腰俞 腰陽關 命門 懸樞 脊中 中樞 筋縮 至陽 靈台 神道 身柱 陶道 大椎 啞門 風府 腦户 強間 後頂 百會 前頂 囟會 上星 神庭 素髎 水溝 兑端 齦交',
   ],
 ];
 type Anchor = [number, number, number, number];
@@ -502,7 +502,7 @@ const roleMap: Record<string, number[]> = {
   GB: [44, 43, 41, 38, 34, 40, 37],
   LR: [1, 2, 3, 4, 8, 3, 5],
 };
-export const roleNames = ['井', '荥', '输', '经', '合', '原', '络'];
+export const roleNames = ['井', '滎', '輸', '經', '合', '原', '絡'];
 export function interpolate(list: Anchor[], index: number): Vec3 {
   const b = list.findIndex((a) => a[0] >= index);
   if (b <= 0) return list[0].slice(1) as Vec3;
@@ -534,7 +534,7 @@ export const channels: Channel[] = seeds.map(
       pair,
       points,
       route: points.map((p) => p.position),
-      note: '体表经穴顺序示意；未显示完整体内分支，三维位置待专业校准。',
+      note: '體表經穴順序示意；未顯示完整體內分支，三維位置待專業校準。',
     };
   },
 );
@@ -545,14 +545,14 @@ const yintang = extraCatalog.find((p) => p.id === 'EX-HN3')!;
 const yintangStudy: IndicationStudy = {
   kind: 'secondary',
   summary:
-    '痴呆、痫证、失眠、健忘、头痛、眩晕、鼻衄、鼻渊、小儿惊风等传统主治列举。',
+    '痴呆、癇證、失眠、健忘、頭痛、眩暈、鼻衄、鼻淵、小兒驚風等傳統主治列舉。',
   references: [
     {
-      label: '中国医药信息查询平台 · 印堂穴（详细主治）',
+      label: '中國醫藥信息查詢平台 · 印堂穴（詳細主治）',
       url: 'https://m.dayi.org.cn/acupuncture/1141758.html',
     },
   ],
-  note: '核对现代术语网页，非古籍原版或疗效研究。网页附注说明原经外奇穴 EX-HN3 现归督脉；本应用按现行国标使用 GV24+，旧编号仅用于检索。摘要选录部分病候，未展开产科急症或操作方法。',
+  note: '核對現代術語網頁，非古籍原版或療效研究。網頁附註説明原經外奇穴 EX-HN3 現歸督脈；本應用按現行國標使用 GV24+，舊編號僅用於檢索。摘要選錄部分病候，未展開產科急症或操作方法。',
 };
 governor.points.splice(24, 0, {
   ...yintang,
@@ -563,7 +563,7 @@ governor.points.splice(24, 0, {
   index: 25,
   roles: [],
   bilateral: false,
-  aliases: 'EX-HN3；GV29（旧编号）；印堂',
+  aliases: 'EX-HN3；GV29（舊編號）；印堂',
 });
 governor.points.forEach((p, i) => {
   p.index = i + 1;
@@ -573,7 +573,7 @@ governor.route = governor.points.map((p) => p.position);
 const extraSeeds: [string, string, string[], Vec3[], string][] = [
   [
     'CHONG',
-    '冲脉',
+    '衝脈',
     ['SP4'],
     [
       [0.055, 0.86, 0.14],
@@ -581,11 +581,11 @@ const extraSeeds: [string, string, string[], Vec3[], string][] = [
       [0.075, 1.27, 0.185],
       [0.055, 1.49, 0.12],
     ],
-    '起于胞中、与任督同源的传统循行概念；当前显示腹胸段示意。八脉交会穴：公孙。',
+    '起於胞中、與任督同源的傳統循行概念；當前顯示腹胸段示意。八脈交會穴：公孫。',
   ],
   [
     'DAI',
-    '带脉',
+    '帶脈',
     ['GB41'],
     Array.from(
       { length: 49 },
@@ -596,11 +596,11 @@ const extraSeeds: [string, string, string[], Vec3[], string][] = [
           0.15 * Math.sin((i / 48) * Math.PI * 2),
         ] as Vec3,
     ),
-    '环腰一周的传统循行示意。八脉交会穴：足临泣；带脉、五枢、维道等为交会穴。',
+    '環腰一週的傳統循行示意。八脈交會穴：足臨泣；帶脈、五樞、維道等為交會穴。',
   ],
   [
     'YINQIAO',
-    '阴跷脉',
+    '陰蹺脈',
     ['KI6'],
     [
       [0.126, 0.076, 0.027],
@@ -611,11 +611,11 @@ const extraSeeds: [string, string, string[], Vec3[], string][] = [
       [0.08, 1.52, 0.11],
       [0.028, 1.715, 0.179],
     ],
-    '从足内侧上行至目内眦的概念示意。八脉交会穴：照海。',
+    '從足內側上行至目內眥的概念示意。八脈交會穴：照海。',
   ],
   [
     'YANGQIAO',
-    '阳跷脉',
+    '陽蹺脈',
     ['BL62'],
     [
       [0.248, 0.071, 0.017],
@@ -626,11 +626,11 @@ const extraSeeds: [string, string, string[], Vec3[], string][] = [
       [0.116, 1.62, 0.08],
       [0.028, 1.715, 0.179],
     ],
-    '从足外侧上行至头目的概念示意。八脉交会穴：申脉。',
+    '從足外側上行至頭目的概念示意。八脈交會穴：申脈。',
   ],
   [
     'YINWEI',
-    '阴维脉',
+    '陰維脈',
     ['PC6'],
     [
       [0.122, 0.27, -0.033],
@@ -640,11 +640,11 @@ const extraSeeds: [string, string, string[], Vec3[], string][] = [
       [0.174, 1.271, 0.183],
       [0, 1.493, 0.097],
     ],
-    '沿下肢内侧上行联络腹胸咽喉的概念示意。八脉交会穴：内关。',
+    '沿下肢內側上行聯絡腹胸咽喉的概念示意。八脈交會穴：內關。',
   ],
   [
     'YANGWEI',
-    '阳维脉',
+    '陽維脈',
     ['TE5'],
     [
       [0.254, 0.17, -0.015],
@@ -656,7 +656,7 @@ const extraSeeds: [string, string, string[], Vec3[], string][] = [
       [0.083, 1.739, -0.132],
       [0.1, 1.798, 0.106],
     ],
-    '沿下肢外侧与肩颈头部联络的概念示意。八脉交会穴：外关。',
+    '沿下肢外側與肩頸頭部聯絡的概念示意。八脈交會穴：外關。',
   ],
 ];
 channels.find((c) => c.id === 'BL')!.routes = [
@@ -676,7 +676,7 @@ for (const [id, name, confluent, route, note] of extraSeeds)
     id,
     name,
     short: name,
-    polarity: '奇经八脉',
+    polarity: '奇經八脈',
     color: '#71d7c4',
     points: [
       ...new Set([
@@ -702,43 +702,43 @@ export function timeLabel(hour: number) {
 }
 
 export const diabetesHealthSource = {
-  label: 'NCCIH · 糖尿病与补充健康方法',
+  label: 'NCCIH · 糖尿病與補充健康方法',
   url: 'https://www.nccih.nih.gov/health/diabetes-and-dietary-supplements-what-you-need-to-know',
-  scope: '未经证实的方法不能替代糖尿病规范治疗。',
+  scope: '未經證實的方法不能替代糖尿病規範治療。',
 };
 export const sources = [
   {
-    label: 'GB/T 40997-2021 · 经外奇穴名称与定位（51 条）',
+    label: 'GB/T 40997-2021 · 經外奇穴名稱與定位（51 條）',
     url: extraStandard.statusUrl,
     scope:
-      '现行奇穴目录与中文基本定位。金津玉液合为一组；未设英文代码的 8 条不另造标准编号。旧资料和同位穴另作说明。',
+      '現行奇穴目錄與中文基本定位。金津玉液合為一組；未設英文代碼的 8 條不另造標準編號。舊資料和同位穴另作説明。',
   },
   {
-    label: 'MakeHuman · CC0 人体网格',
+    label: 'MakeHuman · CC0 人體網格',
     url: 'https://github.com/makehumancommunity/makehuman/blob/a8bc2d54ff0ac92e78ff71431b1023eda42bf482/LICENSE.ASSETS.md',
     scope:
-      '提取基础人体网格并调整前臂学习体位；通用资产并非医学影像，也未还原特定人物。',
+      '提取基礎人體網格並調整前臂學習體位；通用資產並非醫學影像，也未還原特定人物。',
   },
   {
-    label: 'GB/T 12346-2021 · 经穴名称与定位（362 经穴）',
+    label: 'GB/T 12346-2021 · 經穴名稱與定位（362 經穴）',
     url: nationalStandard.statusUrl,
     scope:
-      '默认目录采用现行国标：印堂 GV24+ 归督脉。362 穴基本定位要点已整理，详情链接到正文对应页；条文注释、文字校订与三维定位校准分别处理。',
+      '默認目錄採用現行國標：印堂 GV24+ 歸督脈。362 穴基本定位要點已整理，詳情鏈接到正文對應頁；條文註釋、文字校訂與三維定位校準分別處理。',
   },
   {
-    label: 'WHO · 标准针灸穴名（361 经穴）',
+    label: 'WHO · 標準針灸穴名（361 經穴）',
     url: 'https://www.who.int/publications/i/item/9290611057',
-    scope: '穴名、标准编码参考；不意味着三维坐标经 WHO 验证。',
+    scope: '穴名、標準編碼參考；不意味着三維座標經 WHO 驗證。',
   },
   {
-    label: 'TARA · 经穴本体与资料来源',
+    label: 'TARA · 經穴本體與資料來源',
     url: 'https://github.com/SciCrunch/TARA-Ontology-Repository',
-    scope: '穴名、传统主治与定位资料核对入口。',
+    scope: '穴名、傳統主治與定位資料核對入口。',
   },
   {
-    label: '十二时辰与经脉对应 · 连州市卫生健康局',
+    label: '十二時辰與經脈對應 · 連州市衞生健康局',
     url: 'https://www.lianzhou.gov.cn/qylzwsj/gkmlpt/content/1/1736/post_1736096.html',
-    scope: '传统时辰配属参考，不代表血管循环或现代生理测量。',
+    scope: '傳統時辰配屬參考，不代表血管循環或現代生理測量。',
   },
   diabetesHealthSource,
 ];
@@ -762,7 +762,7 @@ for (const p of Object.values(pointById)) {
   const r = refs[p.id];
   if (!r) continue;
   p.indications = r.indications;
-  p.location = `体表区域：${r.region}。现代标准的完整文字定位见 WHO《西太平洋地区标准针灸穴位定位》${r.referencePage ? '第 ' + r.referencePage + ' 页' : ''}。模型位置为近似示意。`;
+  p.location = `體表區域：${r.region}。現代標準的完整文字定位見 WHO《西太平洋地區標準針灸穴位定位》${r.referencePage ? '第 ' + r.referencePage + ' 頁' : ''}。模型位置為近似示意。`;
   p.source = r.reference + '；' + r.curation;
 }
 for (const p of extraPoints) pointById[p.id] = p;
@@ -774,19 +774,19 @@ const nationalIndex: Record<
 for (const [id, entry] of Object.entries(nationalIndex)) {
   const p = pointById[id];
   p.locationReference = {
-    label: `GB/T 12346-2021 · ${entry.clause} · PDF 第 ${entry.pdfPage} 页`,
+    label: `GB/T 12346-2021 · ${entry.clause} · PDF 第 ${entry.pdfPage} 頁`,
     url: `${nationalStandard.documentUrl}#page=${entry.pdfPage}`,
   };
 }
-pointById.ST35.aliases = '外膝眼；M-LE26（旧资料编号）';
-pointById.TE11.aliases = '清冷渊（所核古籍版本用字，现代标准名称为清泠渊）';
+pointById.ST35.aliases = '外膝眼；M-LE26（舊資料編號）';
+pointById.TE11.aliases = '清冷淵（所核古籍版本用字，現代標準名稱為清泠淵）';
 applyPlacementRules(pointById);
 // Standard text is authoritative; model-generation rules must not shorten or
 // replace its anatomical landmarks. Preserve the separately authored LI digest.
 for (const [id, location] of Object.entries(standardLocations)) {
   pointById[id].location = locationFacts[id]
     ? describeLocationFacts(locationFacts[id]) +
-      (location.postureNote ? `体位提示：${location.postureNote}` : '')
+      (location.postureNote ? `體位提示：${location.postureNote}` : '')
     : describeStandardLocation(location);
 }
 for (const c of channels) {
@@ -833,10 +833,10 @@ export function canInspectPoint(
 }
 
 // Collateral identities include the Ren/Du luo points and the great luo of
-// the spleen. Keep 大络 distinct so the spleen's usual 络 category is 公孙.
+// the spleen. Keep 大絡 distinct so the spleen's usual 絡 category is 公孫.
 for (const study of luoStudies) {
   const p = pointById[study.pointId];
-  const role = study.id === 'LUO-SP-MAJOR' ? '大络' : '络';
+  const role = study.id === 'LUO-SP-MAJOR' ? '大絡' : '絡';
   if (!p.roles.includes(role)) p.roles.push(role);
 }
 
@@ -852,7 +852,7 @@ for (const [id, study] of Object.entries(primaryIndicationScan.points)) {
     excerpt: study.excerpt,
     references: [
       {
-        label: `${document.title} · ${study.printedLeaf} · PDF 第 ${study.pdfPage} 页（扫描）`,
+        label: `${document.title} · ${study.printedLeaf} · PDF 第 ${study.pdfPage} 頁（掃描）`,
         url: `${document.url}#page=${study.pdfPage}`,
       },
     ],
@@ -867,7 +867,7 @@ for (const [id, study] of Object.entries(primaryIndicationScan.points)) {
   }
   p.indications = study.summary;
   p.indicationStudy = scannedStudy;
-  p.source = '文献说明已按所附《针灸大成》扫描页核对；现代定位与三维校准另列。';
+  p.source = '文獻説明已按所附《針灸大成》掃描頁核對；現代定位與三維校準另列。';
 }
 
 // Standard basic indications are separate from historical accounts and locations.
@@ -889,16 +889,16 @@ for (const [id, entry] of Object.entries(standardIndications.points)) {
     summary: entry.summary,
     references: [
       {
-        label: `${standardIndications.standard}《${standardIndications.title}》· ${entry.clause} · 正文第 ${entry.printedPage} 页（PDF 第 ${entry.pdfPage} 页）`,
+        label: `${standardIndications.standard}《${standardIndications.title}》· ${entry.clause} · 正文第 ${entry.printedPage} 頁（PDF 第 ${entry.pdfPage} 頁）`,
         url: `${standardIndications.documentUrl}#page=${entry.pdfPage}`,
       },
     ],
     note:
-      '按国家标准原页整理基础主治。标准以古今文献整理为依据，所列病证不等于逐病完成现代疗效验证；不包含特殊操作与个体治疗方案。定位仍按现行定位标准单独展示。' +
+      '按國家標準原頁整理基礎主治。標準以古今文獻整理為依據，所列病證不等於逐病完成現代療效驗證；不包含特殊操作與個體治療方案。定位仍按現行定位標準單獨展示。' +
       (id === 'EX-B2'
-        ? '夹脊为胸腰段穴组，主治须分段阅读，不能认为每个穴点均对应全部病症。'
+        ? '夾脊為胸腰段穴組，主治須分段閲讀，不能認為每個穴點均對應全部病症。'
         : '') +
-      (id === 'EX-B3' ? '消渴为传统病证，不直接等同于现代糖尿病。' : ''),
+      (id === 'EX-B3' ? '消渴為傳統病證，不直接等同於現代糖尿病。' : ''),
   };
-  p.source = '基础主治已按所附国家标准原页核对；三维位置校准另列。';
+  p.source = '基礎主治已按所附國家標準原頁核對；三維位置校準另列。';
 }

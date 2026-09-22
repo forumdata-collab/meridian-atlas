@@ -76,24 +76,24 @@ export function torsoDescription(rule: TorsoRule): string {
   const offset =
     'lateral' in rule
       ? rule.lateral
-        ? `前正中线旁开 ${rule.lateral} 寸`
-        : '前正中线上'
-      : '前正中线上';
+        ? `前正中線旁開 ${rule.lateral} 寸`
+        : '前正中線上'
+      : '前正中線上';
   switch (rule.kind) {
     case 'abdomen':
-      return `${rule.heightCun === 0 ? '脐中水平' : `脐中${rule.heightCun > 0 ? '上' : '下'} ${Math.abs(rule.heightCun)} 寸`}，${offset}。`;
+      return `${rule.heightCun === 0 ? '臍中水平' : `臍中${rule.heightCun > 0 ? '上' : '下'} ${Math.abs(rule.heightCun)} 寸`}，${offset}。`;
     case 'rib':
-      return `第 ${rule.space} 肋间隙水平，${offset}。`;
+      return `第 ${rule.space} 肋間隙水平，${offset}。`;
     case 'clavicle':
-      return `锁骨下缘区域，${offset}。`;
+      return `鎖骨下緣區域，${offset}。`;
     case 'xiphoid':
-      return '剑突尖，前正中线上。';
+      return '劍突尖，前正中線上。';
     case 'notch':
-      return '胸骨上窝中央，前正中线上。';
+      return '胸骨上窩中央，前正中線上。';
     case 'belowNotch':
-      return '胸骨上窝下 1 寸，前正中线上。';
+      return '胸骨上窩下 1 寸，前正中線上。';
     case 'nipple':
-      return '乳头中央；通用人形的乳头标志采用第 4 肋间隙水平，个体乳头位置不可由此推定。';
+      return '乳頭中央；通用人形的乳頭標誌採用第 4 肋間隙水平，個體乳頭位置不可由此推定。';
   }
 }
 
@@ -119,7 +119,7 @@ for (const [id, cun] of [
   ['LU7', 1.5],
   ['LU8', 1],
 ] as const)
-  forearm(id, 'LU9', 'LU5', cun, '前臂桡侧；肌腱与动脉的细部位置另见原文');
+  forearm(id, 'LU9', 'LU5', cun, '前臂橈側；肌腱與動脈的細部位置另見原文');
 for (const [id, cun] of [
   ['LI6', 3],
   ['LI7', 5],
@@ -127,21 +127,21 @@ for (const [id, cun] of [
   ['LI9', 9],
   ['LI10', 10],
 ] as const)
-  forearm(id, 'LI5', 'LI11', cun, '阳溪—曲池连线');
+  forearm(id, 'LI5', 'LI11', cun, '陽溪—曲池連線');
 for (const [id, cun] of [
   ['HT4', 1.5],
   ['HT5', 1],
   ['HT6', 0.5],
 ] as const)
-  forearm(id, 'HT7', 'HT3', cun, '前臂前内侧，尺侧腕屈肌腱的桡侧缘');
+  forearm(id, 'HT7', 'HT3', cun, '前臂前內側，尺側腕屈肌腱的橈側緣');
 for (const [id, cun] of [
   ['PC4', 5],
   ['PC5', 3],
   ['PC6', 2],
 ] as const)
-  forearm(id, 'PC7', 'PC3', cun, '前臂前侧，掌长肌腱与桡侧腕屈肌腱之间');
-forearm('SI6', 'SI5', 'SI8', 1, '前臂后侧，尺骨头桡侧凹陷');
-forearm('SI7', 'SI5', 'SI8', 5, '尺骨尺侧与尺侧腕屈肌之间');
+  forearm(id, 'PC7', 'PC3', cun, '前臂前側，掌長肌腱與橈側腕屈肌腱之間');
+forearm('SI6', 'SI5', 'SI8', 1, '前臂後側，尺骨頭橈側凹陷');
+forearm('SI7', 'SI5', 'SI8', 5, '尺骨尺側與尺側腕屈肌之間');
 // The olecranon is the zero-elbow landmark. TE10 is 1 cun above it and
 // must not be substituted as the endpoint of the 12-cun forearm interval.
 export const olecranon: Vec3 = [0.594, 1.1, -0.058];
@@ -158,8 +158,8 @@ for (const [id, cun] of [
     olecranon,
     cun,
     id === 'TE7'
-      ? '前臂后侧，尺骨桡侧缘；位于支沟尺侧'
-      : '前臂后侧，尺骨与桡骨间隙',
+      ? '前臂後側，尺骨橈側緣；位於支溝尺側'
+      : '前臂後側，尺骨與橈骨間隙',
   );
 // Same longitudinal level as TE6; transverse offset is mannequin-specific.
 forearmRules.TE7.sideOffset = [0.012, 0, 0];
@@ -176,12 +176,12 @@ export function applyPlacementRules(points: Record<string, Point>) {
     p.position = torsoPosition(rule);
     p.modelPlacement =
       torsoDescription(rule) +
-      '模型已按比例和体表网格约束；解剖标志仍为通用人形估计值，待逐穴复核。';
+      '模型已按比例和體表網格約束；解剖標誌仍為通用人形估計值，待逐穴複核。';
     // Keep more specific existing LU locations and ST17's nipple landmark.
     if (!['LU1', 'LU2'].includes(id))
       p.location =
         torsoDescription(rule) +
-        '（定位要点；完整表述与个体差异见所附国标条款。）';
+        '（定位要點；完整表述與個體差異見所附國標條款。）';
   }
   for (const [id, rule] of Object.entries(forearmRules)) {
     const wrist = points[rule.wrist].position;
@@ -194,12 +194,12 @@ export function applyPlacementRules(points: Record<string, Point>) {
       });
     points[id].position = position;
     points[id].modelPlacement =
-      `腕肘间按 12 骨度寸折算，本穴腕上 ${rule.cun} 寸。比例已约束；腕肘端点、横向偏移及肌腱定位仍待复核。`;
+      `腕肘間按 12 骨度寸折算，本穴腕上 ${rule.cun} 寸。比例已約束；腕肘端點、橫向偏移及肌腱定位仍待複核。`;
     if (!id.startsWith('LU') && !id.startsWith('LI')) {
       const wristSurface =
         id.startsWith('HT') || id.startsWith('PC') ? '掌' : '背';
       points[id].location =
-        `腕${wristSurface}侧远端横纹向肘 ${rule.cun} 寸；${rule.landmarks}。完整定位与特殊体位见所附国标条款。`;
+        `腕${wristSurface}側遠端橫紋向肘 ${rule.cun} 寸；${rule.landmarks}。完整定位與特殊體位見所附國標條款。`;
     }
   }
 }

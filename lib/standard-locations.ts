@@ -28,18 +28,18 @@ export function describeStandardLocation(location: StandardLocation): string {
   const relations = location.relations.map((r) => {
     switch (r.kind) {
       case 'distance':
-        return `${r.approximate ? '约在' : ''}${r.reference}${r.direction} ${r.cun} 寸${r.detail}`;
+        return `${r.approximate ? '約在' : ''}${r.reference}${r.direction} ${r.cun} 寸${r.detail}`;
       case 'level':
-        return `与${r.reference}同高`;
+        return `與${r.reference}同高`;
       case 'axis':
-        return `位于${r.reference}`;
+        return `位於${r.reference}`;
       case 'line':
-        return `${r.names.join('—')}连线（${r.pointIds.join('—')}）`;
+        return `${r.names.join('—')}連線（${r.pointIds.join('—')}）`;
       case 'intercostal':
-        return `第 ${r.space} 肋间隙`;
+        return `第 ${r.space} 肋間隙`;
       case 'anatomical':
         return r.detail;
     }
   });
-  return `区域：${location.region}。定位关系：${relations.join('；')}。${location.postureNote ? `体位提示：${location.postureNote}` : ''}`;
+  return `區域：${location.region}。定位關係：${relations.join('；')}。${location.postureNote ? `體位提示：${location.postureNote}` : ''}`;
 }

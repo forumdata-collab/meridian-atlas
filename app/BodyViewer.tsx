@@ -97,7 +97,7 @@ export default function BodyViewer(props: Props) {
     } catch {
       // oxlint-disable-next-line react/react-compiler -- DOM renderer initialization failure requires fallback state.
       setError(
-        '当前设备无法启动 WebGL。仍可通过左侧经络和穴位列表学习；请使用支持 WebGL 的浏览器查看三维模型。',
+        '當前設備無法啓動 WebGL。仍可通過左側經絡和穴位列表學習；請使用支持 WebGL 的瀏覽器查看三維模型。',
       );
       return;
     }
@@ -108,7 +108,7 @@ export default function BodyViewer(props: Props) {
     renderer.domElement.tabIndex = 0;
     renderer.domElement.setAttribute(
       'aria-label',
-      '三维人体经络模型，拖动旋转，滚轮缩放；也可使用周围按钮和穴位列表',
+      '三維人體經絡模型，拖動旋轉，滾輪縮放；也可使用周圍按鈕和穴位列表',
     );
     const scene = new THREE.Scene();
     scene.visible = false;
@@ -184,7 +184,7 @@ export default function BodyViewer(props: Props) {
       } catch {
         if (!disposed) {
           setError(
-            '人体模型未能载入。请刷新重试；经络目录与穴位资料仍可使用。',
+            '人體模型未能載入。請刷新重試；經絡目錄與穴位資料仍可使用。',
           );
           setLoading(false);
         }
@@ -509,7 +509,7 @@ export default function BodyViewer(props: Props) {
           }
           if (side === 1)
             for (const node of lungCourse.nodes.filter((n) =>
-              ['中焦', '络大肠', '属肺', '肺系'].includes(n.label),
+              ['中焦', '絡大腸', '屬肺', '肺系'].includes(n.label),
             ))
               addLabel(
                 { id: `course:${node.label}`, name: node.label, channel: c.id },
@@ -1124,11 +1124,11 @@ export default function BodyViewer(props: Props) {
     <div className="body-host" ref={host}>
       {graphicsLost && (
         <div className="webgl-error" role="alert">
-          三维绘图暂时中断，正在等待浏览器恢复。仍可使用经络与穴位列表；若一直未恢复，请刷新页面。
+          三維繪圖暫時中斷，正在等待瀏覽器恢復。仍可使用經絡與穴位列表；若一直未恢復，請刷新頁面。
         </div>
       )}
       {loading && !error && !graphicsLost && (
-        <output className="webgl-error">正在载入三维人体…</output>
+        <output className="webgl-error">正在載入三維人體…</output>
       )}
       {error && (
         <div className="webgl-error" role="alert">
@@ -1142,8 +1142,8 @@ export default function BodyViewer(props: Props) {
           className="model-pick-choices"
           aria-label={
             choices.items[0].kind === 'channel'
-              ? '选择此处的经络'
-              : '选择此处的穴位'
+              ? '選擇此處的經絡'
+              : '選擇此處的穴位'
           }
           ref={choicePanel}
           style={{ left: choices.x, top: choices.y }}
@@ -1160,11 +1160,11 @@ export default function BodyViewer(props: Props) {
           <div className="model-pick-heading">
             <span>
               {choices.items[0].kind === 'channel'
-                ? '此处有多条经络'
-                : '此处有多个穴位'}
+                ? '此處有多條經絡'
+                : '此處有多個穴位'}
             </span>
             <button
-              aria-label="取消本次点选"
+              aria-label="取消本次點選"
               onClick={() => {
                 setChoices(null);
                 host.current

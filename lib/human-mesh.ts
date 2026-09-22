@@ -57,7 +57,7 @@ export function attachHumanMesh(
     p.positions = binding.positions;
     p.modelPlacement =
       (p.modelPlacement ? p.modelPlacement + ' ' : '') +
-      '已绑定学习体位人体网格；体表吸附不代表解剖定位已经校准。' +
+      '已綁定學習體位人體網格；體表吸附不代表解剖定位已經校準。' +
       (binding.proportionNote ? ' ' + binding.proportionNote : '');
   }
   for (const c of channels) {

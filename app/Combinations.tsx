@@ -33,7 +33,7 @@ export default function Combinations({
   const base = channels.find((c) => c.id === baseChannel)!;
   const paired = channels.find((c) => c.id === base.pair)!;
   const yuan = base.points.find((p) => p.roles.includes('原'))!,
-    luo = paired.points.find((p) => p.roles.includes('络'))!;
+    luo = paired.points.find((p) => p.roles.includes('絡'))!;
   const pointCards = (items: string[]) => (
     <div className="association-points">
       {items.map((id) => (
@@ -42,7 +42,7 @@ export default function Combinations({
           <small>
             {pointById[id].displayCode || id} ·{' '}
             {channels.find((c) => c.id === pointById[id].channel)?.short ||
-              '经外奇穴'}
+              '經外奇穴'}
           </small>
         </a>
       ))}
@@ -51,16 +51,16 @@ export default function Combinations({
   return (
     <section className="document-page">
       <div className="eyebrow">CLINICAL READING ROOM</div>
-      <h1>从一穴，到经络之间。</h1>
+      <h1>從一穴，到經絡之間。</h1>
       <p>
-        配伍、辨证与文献放在一起阅读。这里记录学习资料，不生成个体治疗处方。
+        配伍、辨證與文獻放在一起閲讀。這裏記錄學習資料，不生成個體治療處方。
       </p>
       <div className="combination-layout">
         <aside>
           {[
             ['diabetes', '消渴 / 糖尿病'],
-            ['yuanluo', '原络配穴'],
-            ['confluent', '八脉交会'],
+            ['yuanluo', '原絡配穴'],
+            ['confluent', '八脈交會'],
           ].map(([id, name]) => (
             <button
               key={id}
@@ -72,24 +72,24 @@ export default function Combinations({
             </button>
           ))}
           <p className="micro-note">
-            中医“消渴”与现代医学糖尿病并非完全等同。疾病治疗须结合辨证和现代规范诊疗。
+            中醫“消渴”與現代醫學糖尿病並非完全等同。疾病治療須結合辨證和現代規範診療。
           </p>
         </aside>
         <article className="study-card">
           {topic === 'diabetes' ? (
             <>
               <div className="tags">
-                <span>有出处的学习记录</span>
-                <span>非疗效保证</span>
+                <span>有出處的學習記錄</span>
+                <span>非療效保證</span>
               </div>
-              <h2>消渴相关配穴</h2>
+              <h2>消渴相關配穴</h2>
               <Tabs
                 value={edition}
                 onValueChange={(v) => setEdition(String(v))}
               >
                 <TabsList>
-                  <TabsTrigger value="modern">公开方案</TabsTrigger>
-                  <TabsTrigger value="classic">古籍对照</TabsTrigger>
+                  <TabsTrigger value="modern">公開方案</TabsTrigger>
+                  <TabsTrigger value="classic">古籍對照</TabsTrigger>
                 </TabsList>
                 <TabsContent value={edition}>
                   {edition === 'modern' ? (
@@ -109,16 +109,16 @@ export default function Combinations({
                         ))}
                       </div>
                       <p>{selectedPattern.explanation}</p>
-                      <div className="section-label">文献基础穴组</div>
+                      <div className="section-label">文獻基礎穴組</div>
                       {pointCards(diabetesCore)}
                       {selectedPattern.points.length > 0 && (
                         <>
-                          <div className="section-label">证型配穴</div>
+                          <div className="section-label">證型配穴</div>
                           {pointCards(selectedPattern.points)}
                         </>
                       )}
                       <p className="micro-note">
-                        胃脘下俞在该方案中称为胰俞。这里摘录穴组与辨证配穴关系，未评定该方案的临床证据等级，也不照录操作方法。
+                        胃脘下俞在該方案中稱為胰俞。這裏摘錄穴組與辨證配穴關係，未評定該方案的臨牀證據等級，也不照錄操作方法。
                       </p>
                       <a
                         className="text-link"
@@ -132,7 +132,7 @@ export default function Combinations({
                   ) : (
                     <>
                       <div className="section-label">
-                        《针灸大成》鼻口门 · 消渴条用穴
+                        《針灸大成》鼻口門 · 消渴條用穴
                       </div>
                       {pointCards(ids)}
                       <p className="micro-note">{classicalDiabetes.note}</p>
@@ -142,24 +142,24 @@ export default function Combinations({
                         target="_blank"
                         rel="noreferrer"
                       >
-                        阅读古籍原条文 ↗
+                        閲讀古籍原條文 ↗
                       </a>
                     </>
                   )}
                 </TabsContent>
               </Tabs>
               <button className="primary-button" onClick={() => onExplore(ids)}>
-                在三维图谱中对照 <ArrowRight size={16} />
+                在三維圖譜中對照 <ArrowRight size={16} />
               </button>
               <div className="pending-note">
                 <h3>胃脘下俞 · 胰俞 · “消渴穴”</h3>
                 <p>
-                  本图以胃脘下俞 EX-B3 收录，位于第八胸椎棘突下旁开 1.5
-                  寸；“消渴穴”作为部分教学资料中的检索称呼，不另增一个重叠穴位。
+                  本圖以胃脘下俞 EX-B3 收錄，位於第八胸椎棘突下旁開 1.5
+                  寸；“消渴穴”作為部分教學資料中的檢索稱呼，不另增一個重疊穴位。
                 </p>
               </div>
               <p className="clinical-note">
-                糖尿病需要规范监测和治疗，针灸学习及古籍记载不能替代降糖治疗。
+                糖尿病需要規範監測和治療，針灸學習及古籍記載不能替代降糖治療。
               </p>
               <a
                 className="text-link"
@@ -167,15 +167,15 @@ export default function Combinations({
                 target="_blank"
                 rel="noreferrer"
               >
-                NCCIH 健康资料 ↗
+                NCCIH 健康資料 ↗
               </a>
             </>
           ) : topic === 'yuanluo' ? (
             <>
               <span className="eyebrow">YUAN–LUO PAIRING</span>
-              <h2>主经原穴 · 表里经络穴</h2>
+              <h2>主經原穴 · 表裏經絡穴</h2>
               <p>
-                原络配穴的一种学习框架：主病经取原穴，表里经取络穴。主客关系改变，配对也随之改变；它并不只用于内科病。
+                原絡配穴的一種學習框架：主病經取原穴，表裏經取絡穴。主客關係改變，配對也隨之改變；它並不只用於內科病。
               </p>
               <div className="pattern-buttons">
                 {primaryChannels.map((c) => (
@@ -189,35 +189,35 @@ export default function Combinations({
                 ))}
               </div>
               <div className="section-label">
-                {base.short}经为主 · {paired.short}经为客
+                {base.short}經為主 · {paired.short}經為客
               </div>
               {pointCards([yuan.id, luo.id])}
               <p className="micro-note">
-                {yuan.name}是{base.short}经原穴，{luo.name}是{paired.short}
-                经络穴。这是原络关系演示，尚须根据实际病证选用。
+                {yuan.name}是{base.short}經原穴，{luo.name}是{paired.short}
+                經絡穴。這是原絡關係演示，尚須根據實際病證選用。
               </p>
               <button
                 className="primary-button"
                 onClick={() => onExplore([yuan.id, luo.id])}
               >
-                对照这组原络穴 <ArrowRight size={16} />
+                對照這組原絡穴 <ArrowRight size={16} />
               </button>
-              <div className="section-label">经典阅读</div>
+              <div className="section-label">經典閲讀</div>
               <a
                 className="text-link"
                 href="https://zh.wikisource.org/wiki/八十一難經#六十六難"
                 target="_blank"
                 rel="noreferrer"
               >
-                《难经》六十六难 · 原穴理论 ↗
+                《難經》六十六難 · 原穴理論 ↗
               </a>
             </>
           ) : (
             <>
               <span className="eyebrow">EIGHT CONFLUENT POINTS</span>
-              <h2>八脉交会 · 四组相配</h2>
+              <h2>八脈交會 · 四組相配</h2>
               <p>
-                八个交会穴属于十二正经，分别通于奇经八脉；并非在奇经上另建八个穴。
+                八個交會穴屬於十二正經，分別通於奇經八脈；並非在奇經上另建八個穴。
               </p>
               {confluentPairs.map((pair) => (
                 <div className="pair-card" key={pair.name}>
@@ -230,7 +230,7 @@ export default function Combinations({
                     className="text-link"
                     onClick={() => onExplore(pair.points)}
                   >
-                    在模型中对照 →
+                    在模型中對照 →
                   </button>
                 </div>
               ))}
@@ -240,7 +240,7 @@ export default function Combinations({
                 target="_blank"
                 rel="noreferrer"
               >
-                《针灸大成》奇经八脉歌 ↗
+                《針灸大成》奇經八脈歌 ↗
               </a>
             </>
           )}

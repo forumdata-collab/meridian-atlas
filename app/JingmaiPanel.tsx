@@ -28,22 +28,22 @@ export default function JingmaiPanel({
   const passage =
     jingmaiSource.passages[channel.id as keyof typeof jingmaiSource.passages];
   return (
-    <section className="jingmai-study" aria-label="十二正经循行研习">
-      <div className="section-label">经脉循行 · 《灵枢》</div>
+    <section className="jingmai-study" aria-label="十二正經循行研習">
+      <div className="section-label">經脈循行 · 《靈樞》</div>
       <p className="jingmai-origin">
-        起于<strong>{study.origin}</strong>
+        起於<strong>{study.origin}</strong>
       </p>
       <div className="jingmai-organ">
-        <span>属 · {study.belonging}</span>
-        <span>络 · {study.connection}</span>
+        <span>屬 · {study.belonging}</span>
+        <span>絡 · {study.connection}</span>
       </div>
       <details className="jingmai-sections">
-        <summary>查看体内经过与分支</summary>
+        <summary>查看體內經過與分支</summary>
         <p className="micro-note">
-          以下按《经脉第十》整理；参照穴便于联系体表位置，并非把体内经过改成穴位连线。
+          以下按《經脈第十》整理；參照穴便於聯繫體表位置，並非把體內經過改成穴位連線。
           {hasRegionalCourse(channel.id)
-            ? '本经可打开图谱下方“体内经过”开关查看三维区域与分支示意。'
-            : '当前三维光流仍为体表穴序示意。'}
+            ? '本經可打開圖譜下方“體內經過”開關查看三維區域與分支示意。'
+            : '當前三維光流仍為體表穴序示意。'}
         </p>
         <ol>
           {study.sections.map((section) => (
@@ -52,7 +52,7 @@ export default function JingmaiPanel({
               <p>{section.summary}</p>
               {section.pointIds.length > 0 && (
                 <div className="jingmai-landmarks">
-                  <small>体表参照穴</small>
+                  <small>體表參照穴</small>
                   {section.pointIds.map((id) => (
                     <button
                       type="button"
@@ -70,14 +70,14 @@ export default function JingmaiPanel({
         </ol>
         {study.note && <p className="jingmai-editorial">{study.note}</p>}
         <div className="jingmai-junction">
-          <strong>与下一经的联系</strong>
+          <strong>與下一經的聯繫</strong>
           <p>{study.junction}</p>
           <small>
-            按相邻经脉的末段、支脉和起段作学习比照；不表示按钟点才发生器官之间的生理血流交接。
+            按相鄰經脈的末段、支脈和起段作學習比照；不表示按鐘點才發生器官之間的生理血流交接。
           </small>
         </div>
         <details className="jingmai-original">
-          <summary>对照循行原文</summary>
+          <summary>對照循行原文</summary>
           <p>{passage}</p>
           <button
             type="button"
@@ -94,15 +94,15 @@ export default function JingmaiPanel({
           target="_blank"
           rel="noreferrer"
         >
-          《灵枢·经脉第十》固定版本 ↗
+          《靈樞·經脈第十》固定版本 ↗
         </a>
       </details>
       <div className="jingmai-neighbours">
         <button type="button" onClick={() => onChannel(previous.id)}>
-          ← 前一经 · {previous.short}
+          ← 前一經 · {previous.short}
         </button>
         <button type="button" onClick={() => onChannel(next.id)}>
-          下一经 · {next.short} →
+          下一經 · {next.short} →
         </button>
       </div>
     </section>

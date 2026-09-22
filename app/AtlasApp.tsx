@@ -23,6 +23,8 @@ import {
   X,
   Plus,
   Minus,
+  Sparkles,
+  HeartPulse,
 } from 'lucide-react';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { Slider } from '@/components/ui/slider';
@@ -30,6 +32,7 @@ import { Switch } from '@/components/ui/switch';
 import Combinations from './Combinations';
 import Pronunciation from './Pronunciation';
 import JingmaiPanel from './JingmaiPanel';
+import { LearnPage, CarePage } from './HealthPages';
 import yangqiaoSource from '@/lib/yangqiao-source.json';
 import daimaiSource from '@/lib/daimai-source.json';
 import {
@@ -64,7 +67,7 @@ const sourceCoverage = summarizeSourceCoverage(
   Object.keys(primaryScans.points),
 );
 
-type Mode = 'atlas' | 'clock' | 'combinations' | 'sources';
+type Mode = 'atlas' | 'clock' | 'combinations' | 'sources' | 'learn' | 'care';
 export default function AtlasApp({
   mode = 'atlas',
   initialPoints = [],
@@ -114,10 +117,10 @@ export default function AtlasApp({
     selected === 'LU'
       ? {
           ...lungCourse,
-          toggleLabel: '体内经过与腕后分支',
+          toggleLabel: '體內經過與腕後分支',
           focusLabel: '',
           summary:
-            '中焦 → 络大肠 → 胃口 → 膈 → 属肺 → 肺系 → 出腋下；主段至拇指，腕后另分支至食指。',
+            '中焦 → 絡大腸 → 胃口 → 膈 → 屬肺 → 肺系 → 出腋下；主段至拇指，腕後另分支至食指。',
         }
       : courseCatalog[selected || ''];
   const routeSource =
@@ -211,7 +214,7 @@ export default function AtlasApp({
     (c) =>
       (category === 'primary'
         ? c.hour !== undefined
-        : c.polarity === (category === 'luo' ? '十五络脉' : '奇经八脉')) &&
+        : c.polarity === (category === 'luo' ? '十五絡脈' : '奇經八脈')) &&
       (!query ||
         c.name.includes(query) ||
         c.id.toLowerCase().includes(query.toLowerCase()) ||
@@ -230,15 +233,17 @@ export default function AtlasApp({
             <Activity size={23} />
           </span>
           <span>
-            经络图谱<small>MERIDIAN ATLAS</small>
+            經絡圖譜<small>MERIDIAN ATLAS</small>
           </span>
         </Link>
-        <nav aria-label="主导航">
+        <nav aria-label="主導航">
           {(
             [
-              ['atlas', '/', '三维图谱', Layers3],
-              ['clock', '/clock', '十二时辰', Clock3],
-              ['combinations', '/combinations', '配穴研习', BookOpen],
+              ['atlas', '/', '三維圖譜', Layers3],
+              ['clock', '/clock', '十二時辰', Clock3],
+              ['combinations', '/combinations', '配穴研習', BookOpen],
+              ['learn', '/learn', '認識穴位', Sparkles],
+              ['care', '/care', '都市保健', HeartPulse],
             ] as const
           ).map(([id, url, label, Icon]) => (
             <Link
@@ -261,7 +266,7 @@ export default function AtlasApp({
               )
             }
           >
-            查读音
+            查讀音
           </button>
           <a
             className="text-link"
@@ -269,11 +274,11 @@ export default function AtlasApp({
             target="_blank"
             rel="noreferrer"
           >
-            源码 ↗
+            源碼 ↗
           </a>
           <Link href="/sources" className="edition">
             <span />
-            研究预览版 <span className="edition-version">v0.1</span>
+            研究預覽版 <span className="edition-version">v0.1</span>
           </Link>
         </div>
       </header>
@@ -286,34 +291,34 @@ export default function AtlasApp({
       {(mode === 'atlas' || mode === 'clock') && luo && (
         <section
           className="mnemonic-card workspace-mnemonic"
-          aria-label="十五络记忆提要"
+          aria-label="十五絡記憶提要"
         >
           <div>
             <BookOpen size={17} />
-            <strong>十五络穴 · 记忆提要</strong>
+            <strong>十五絡穴 · 記憶提要</strong>
             <button type="button" onClick={() => openPronunciation(luoMemory)}>
               提要注音
             </button>
           </div>
           <p>{luoMemory}</p>
           <p className="variant-note">
-            按当前目录编写，非古籍歌诀原文。十二经各一络，加任脉络、督脉络与脾之大络，共十五络。
+            按當前目錄編寫，非古籍歌訣原文。十二經各一絡，加任脈絡、督脈絡與脾之大絡，共十五絡。
           </p>
         </section>
       )}
       {(mode === 'atlas' || mode === 'clock') && channel && !luo && (
         <section
           className="mnemonic-card workspace-mnemonic"
-          aria-label="经络歌诀"
+          aria-label="經絡歌訣"
         >
           <div>
             <BookOpen size={17} />
-            <strong>{channel.name} · 《针灸大成》歌诀</strong>
+            <strong>{channel.name} · 《針灸大成》歌訣</strong>
             <button
               type="button"
               onClick={() => openPronunciation(mnemonic(channel))}
             >
-              歌诀注音
+              歌訣注音
             </button>
             <button
               aria-pressed={reciting}
@@ -325,7 +330,7 @@ export default function AtlasApp({
                 setReciteIndex(0);
               }}
             >
-              {reciting ? '停止' : '逐穴带读'}
+              {reciting ? '停止' : '逐穴帶讀'}
             </button>
           </div>
           <p>{mnemonic(channel)}</p>
@@ -344,7 +349,7 @@ export default function AtlasApp({
           )}
           {channel.vesselStudy && (
             <p className="variant-note">
-              逐穴带读按下方相关穴目录顺序进行；奇经歌诀与沿线关联穴目录分别供记忆、查阅，目录不代表完整循行次序。
+              逐穴帶讀按下方相關穴目錄順序進行；奇經歌訣與沿線關聯穴目錄分別供記憶、查閲，目錄不代表完整循行次序。
             </p>
           )}
           {reciting && (
@@ -358,9 +363,9 @@ export default function AtlasApp({
       {mode === 'sources' ? (
         <section className="document-page">
           <div className="eyebrow">REFERENCE & METHODOLOGY</div>
-          <h1>每一层信息，都有边界。</h1>
+          <h1>每一層信息，都有邊界。</h1>
           <p>
-            这是用于学习传统经络理论的交互图谱。经络光流表示传统循行顺序，不能解释为人体血管中的血液流动。
+            這是用於學習傳統經絡理論的交互圖譜。經絡光流表示傳統循行順序，不能解釋為人體血管中的血液流動。
           </p>
           <div className="source-grid">
             {[
@@ -369,7 +374,7 @@ export default function AtlasApp({
               {
                 label: luoSource.title,
                 url: luoSource.url,
-                scope: '十五络脉循行、络穴古今名称与经间联系。',
+                scope: '十五絡脈循行、絡穴古今名稱與經間聯繫。',
               },
             ].map((s) => (
               <a
@@ -382,28 +387,28 @@ export default function AtlasApp({
                 <BookOpen />
                 <h2>{s.label}</h2>
                 <p>{s.scope}</p>
-                <span>查看来源 ↗</span>
+                <span>查看來源 ↗</span>
               </a>
             ))}
           </div>
-          <h2>逐穴资料核对进度</h2>
+          <h2>逐穴資料核對進度</h2>
           <p>
-            当前共 {sourceCoverage.total} 个独立穴位条目，
-            {sourceCoverage.withText} 条已有学习文字， 其中{' '}
-            {sourceCoverage.withReference} 条附有逐穴独立参考资料。
+            當前共 {sourceCoverage.total} 個獨立穴位條目，
+            {sourceCoverage.withText} 條已有學習文字， 其中{' '}
+            {sourceCoverage.withReference} 條附有逐穴獨立參考資料。
           </p>
           <ul>
-            <li>{sourceCoverage.withScan} 条已核对所附古籍扫描条文。</li>
+            <li>{sourceCoverage.withScan} 條已核對所附古籍掃描條文。</li>
             <li>
-              {sourceCoverage.otherReference} 条附有其他逐穴文献或公开引文。
+              {sourceCoverage.otherReference} 條附有其他逐穴文獻或公開引文。
             </li>
             <li>
               {sourceCoverage.withoutReference}{' '}
-              条尚未附独立逐穴出处，现有汇编摘要仍待核对。
+              條尚未附獨立逐穴出處，現有彙編摘要仍待核對。
             </li>
           </ul>
           <p className="micro-note">
-            此处统计文献记录，包含乳中的定位说明；不等同于治疗主治数量、现代疗效证据或解剖定位校准进度。节选范围及古今差异见各穴详情。
+            此處統計文獻記錄，包含乳中的定位説明；不等同於治療主治數量、現代療效證據或解剖定位校準進度。節選範圍及古今差異見各穴詳情。
           </p>
           <div className="source-grid">
             {Object.values(primaryScans.documents).map((document) => (
@@ -415,27 +420,27 @@ export default function AtlasApp({
                 rel="noreferrer"
               >
                 <BookOpen />
-                <h2>{document.title}扫描本</h2>
-                <p>逐穴出处链接会定位到对应 PDF 页；原文与学习摘要分列。</p>
-                <span>查看扫描本 ↗</span>
+                <h2>{document.title}掃描本</h2>
+                <p>逐穴出處鏈接會定位到對應 PDF 頁；原文與學習摘要分列。</p>
+                <span>查看掃描本 ↗</span>
               </a>
             ))}
           </div>
-          <h2>当前模型与资料状态</h2>
+          <h2>當前模型與資料狀態</h2>
           <p>
-            默认目录采用 GB/T 12346-2021 的 362 个经穴，包含督脉印堂 GV24+；WHO
-            361 穴体系中的印堂 EX-HN3 可用旧编号检索。362
-            穴均已整理中文基本定位要点，并链接对应条款与原文页码；特殊体位和条文注释需查看原文。人体采用
+            默認目錄採用 GB/T 12346-2021 的 362 個經穴，包含督脈印堂 GV24+；WHO
+            361 穴體系中的印堂 EX-HN3 可用舊編號檢索。362
+            穴均已整理中文基本定位要點，並鏈接對應條款與原文頁碼；特殊體位和條文註釋需查看原文。人體採用
             CC0
-            通用网格，已调整学习体位并绑定穴位标记；骨度参考和体表吸附尚未经过全身逐穴解剖校准，不能用于临床定位。奇经除任督以外的六脉显示概念路线与八脉交会穴，不重复制造独立经穴。
+            通用網格，已調整學習體位並綁定穴位標記；骨度參考和體表吸附尚未經過全身逐穴解剖校準，不能用於臨牀定位。奇經除任督以外的六脈顯示概念路線與八脈交會穴，不重複製造獨立經穴。
           </p>
           <p>
-            五输穴、原穴和络穴可同时归类。例如太渊既是输穴也是原穴。原络配穴与五输穴的应用不局限于内科疾病，需要结合辨证。
+            五輸穴、原穴和絡穴可同時歸類。例如太淵既是輸穴也是原穴。原絡配穴與五輸穴的應用不侷限於內科疾病，需要結合辨證。
           </p>
           <p>
-            十四经显示《针灸大成》原歌，另列现代标准穴序。肝经、督脉穴数和部分古歌顺序差异逐条标注。已录入
-            51 个 GB/T 40997-2021 奇穴条目，另保留 6
-            条补充资料。金津玉液合为一组，外膝眼归并犊鼻；未设英文代码的条目不编造国标编号。胃脘下俞以胰俞为别名，消渴穴列为教学检索称呼。
+            十四經顯示《針灸大成》原歌，另列現代標準穴序。肝經、督脈穴數和部分古歌順序差異逐條標註。已錄入
+            51 個 GB/T 40997-2021 奇穴條目，另保留 6
+            條補充資料。金津玉液合為一組，外膝眼歸併犢鼻；未設英文代碼的條目不編造國標編號。胃脘下俞以胰俞為別名，消渴穴列為教學檢索稱呼。
           </p>
         </section>
       ) : mode === 'combinations' ? (
@@ -445,23 +450,27 @@ export default function AtlasApp({
               '/?points=' + encodeURIComponent(ids.join(','));
           }}
         />
+      ) : mode === 'learn' ? (
+        <LearnPage />
+      ) : mode === 'care' ? (
+        <CarePage />
       ) : (
         <>
           <div className="workspace">
             <aside className="left-panel">
               <div className="panel-heading">
                 <span className="eyebrow">CHANNEL LIBRARY</span>
-                <span className="count">20 经脉 · 15 络脉</span>
+                <span className="count">20 經脈 · 15 絡脈</span>
               </div>
-              <h1>{mode === 'clock' ? '循时观脉' : '探索经络'}</h1>
-              <p className="subtle">从一条经，认识全身的联系。</p>
+              <h1>{mode === 'clock' ? '循時觀脈' : '探索經絡'}</h1>
+              <p className="subtle">從一條經，認識全身的聯繫。</p>
               <label className="search">
                 <Search size={17} />
                 <input
                   value={query}
                   onChange={(e) => setQuery(e.target.value)}
-                  placeholder="查找经络、穴名或编码"
-                  aria-label="查找经络、穴位"
+                  placeholder="查找經絡、穴名或編碼"
+                  aria-label="查找經絡、穴位"
                 />
                 {query && (
                   <button onClick={() => setQuery('')} aria-label="清空搜索">
@@ -470,9 +479,9 @@ export default function AtlasApp({
                 )}
               </label>
               {query.trim() && (
-                <section aria-label="全身穴位搜索结果">
+                <section aria-label="全身穴位搜索結果">
                   <div className="section-label" aria-live="polite">
-                    全身穴位搜索结果 · {globalPointMatches.length} 个
+                    全身穴位搜索結果 · {globalPointMatches.length} 個
                   </div>
                   <div className="channel-list">
                     {globalPointMatches.map((p) => (
@@ -486,7 +495,7 @@ export default function AtlasApp({
                           <small>
                             {p.displayCode || p.id} ·{' '}
                             {channels.find((c) => c.id === p.channel)?.name ||
-                              '经外奇穴'}
+                              '經外奇穴'}
                           </small>
                         </span>
                         <ChevronRight size={15} />
@@ -494,7 +503,7 @@ export default function AtlasApp({
                     ))}
                     {!globalPointMatches.length && (
                       <p className="empty">
-                        没有匹配的穴位，可尝试穴名、别名或编码。
+                        沒有匹配的穴位，可嘗試穴名、別名或編碼。
                       </p>
                     )}
                   </div>
@@ -505,9 +514,9 @@ export default function AtlasApp({
                 onValueChange={(v) => setCategory(String(v))}
               >
                 <TabsList className="library-tabs">
-                  <TabsTrigger value="primary">十二正经</TabsTrigger>
-                  <TabsTrigger value="extra">奇经八脉</TabsTrigger>
-                  <TabsTrigger value="luo">十五络脉</TabsTrigger>
+                  <TabsTrigger value="primary">十二正經</TabsTrigger>
+                  <TabsTrigger value="extra">奇經八脈</TabsTrigger>
+                  <TabsTrigger value="luo">十五絡脈</TabsTrigger>
                 </TabsList>
                 <TabsContent value={category}>
                   <div className="channel-list">
@@ -527,8 +536,8 @@ export default function AtlasApp({
                             {getLuoStudy(c.id)
                               ? `${c.points[0].name} · ${c.points[0].id}`
                               : c.hour === undefined
-                                ? '奇经 · 循行示意'
-                                : `${c.branch}时 · ${String(c.hour).padStart(2, '0')}:00–${String((c.hour + 2) % 24).padStart(2, '0')}:00`}
+                                ? '奇經 · 循行示意'
+                                : `${c.branch}時 · ${String(c.hour).padStart(2, '0')}:00–${String((c.hour + 2) % 24).padStart(2, '0')}:00`}
                           </small>
                         </span>
                         <ChevronRight size={15} />
@@ -537,8 +546,8 @@ export default function AtlasApp({
                     {!list.length && (
                       <p className="empty">
                         {globalPointMatches.length
-                          ? '本分类没有匹配经络，可点击上方穴位搜索结果。'
-                          : '没有匹配的经络。试试“肺”或“LU9”。'}
+                          ? '本分類沒有匹配經絡，可點擊上方穴位搜索結果。'
+                          : '沒有匹配的經絡。試試“肺”或“LU9”。'}
                       </p>
                     )}
                   </div>
@@ -550,20 +559,20 @@ export default function AtlasApp({
               >
                 <Compass size={18} />
                 <span>
-                  经外奇穴
-                  <small>国标 51 条 · 补充 6 条</small>
+                  經外奇穴
+                  <small>國標 51 條 · 補充 6 條</small>
                 </span>
                 <ChevronRight size={16} />
               </button>
               <div className="library-foot">
                 <span className="status-dot" />
-                学习模式<span>局部坐标待校准</span>
+                學習模式<span>局部座標待校準</span>
               </div>
             </aside>
             <section
               id="atlas-viewer"
               className="viewer-panel"
-              aria-label="三维图谱工作区"
+              aria-label="三維圖譜工作區"
             >
               <div className="viewer-top">
                 <div>
@@ -574,8 +583,8 @@ export default function AtlasApp({
                   </span>
                   <h2>
                     {mode === 'clock'
-                      ? `${timeLabel(hour)} · ${channelAtHour(hour).branch}时`
-                      : '三维经络图谱'}
+                      ? `${timeLabel(hour)} · ${channelAtHour(hour).branch}時`
+                      : '三維經絡圖譜'}
                   </h2>
                 </div>
                 <button
@@ -592,7 +601,7 @@ export default function AtlasApp({
                   }}
                 >
                   <Layers3 size={16} />
-                  全身总览
+                  全身總覽
                 </button>
               </div>
               <BodyViewer
@@ -620,7 +629,7 @@ export default function AtlasApp({
                 }
               />
               <div className="body-orientation">
-                旋转人体 · 前 / 背 / 侧<span>左右为人体自身方向</span>
+                旋轉人體 · 前 / 背 / 側<span>左右為人體自身方向</span>
               </div>
               <div className="view-tools">
                 <button title="正面" onClick={() => camera('front')}>
@@ -629,8 +638,8 @@ export default function AtlasApp({
                 <button title="背面" onClick={() => camera('back')}>
                   背
                 </button>
-                <button title="侧面" onClick={() => camera('left')}>
-                  侧
+                <button title="側面" onClick={() => camera('left')}>
+                  側
                 </button>
                 <span />
                 <button
@@ -641,15 +650,15 @@ export default function AtlasApp({
                   <Plus size={17} />
                 </button>
                 <button
-                  title="缩小"
-                  aria-label="缩小"
+                  title="縮小"
+                  aria-label="縮小"
                   onClick={() => camera('out')}
                 >
                   <Minus size={17} />
                 </button>
                 <button
-                  title="复位视角"
-                  aria-label="复位视角"
+                  title="復位視角"
+                  aria-label="復位視角"
                   onClick={() => camera('front')}
                 >
                   <RotateCcw size={16} />
@@ -658,11 +667,11 @@ export default function AtlasApp({
               <div className="model-caption">
                 <span className="status-dot" />
                 {compared.length
-                  ? `正在对照 ${compared.length} 个穴位`
+                  ? `正在對照 ${compared.length} 個穴位`
                   : guides
-                    ? '参考线：胸部肋间水平 · 腹部骨度分寸'
-                    : '穴位位置为三维示意'}
-                <span>点击经络选中 · 点击穴位查看</span>
+                    ? '參考線：胸部肋間水平 · 腹部骨度分寸'
+                    : '穴位位置為三維示意'}
+                <span>點擊經絡選中 · 點擊穴位查看</span>
               </div>
               <div className="viewer-options">
                 <label htmlFor="show-placement-guides">
@@ -670,27 +679,27 @@ export default function AtlasApp({
                     id="show-placement-guides"
                     checked={guides}
                     onCheckedChange={setGuides}
-                    aria-label="显示定位参考线"
+                    aria-label="顯示定位參考線"
                   />
-                  定位参考
+                  定位參考
                 </label>
                 <label htmlFor="show-other-meridians">
                   <Switch
                     id="show-other-meridians"
                     checked={showAll}
                     onCheckedChange={setShowAll}
-                    aria-label="显示其他经络"
+                    aria-label="顯示其他經絡"
                   />
-                  其他经络
+                  其他經絡
                 </label>
                 <label htmlFor="show-point-labels">
                   <Switch
                     id="show-point-labels"
                     checked={labels}
                     onCheckedChange={setLabels}
-                    aria-label="显示穴位名称"
+                    aria-label="顯示穴位名稱"
                   />
-                  穴位名称
+                  穴位名稱
                 </label>
                 <button
                   className={flow ? 'active' : ''}
@@ -703,7 +712,7 @@ export default function AtlasApp({
                   disabled={!channel || !!luo}
                 >
                   {flow ? <Pause size={16} /> : <Play size={16} />}
-                  {luo ? '络脉关系示意' : '单经循行'}
+                  {luo ? '絡脈關係示意' : '單經循行'}
                 </button>
               </div>
               {courseData && (
@@ -713,7 +722,7 @@ export default function AtlasApp({
                       id="show-lung-course"
                       checked={internalCourse}
                       onCheckedChange={setInternalCourse}
-                      aria-label={`显示${channel?.hour !== undefined ? channel.short + '经' : channel?.name}${courseData.toggleLabel}`}
+                      aria-label={`顯示${channel?.hour !== undefined ? channel.short + '經' : channel?.name}${courseData.toggleLabel}`}
                     />
                     {courseData.toggleLabel}
                   </label>
@@ -722,9 +731,9 @@ export default function AtlasApp({
                       <p>{courseData.summary}</p>
                       <p>
                         {courseHasInternalSegments(selected)
-                          ? '虚线为体内或不确定区域示意，实线为体表段。'
-                          : '实线为体表段，虚线为不确定区域连接。'}
-                        开启「单经循行」可观看叙述次序；播放速度仅用于学习。
+                          ? '虛線為體內或不確定區域示意，實線為體表段。'
+                          : '實線為體表段，虛線為不確定區域連接。'}
+                        開啓「單經循行」可觀看敍述次序；播放速度僅用於學習。
                       </p>
                       {courseData.focusLabel && (
                         <button
@@ -749,7 +758,7 @@ export default function AtlasApp({
                         </button>
                       )}
                       <details>
-                        <summary>这段三维循行的依据</summary>
+                        <summary>這段三維循行的依據</summary>
                         <p>{courseData.note}</p>
                         <p>{courseData.passage}</p>
                         <a
@@ -769,7 +778,7 @@ export default function AtlasApp({
                   <div>
                     <Clock3 size={16} />
                     <span>子午流注</span>
-                    <small>传统时辰配属示意</small>
+                    <small>傳統時辰配屬示意</small>
                   </div>
                   <button
                     onClick={() => {
@@ -782,7 +791,7 @@ export default function AtlasApp({
                     }}
                   >
                     {playing ? <Pause size={15} /> : <Play size={15} />}{' '}
-                    {playing ? '暂停' : '播放全天'}
+                    {playing ? '暫停' : '播放全天'}
                   </button>
                 </div>
                 <div className="hour-grid">
@@ -805,15 +814,15 @@ export default function AtlasApp({
                   <div className="clock-progress">
                     <span>
                       {channel.points[0]?.name} → {channel.points.at(-1)?.name}{' '}
-                      · 本时辰 {Math.floor(clockProgress! * 100 + 1e-7)}%
+                      · 本時辰 {Math.floor(clockProgress! * 100 + 1e-7)}%
                     </span>
                     <progress
-                      aria-label="时辰循行进度"
+                      aria-label="時辰循行進度"
                       max={1}
                       value={clockProgress}
                     />
                     <small>
-                      光点按时段比例沿示意路线前进，不代表实际气血速度。
+                      光點按時段比例沿示意路線前進，不代表實際氣血速度。
                     </small>
                   </div>
                 )}
@@ -828,7 +837,7 @@ export default function AtlasApp({
                       setPlaying(false);
                       moveHour(Array.isArray(v) ? v[0] : v);
                     }}
-                    aria-label="全天时刻"
+                    aria-label="全天時刻"
                   />
                   <span>24 h</span>
                 </div>
@@ -838,7 +847,7 @@ export default function AtlasApp({
               {point ? (
                 <>
                   <button className="back-link" onClick={() => setPoint(null)}>
-                    ← 返回经络
+                    ← 返回經絡
                   </button>
                   <div className="eyebrow">
                     ACUPOINT · {detailed ? 'DETAIL' : 'OVERVIEW'}
@@ -851,15 +860,15 @@ export default function AtlasApp({
                       className="pronunciation-trigger"
                       onClick={() => openPronunciation(point.name)}
                     >
-                      查此穴读音
+                      查此穴讀音
                     </button>
                   </div>
                   <p className="subtle">
                     {channels.find((c) => c.id === point.channel)?.name ||
-                      '经外奇穴'}
+                      '經外奇穴'}
                   </p>
                   {point.aliases && (
-                    <p className="micro-note">别名 / 检索词：{point.aliases}</p>
+                    <p className="micro-note">別名 / 檢索詞：{point.aliases}</p>
                   )}
                   {point.catalogNote && (
                     <p className="micro-note">{point.catalogNote}</p>
@@ -873,17 +882,17 @@ export default function AtlasApp({
                     <>
                       <div className="section-label">
                         {point.locationReference
-                          ? '国标定位要点'
-                          : '位置与定位'}
+                          ? '國標定位要點'
+                          : '位置與定位'}
                       </div>
                       <p className="detail-copy">
                         {point.location ||
-                          '本条定位待补充，请从资料来源查看原文。'}
+                          '本條定位待補充，請從資料來源查看原文。'}
                       </p>
                       {point.locationReference && (
                         <>
                           <p className="micro-note">
-                            定位中的“寸”为人体比例单位。特殊体位及条文注释见原文，不能按屏幕距离取穴。
+                            定位中的“寸”為人體比例單位。特殊體位及條文註釋見原文，不能按屏幕距離取穴。
                           </p>
                           <a
                             className="text-link"
@@ -891,7 +900,7 @@ export default function AtlasApp({
                             target="_blank"
                             rel="noreferrer"
                           >
-                            核对定位原文：{point.locationReference.label} ↗
+                            核對定位原文：{point.locationReference.label} ↗
                           </a>
                         </>
                       )}
@@ -904,32 +913,32 @@ export default function AtlasApp({
                             target="_blank"
                             rel="noreferrer"
                           >
-                            对照{locationIllustration.label} ↗
+                            對照{locationIllustration.label} ↗
                           </a>
                           <p>
-                            英文原图，由 MEDBOX
-                            提供文献副本；本页定位仍以所列国标为准。
+                            英文原圖，由 MEDBOX
+                            提供文獻副本；本頁定位仍以所列國標為準。
                           </p>
                         </div>
                       )}
                       {point.modelPlacement && (
                         <p className="micro-note">
-                          模型定位依据：{point.modelPlacement}
+                          模型定位依據：{point.modelPlacement}
                         </p>
                       )}
                       <div className="section-label">
                         {point.id === 'ST17'
-                          ? '定位标志 · 文献说明'
-                          : '传统主治 · 学习资料'}
+                          ? '定位標誌 · 文獻説明'
+                          : '傳統主治 · 學習資料'}
                       </div>
                       <p className="detail-copy">
                         {point.indications ||
-                          '逐穴主治资料正在核对，本条不以经络的通用主治替代具体穴位主治。'}
+                          '逐穴主治資料正在核對，本條不以經絡的通用主治替代具體穴位主治。'}
                       </p>
                       <p className="clinical-note">
                         {point.id === 'ST17'
-                          ? '此条用于定位学习，古籍文字与现代定位标准分列。'
-                          : '主治是传统文献记载，不表示疗效已获现代临床证实。此图不提供针刺操作指导。'}
+                          ? '此條用於定位學習，古籍文字與現代定位標準分列。'
+                          : '主治是傳統文獻記載，不表示療效已獲現代臨牀證實。此圖不提供針刺操作指導。'}
                       </p>
                       <p className="micro-note">{point.source}</p>
                       {indicationStudies.map((study, studyIndex) => (
@@ -938,16 +947,16 @@ export default function AtlasApp({
                           className="indication-study"
                           aria-label={
                             point.id === 'ST17'
-                              ? '定位文献出处'
-                              : '主治文献出处'
+                              ? '定位文獻出處'
+                              : '主治文獻出處'
                           }
                         >
                           <div className="section-label">
                             {study.kind === 'classical'
-                              ? '古籍记载 · 核对方式见说明'
+                              ? '古籍記載 · 核對方式見説明'
                               : study.kind === 'standard'
-                                ? '国家标准 · 基础主治'
-                                : '补充资料 · 核对范围见说明'}
+                                ? '國家標準 · 基礎主治'
+                                : '補充資料 · 核對範圍見説明'}
                           </div>
                           {studyIndex > 0 && (
                             <p className="detail-copy">{study.summary}</p>
@@ -965,21 +974,21 @@ export default function AtlasApp({
                               rel="noreferrer"
                             >
                               {point.id === 'ST17'
-                                ? '核对定位文献'
-                                : '核对主治出处'}
+                                ? '核對定位文獻'
+                                : '核對主治出處'}
                               ：{ref.label} ↗
                             </a>
                           ))}
                         </section>
                       ))}
                       <Link className="text-link" href="/sources">
-                        查看资料来源与模型说明 ↗
+                        查看資料來源與模型説明 ↗
                       </Link>
                     </>
                   ) : (
                     <div className="basic-info">
                       <p>
-                        当前为穴位简介。先选中所属经络，再查看定位、分类与传统主治。
+                        當前為穴位簡介。先選中所屬經絡，再查看定位、分類與傳統主治。
                       </p>
                       <button
                         className="primary-button"
@@ -990,10 +999,10 @@ export default function AtlasApp({
                           setRole('全部');
                         }}
                       >
-                        进入
+                        進入
                         {channels.find((c) => c.id === point.channel)?.short ||
                           '奇穴'}
-                        学习 <ArrowRight size={16} />
+                        學習 <ArrowRight size={16} />
                       </button>
                     </div>
                   )}
@@ -1013,23 +1022,23 @@ export default function AtlasApp({
                   <div className="detail-meta">
                     <span>
                       {luo
-                        ? '1 个络穴 · 区域联系示意'
+                        ? '1 個絡穴 · 區域聯繫示意'
                         : channel.id.length <= 2
-                          ? `${channel.points.length} 个经穴`
-                          : '循行与交会穴'}
+                          ? `${channel.points.length} 個經穴`
+                          : '循行與交會穴'}
                     </span>
                     <span>
                       {luo
                         ? luo.connection
                         : channel.pair
-                          ? `表里 · ${channels.find((c) => c.id === channel.pair)?.short}经`
-                          : '奇经体系'}
+                          ? `表裏 · ${channels.find((c) => c.id === channel.pair)?.short}經`
+                          : '奇經體系'}
                     </span>
                   </div>
                   {luo && (
                     <section
                       className="vessel-study"
-                      aria-label="十五络循行资料"
+                      aria-label="十五絡循行資料"
                     >
                       <p>{luo.summary}</p>
                       <button
@@ -1039,17 +1048,17 @@ export default function AtlasApp({
                           camera(`point-${luo.pointId}`);
                         }}
                       >
-                        查看络穴 · {pointById[luo.pointId].name}（{luo.pointId}
+                        查看絡穴 · {pointById[luo.pointId].name}（{luo.pointId}
                         ）
                       </button>
                       <button
                         className="vessel-point"
                         onClick={() => selectChannel(luo.parent)}
                       >
-                        查看所属经脉
+                        查看所屬經脈
                       </button>
                       <details>
-                        <summary>《灵枢》络脉原文与说明</summary>
+                        <summary>《靈樞》絡脈原文與説明</summary>
                         <p>{luo.excerpt}</p>
                         {luo.note && <p>{luo.note}</p>}
                         <p className="micro-note">{luoSource.note}</p>
@@ -1068,13 +1077,13 @@ export default function AtlasApp({
                     <div className="time-card">
                       <Clock3 size={21} />
                       <div>
-                        <strong>{channel.branch}时</strong>
+                        <strong>{channel.branch}時</strong>
                         <span>
                           {String(channel.hour).padStart(2, '0')}:00 —{' '}
                           {String((channel.hour + 2) % 24).padStart(2, '0')}:00
                         </span>
                       </div>
-                      <small>传统流注时段</small>
+                      <small>傳統流注時段</small>
                     </div>
                   )}
                   {channel.id.length <= 2 ? (
@@ -1087,8 +1096,8 @@ export default function AtlasApp({
                     </div>
                   ) : null}
                   {channel.confluentPointIds && (
-                    <section className="vessel-study" aria-label="八脉交会穴">
-                      <div className="section-label">八脉交会穴 · 肘膝以下</div>
+                    <section className="vessel-study" aria-label="八脈交會穴">
+                      <div className="section-label">八脈交會穴 · 肘膝以下</div>
                       {channel.confluentPointIds.map((id) => (
                         <button
                           className="vessel-point"
@@ -1099,17 +1108,17 @@ export default function AtlasApp({
                         </button>
                       ))}
                       <p className="micro-note">
-                        这是与该奇经相通的八个特定穴之一，和沿线交会穴分开学习。
+                        這是與該奇經相通的八個特定穴之一，和沿線交會穴分開學習。
                       </p>
                     </section>
                   )}
                   {channel.vesselStudy && (
                     <section
                       className="vessel-study"
-                      aria-label="奇经文献关联穴"
+                      aria-label="奇經文獻關聯穴"
                     >
                       <div className="section-label">
-                        《奇经八脉考》沿线关联穴
+                        《奇經八脈考》沿線關聯穴
                       </div>
                       <div className="vessel-points">
                         {channel.vesselStudy.members.map((member) => (
@@ -1121,14 +1130,14 @@ export default function AtlasApp({
                             {pointById[member.id].name}{' '}
                             <small>
                               {member.id}
-                              {member.landmark ? ' · 起点参照' : ''}
+                              {member.landmark ? ' · 起點參照' : ''}
                             </small>
                           </button>
                         ))}
                       </div>
                       <p className="micro-note">{channel.vesselStudy.note}</p>
                       <p className="micro-note">
-                        这是本书条文的关联索引，穴名、代码、定位仍取现行国标；模型使用现有穴点连接，解剖定位与完整体内分支仍待校准。
+                        這是本書條文的關聯索引，穴名、代碼、定位仍取現行國標；模型使用現有穴點連接，解剖定位與完整體內分支仍待校準。
                       </p>
                       {channel.vesselStudy.references.map((ref) => (
                         <a
@@ -1138,32 +1147,32 @@ export default function AtlasApp({
                           target="_blank"
                           rel="noreferrer"
                         >
-                          核对本篇：{ref.label} ↗
+                          核對本篇：{ref.label} ↗
                         </a>
                       ))}
                     </section>
                   )}
                   {channel.routePresentation &&
                   !(hasRegionalCourse(channel.id) && internalCourse) ? (
-                    <section className="vessel-study" aria-label="当前路线说明">
-                      <div className="section-label">当前三维路线</div>
+                    <section className="vessel-study" aria-label="當前路線説明">
+                      <div className="section-label">當前三維路線</div>
                       <p className="micro-note">
                         {channel.routePresentation.note}
                       </p>
                       <p className="micro-note">
                         {luo
-                          ? '本图展示络脉的分布与联系，不设置独立时辰或播放速度；上下走向见循行提要与原文。'
-                          : '实线：有穴点约束的体表示意；虚线：区域关系或体内段的体表投影。分段播放仅演示本段的叙述次序，不表示实测气血速度。'}
+                          ? '本圖展示絡脈的分佈與聯繫，不設置獨立時辰或播放速度；上下走向見循行提要與原文。'
+                          : '實線：有穴點約束的體表示意；虛線：區域關係或體內段的體表投影。分段播放僅演示本段的敍述次序，不表示實測氣血速度。'}
                       </p>
                       {routeSource && (
                         <details>
-                          <summary>{channel.name}循行原文与校订说明</summary>
+                          <summary>{channel.name}循行原文與校訂説明</summary>
                           <p className="micro-note">{routeSource.passage}</p>
                           <p className="micro-note">{routeSource.note}</p>
                           {channel.id === 'DAI' && (
                             <>
                               <p className="micro-note">
-                                肾经经别联系（与带脉主线分开）：
+                                腎經經別聯繫（與帶脈主線分開）：
                                 {daimaiSource.kidneyDivergent}
                               </p>
                               <p className="micro-note">
@@ -1183,7 +1192,7 @@ export default function AtlasApp({
                       {channel.routePresentation.paths.map((path, i) => (
                         <p className="micro-note" key={i}>
                           {path.label}
-                          {path.animate === false ? ' · 无方向演示' : ''}
+                          {path.animate === false ? ' · 無方向演示' : ''}
                         </p>
                       ))}
                     </section>
@@ -1191,15 +1200,15 @@ export default function AtlasApp({
                     <p className="micro-note">
                       {hasRegionalCourse(channel.id) && internalCourse
                         ? channel.id === 'LU'
-                          ? '已显示肺经体内区域与腕后分支示意；中府至少商仍为体表穴序参照，三维位置待校准。'
-                          : `已显示${channel.name}${courseHasInternalSegments(channel.id) ? '体内区域与分支' : '区域循行'}示意，三维位置待校准。`
+                          ? '已顯示肺經體內區域與腕後分支示意；中府至少商仍為體表穴序參照，三維位置待校準。'
+                          : `已顯示${channel.name}${courseHasInternalSegments(channel.id) ? '體內區域與分支' : '區域循行'}示意，三維位置待校準。`
                         : channel.note}
                     </p>
                   )}
                   {channel.hour !== undefined && (
                     <>
                       <div className="section-label">
-                        五输 · 原 · 络 <span>肘膝以下及肘膝部</span>
+                        五輸 · 原 · 絡 <span>肘膝以下及肘膝部</span>
                       </div>
                       <div className="special-grid">
                         {roleNames.map((r) => {
@@ -1236,15 +1245,15 @@ export default function AtlasApp({
                   </span>
                   <h2 className="detail-name">
                     {selected === 'EX'
-                      ? '经外奇穴'
+                      ? '經外奇穴'
                       : compared.length
-                        ? '跨经配穴对照'
-                        : '全身经络'}
+                        ? '跨經配穴對照'
+                        : '全身經絡'}
                   </h2>
                   <p className="detail-copy">
                     {selected === 'EX'
-                      ? '国标收录 51 个奇穴条目，另有 6 条补充资料。金津玉液合为一组，标准未设代码的条目以名称学习。可用“消渴”“鼻通”“落枕”等旧称检索。'
-                      : '选择左侧经络，或直接点击人体上的线条。经络选中后会发亮，并显示穴序与特定穴分类。'}
+                      ? '國標收錄 51 個奇穴條目，另有 6 條補充資料。金津玉液合為一組，標準未設代碼的條目以名稱學習。可用“消渴”“鼻通”“落枕”等舊稱檢索。'
+                      : '選擇左側經絡，或直接點擊人體上的線條。經絡選中後會發亮，並顯示穴序與特定穴分類。'}
                   </p>
                 </>
               )}
@@ -1252,20 +1261,20 @@ export default function AtlasApp({
                 <div className="points-section">
                   <div className="section-label">
                     {compared.length && !channel
-                      ? '配穴目录'
+                      ? '配穴目錄'
                       : luo
-                        ? '本络络穴'
+                        ? '本絡絡穴'
                         : channel?.id.length && channel.id.length > 2
-                          ? '奇经相关穴目录'
-                          : '穴位目录'}{' '}
-                    <span>{visiblePoints.length} 个</span>
+                          ? '奇經相關穴目錄'
+                          : '穴位目錄'}{' '}
+                    <span>{visiblePoints.length} 個</span>
                   </div>
                   <div className="point-filter">
                     {selected === 'EX'
                       ? [
                           ['all', '全部 57'],
-                          ['standard-extra', '国标 51'],
-                          ['supplement-extra', '补充 6'],
+                          ['standard-extra', '國標 51'],
+                          ['supplement-extra', '補充 6'],
                         ].map(([value, label]) => (
                           <button
                             key={value}
@@ -1293,14 +1302,14 @@ export default function AtlasApp({
                         <b>{p.name}</b>
                         <small>
                           {p.catalog === 'supplement-extra'
-                            ? '补充资料'
+                            ? '補充資料'
                             : p.roles.join(' / ')}
                         </small>
                         <ChevronRight size={14} />
                       </button>
                     ))}
                     {!visiblePoints.length && (
-                      <p className="empty">此分类下没有匹配穴位。</p>
+                      <p className="empty">此分類下沒有匹配穴位。</p>
                     )}
                   </div>
                 </div>
@@ -1308,8 +1317,8 @@ export default function AtlasApp({
             </aside>
           </div>
           <footer>
-            用于传统中医理论学习与研究 · 人体及循行均为示意，不能用于临床取穴。
-            <Link href="/sources">资料来源与校订状态 ↗</Link>
+            用於傳統中醫理論學習與研究 · 人體及循行均為示意，不能用於臨牀取穴。
+            <Link href="/sources">資料來源與校訂狀態 ↗</Link>
           </footer>
         </>
       )}

@@ -63,7 +63,7 @@ export default function Pronunciation({
         setError('');
       })
       .catch(() => {
-        if (active) setError('读音字库暂未加载成功，请关闭后重试。');
+        if (active) setError('讀音字庫暫未加載成功，請關閉後重試。');
       });
     return () => {
       active = false;
@@ -92,7 +92,7 @@ export default function Pronunciation({
         playback.current = null;
         setSpeaking(false);
         if (reason === 'error')
-          setSpeechStatus('系统朗读未能完成，仍可查看拼音。');
+          setSpeechStatus('系統朗讀未能完成，仍可查看拼音。');
       },
     );
     playback.current = session;
@@ -112,32 +112,32 @@ export default function Pronunciation({
       <div className="pronunciation-heading">
         <div>
           <div className="eyebrow">READ & LEARN</div>
-          <h2 id="pronunciation-title">查读音</h2>
+          <h2 id="pronunciation-title">查讀音</h2>
         </div>
         <button
           type="button"
           className="pronunciation-close"
           onClick={onClose}
-          aria-label="关闭查读音"
+          aria-label="關閉查讀音"
         >
           <X size={20} />
         </button>
       </div>
       <p id="pronunciation-help">
-        输入不认识的字、穴位名或歌诀，即可查看拼音。
+        輸入不認識的字、穴位名或歌訣，即可查看拼音。
       </p>
-      <label htmlFor="pronunciation-input">要查询的文字</label>
+      <label htmlFor="pronunciation-input">要查詢的文字</label>
       <textarea
         ref={input}
         id="pronunciation-input"
         rows={2}
         value={query}
         onChange={(e) => change(e.target.value)}
-        placeholder="例如：膻中、郄门、肩髎"
+        placeholder="例如：膻中、郄門、肩髎"
       />
       <div className="pronunciation-examples">
         <span>{Array.from(query).length} / 500 字</span>
-        {['膻中', '郄门', '肩髎', '俞'].map((text) => (
+        {['膻中', '郄門', '肩髎', '俞'].map((text) => (
           <button type="button" key={text} onClick={() => change(text)}>
             {text}
           </button>
@@ -151,12 +151,12 @@ export default function Pronunciation({
         {error ? (
           <p role="alert">{error}</p>
         ) : !result ? (
-          <p>正在查询…</p>
+          <p>正在查詢…</p>
         ) : !result.text ? (
-          <p>输入文字，或点击上面的示例试一试。</p>
+          <p>輸入文字，或點擊上面的示例試一試。</p>
         ) : (
           <>
-            <div className="pronunciation-ruby" aria-label="注音结果">
+            <div className="pronunciation-ruby" aria-label="注音結果">
               {result.units.map((unit, i) =>
                 unit.reading ? (
                   <ruby key={i}>
@@ -168,24 +168,24 @@ export default function Pronunciation({
                 ) : (
                   <span key={i}>
                     {unit.text}
-                    {unit.unknown && <small>（读音待查）</small>}
+                    {unit.unknown && <small>（讀音待查）</small>}
                   </span>
                 ),
               )}
             </div>
             {single && single.readings.length > 1 && (
               <p className="pronunciation-note">
-                这是多音字：{single.readings.join(' / ')}
-                。输入完整穴位名，可按穴名查看读音。
+                這是多音字：{single.readings.join(' / ')}
+                。輸入完整穴位名，可按穴名查看讀音。
               </p>
             )}
             {result.units.some((u) => u.unknown) && (
               <p className="pronunciation-note">
-                部分生僻字尚未收录，可通过下方字典继续查找。
+                部分生僻字尚未收錄，可通過下方字典繼續查找。
               </p>
             )}
             {!result.units.some((u) => u.reading || u.unknown) && (
-              <p className="pronunciation-note">未检测到可注音的汉字。</p>
+              <p className="pronunciation-note">未檢測到可注音的漢字。</p>
             )}
           </>
         )}
@@ -197,7 +197,7 @@ export default function Pronunciation({
           disabled={!voices.length || !result?.units.some((u) => u.reading)}
         >
           <Volume2 size={17} />
-          {speaking ? '停止朗读' : '朗读'}
+          {speaking ? '停止朗讀' : '朗讀'}
         </button>
         {result?.text && (
           <a
@@ -205,19 +205,19 @@ export default function Pronunciation({
             target="_blank"
             rel="noreferrer"
           >
-            到汉典查字 ↗
+            到漢典查字 ↗
           </a>
         )}
       </div>
       <output className="pronunciation-note pronunciation-voice-status">
         {speechStatus ||
           (voices.length
-            ? '系统朗读仅作辅助，多音字可能与标注不同，请以显示的拼音及来源说明为准。'
-            : '当前设备尚未提供中文语音，仍可查看拼音。')}
+            ? '系統朗讀僅作輔助，多音字可能與標註不同，請以顯示的拼音及來源説明為準。'
+            : '當前設備尚未提供中文語音，仍可查看拼音。')}
       </output>
       {result && lookup && result.sources.length > 0 && (
         <details className="pronunciation-sources">
-          <summary>穴名读音依据 · {result.sources.length} 项</summary>
+          <summary>穴名讀音依據 · {result.sources.length} 項</summary>
           <ul>
             {result.sources.map((source) => (
               <li key={source.id}>
@@ -230,13 +230,13 @@ export default function Pronunciation({
                   rel="noreferrer"
                 >
                   {source.name} · {source.standard} · {source.clause} · PDF 第{' '}
-                  {source.pdfPage} 页 ↗
+                  {source.pdfPage} 頁 ↗
                 </a>
-                <p>原标注：{source.sourcePinyin}</p>
+                <p>原標註：{source.sourcePinyin}</p>
                 {source.note && (
                   <p>
                     {source.note}
-                    {source.name === '颈百劳' && (
+                    {source.name === '頸百勞' && (
                       <>
                         {' '}
                         <a
@@ -244,7 +244,7 @@ export default function Pronunciation({
                           target="_blank"
                           rel="noreferrer"
                         >
-                          字典“颈” ↗
+                          字典“頸” ↗
                         </a>
                       </>
                     )}
@@ -268,7 +268,7 @@ export default function Pronunciation({
         </details>
       )}
       <p className="pronunciation-note">
-        穴名优先采用国标标音（差异见依据）；其余文字由拼音字库自动注音，古文和多音词可结合上下文查字典。查询在页面内完成。
+        穴名優先採用國標標音（差異見依據）；其餘文字由拼音字庫自動注音，古文和多音詞可結合上下文查字典。查詢在頁面內完成。
       </p>
     </dialog>
   );

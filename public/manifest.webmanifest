@@ -1,13 +1,13 @@
 {
-  "name": "经络图谱 · Meridian Atlas",
-  "short_name": "经络图谱",
-  "lang": "zh-CN",
+  "name": "經絡圖譜 · Meridian Atlas",
+  "short_name": "經絡圖譜",
+  "lang": "zh-Hant",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
   "background_color": "#101c24",
   "theme_color": "#101c24",
-  "description": "三维经络、歌诀注音与传统时辰学习",
+  "description": "三維經絡、歌訣注音與傳統時辰學習",
   "icons": [
     {
       "src": "/app-icon.svg",

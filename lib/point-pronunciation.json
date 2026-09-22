@@ -14,7 +14,7 @@
   },
   {
     "id": "LU2",
-    "name": "云门",
+    "name": "雲門",
     "sourcePinyin": "Yúnmén",
     "standard": "GB/T 12346-2021",
     "pdfPage": 14,
@@ -40,7 +40,7 @@
   },
   {
     "id": "LU4",
-    "name": "侠白",
+    "name": "俠白",
     "sourcePinyin": "Xiábái",
     "standard": "GB/T 12346-2021",
     "pdfPage": 14,
@@ -53,7 +53,7 @@
   },
   {
     "id": "LU5",
-    "name": "尺泽",
+    "name": "尺澤",
     "sourcePinyin": "Chǐzé",
     "standard": "GB/T 12346-2021",
     "pdfPage": 14,
@@ -92,7 +92,7 @@
   },
   {
     "id": "LU8",
-    "name": "经渠",
+    "name": "經渠",
     "sourcePinyin": "Jīngqú",
     "standard": "GB/T 12346-2021",
     "pdfPage": 15,
@@ -105,7 +105,7 @@
   },
   {
     "id": "LU9",
-    "name": "太渊",
+    "name": "太淵",
     "sourcePinyin": "Tàiyuān",
     "standard": "GB/T 12346-2021",
     "pdfPage": 15,
@@ -118,7 +118,7 @@
   },
   {
     "id": "LU10",
-    "name": "鱼际",
+    "name": "魚際",
     "sourcePinyin": "Yújì",
     "standard": "GB/T 12346-2021",
     "pdfPage": 15,
@@ -144,7 +144,7 @@
   },
   {
     "id": "LI1",
-    "name": "商阳",
+    "name": "商陽",
     "sourcePinyin": "Shāngyáng",
     "standard": "GB/T 12346-2021",
     "pdfPage": 15,
@@ -157,7 +157,7 @@
   },
   {
     "id": "LI2",
-    "name": "二间",
+    "name": "二間",
     "sourcePinyin": "Èrjiān",
     "standard": "GB/T 12346-2021",
     "pdfPage": 15,
@@ -170,7 +170,7 @@
   },
   {
     "id": "LI3",
-    "name": "三间",
+    "name": "三間",
     "sourcePinyin": "Sānjiān",
     "standard": "GB/T 12346-2021",
     "pdfPage": 15,
@@ -196,7 +196,7 @@
   },
   {
     "id": "LI5",
-    "name": "阳溪",
+    "name": "陽溪",
     "sourcePinyin": "Yángxī",
     "standard": "GB/T 12346-2021",
     "pdfPage": 15,
@@ -209,7 +209,7 @@
   },
   {
     "id": "LI6",
-    "name": "偏历",
+    "name": "偏歷",
     "sourcePinyin": "Piānlì",
     "standard": "GB/T 12346-2021",
     "pdfPage": 15,
@@ -446,7 +446,7 @@
   },
   {
     "id": "ST4",
-    "name": "地仓",
+    "name": "地倉",
     "sourcePinyin": "Dìcāng",
     "standard": "GB/T 12346-2021",
     "pdfPage": 17,
@@ -472,7 +472,7 @@
   },
   {
     "id": "ST6",
-    "name": "颊车",
+    "name": "頰車",
     "sourcePinyin": "Jiáchē",
     "standard": "GB/T 12346-2021",
     "pdfPage": 17,
@@ -485,7 +485,7 @@
   },
   {
     "id": "ST7",
-    "name": "下关",
+    "name": "下關",
     "sourcePinyin": "Xiàguān",
     "standard": "GB/T 12346-2021",
     "pdfPage": 17,
@@ -498,7 +498,7 @@
   },
   {
     "id": "ST8",
-    "name": "头维",
+    "name": "頭維",
     "sourcePinyin": "Tóuwéi",
     "standard": "GB/T 12346-2021",
     "pdfPage": 17,
@@ -537,7 +537,7 @@
   },
   {
     "id": "ST11",
-    "name": "气舍",
+    "name": "氣舍",
     "sourcePinyin": "Qìshè",
     "standard": "GB/T 12346-2021",
     "pdfPage": 17,
@@ -563,7 +563,7 @@
   },
   {
     "id": "ST13",
-    "name": "气户",
+    "name": "氣户",
     "sourcePinyin": "Qìhù",
     "standard": "GB/T 12346-2021",
     "pdfPage": 18,
@@ -576,7 +576,7 @@
   },
   {
     "id": "ST14",
-    "name": "库房",
+    "name": "庫房",
     "sourcePinyin": "Kùfáng",
     "standard": "GB/T 12346-2021",
     "pdfPage": 18,
@@ -654,7 +654,7 @@
   },
   {
     "id": "ST20",
-    "name": "承满",
+    "name": "承滿",
     "sourcePinyin": "Chéngmǎn",
     "standard": "GB/T 12346-2021",
     "pdfPage": 18,
@@ -667,7 +667,7 @@
   },
   {
     "id": "ST21",
-    "name": "梁门",
+    "name": "梁門",
     "sourcePinyin": "Liángmén",
     "standard": "GB/T 12346-2021",
     "pdfPage": 18,
@@ -680,7 +680,7 @@
   },
   {
     "id": "ST22",
-    "name": "关门",
+    "name": "關門",
     "sourcePinyin": "Guānmén",
     "standard": "GB/T 12346-2021",
     "pdfPage": 18,
@@ -706,7 +706,7 @@
   },
   {
     "id": "ST24",
-    "name": "滑肉门",
+    "name": "滑肉門",
     "sourcePinyin": "Huáròumén",
     "standard": "GB/T 12346-2021",
     "pdfPage": 19,
@@ -720,7 +720,7 @@
   },
   {
     "id": "ST25",
-    "name": "天枢",
+    "name": "天樞",
     "sourcePinyin": "Tiānshū",
     "standard": "GB/T 12346-2021",
     "pdfPage": 19,
@@ -772,7 +772,7 @@
   },
   {
     "id": "ST29",
-    "name": "归来",
+    "name": "歸來",
     "sourcePinyin": "Guīlái",
     "standard": "GB/T 12346-2021",
     "pdfPage": 19,
@@ -785,7 +785,7 @@
   },
   {
     "id": "ST30",
-    "name": "气冲",
+    "name": "氣衝",
     "sourcePinyin": "Qìchōng",
     "standard": "GB/T 12346-2021",
     "pdfPage": 19,
@@ -798,7 +798,7 @@
   },
   {
     "id": "ST31",
-    "name": "髀关",
+    "name": "髀關",
     "sourcePinyin": "Bìguān",
     "standard": "GB/T 12346-2021",
     "pdfPage": 19,
@@ -824,7 +824,7 @@
   },
   {
     "id": "ST33",
-    "name": "阴市",
+    "name": "陰市",
     "sourcePinyin": "Yīnshì",
     "standard": "GB/T 12346-2021",
     "pdfPage": 19,
@@ -850,7 +850,7 @@
   },
   {
     "id": "ST35",
-    "name": "犊鼻",
+    "name": "犢鼻",
     "sourcePinyin": "Dúbí",
     "standard": "GB/T 12346-2021",
     "pdfPage": 20,
@@ -877,7 +877,7 @@
   },
   {
     "id": "ST37",
-    "name": "上巨虚",
+    "name": "上巨虛",
     "sourcePinyin": "Shàngjùxū",
     "standard": "GB/T 12346-2021",
     "pdfPage": 20,
@@ -891,7 +891,7 @@
   },
   {
     "id": "ST38",
-    "name": "条口",
+    "name": "條口",
     "sourcePinyin": "Tiáokǒu",
     "standard": "GB/T 12346-2021",
     "pdfPage": 20,
@@ -904,7 +904,7 @@
   },
   {
     "id": "ST39",
-    "name": "下巨虚",
+    "name": "下巨虛",
     "sourcePinyin": "Xiàjùxū",
     "standard": "GB/T 12346-2021",
     "pdfPage": 20,
@@ -918,7 +918,7 @@
   },
   {
     "id": "ST40",
-    "name": "丰隆",
+    "name": "豐隆",
     "sourcePinyin": "Fēnglóng",
     "standard": "GB/T 12346-2021",
     "pdfPage": 20,
@@ -944,7 +944,7 @@
   },
   {
     "id": "ST42",
-    "name": "冲阳",
+    "name": "衝陽",
     "sourcePinyin": "Chōngyáng",
     "standard": "GB/T 12346-2021",
     "pdfPage": 20,
@@ -970,7 +970,7 @@
   },
   {
     "id": "ST44",
-    "name": "内庭",
+    "name": "內庭",
     "sourcePinyin": "Nèitíng",
     "standard": "GB/T 12346-2021",
     "pdfPage": 20,
@@ -983,7 +983,7 @@
   },
   {
     "id": "ST45",
-    "name": "厉兑",
+    "name": "厲兑",
     "sourcePinyin": "Lìduì",
     "standard": "GB/T 12346-2021",
     "pdfPage": 20,
@@ -996,7 +996,7 @@
   },
   {
     "id": "SP1",
-    "name": "隐白",
+    "name": "隱白",
     "sourcePinyin": "Yǐnbái",
     "standard": "GB/T 12346-2021",
     "pdfPage": 21,
@@ -1035,7 +1035,7 @@
   },
   {
     "id": "SP4",
-    "name": "公孙",
+    "name": "公孫",
     "sourcePinyin": "Gōngsūn",
     "standard": "GB/T 12346-2021",
     "pdfPage": 21,
@@ -1061,7 +1061,7 @@
   },
   {
     "id": "SP6",
-    "name": "三阴交",
+    "name": "三陰交",
     "sourcePinyin": "Sānyīnjiāo",
     "standard": "GB/T 12346-2021",
     "pdfPage": 21,
@@ -1088,7 +1088,7 @@
   },
   {
     "id": "SP8",
-    "name": "地机",
+    "name": "地機",
     "sourcePinyin": "Dìjī",
     "standard": "GB/T 12346-2021",
     "pdfPage": 21,
@@ -1101,7 +1101,7 @@
   },
   {
     "id": "SP9",
-    "name": "阴陵泉",
+    "name": "陰陵泉",
     "sourcePinyin": "Yīnlíngquán",
     "standard": "GB/T 12346-2021",
     "pdfPage": 21,
@@ -1128,7 +1128,7 @@
   },
   {
     "id": "SP11",
-    "name": "箕门",
+    "name": "箕門",
     "sourcePinyin": "Jīmén",
     "standard": "GB/T 12346-2021",
     "pdfPage": 21,
@@ -1141,7 +1141,7 @@
   },
   {
     "id": "SP12",
-    "name": "冲门",
+    "name": "衝門",
     "sourcePinyin": "Chōngmén",
     "standard": "GB/T 12346-2021",
     "pdfPage": 22,
@@ -1167,7 +1167,7 @@
   },
   {
     "id": "SP14",
-    "name": "腹结",
+    "name": "腹結",
     "sourcePinyin": "Fùjié",
     "standard": "GB/T 12346-2021",
     "pdfPage": 22,
@@ -1180,7 +1180,7 @@
   },
   {
     "id": "SP15",
-    "name": "大横",
+    "name": "大橫",
     "sourcePinyin": "Dàhéng",
     "standard": "GB/T 12346-2021",
     "pdfPage": 22,
@@ -1206,7 +1206,7 @@
   },
   {
     "id": "SP17",
-    "name": "食窦",
+    "name": "食竇",
     "sourcePinyin": "Shídòu",
     "standard": "GB/T 12346-2021",
     "pdfPage": 22,
@@ -1232,7 +1232,7 @@
   },
   {
     "id": "SP19",
-    "name": "胸乡",
+    "name": "胸鄉",
     "sourcePinyin": "Xiōngxiāng",
     "standard": "GB/T 12346-2021",
     "pdfPage": 22,
@@ -1245,7 +1245,7 @@
   },
   {
     "id": "SP20",
-    "name": "周荣",
+    "name": "周榮",
     "sourcePinyin": "Zhōuróng",
     "standard": "GB/T 12346-2021",
     "pdfPage": 22,
@@ -1271,7 +1271,7 @@
   },
   {
     "id": "HT1",
-    "name": "极泉",
+    "name": "極泉",
     "sourcePinyin": "Jíquán",
     "standard": "GB/T 12346-2021",
     "pdfPage": 22,
@@ -1284,7 +1284,7 @@
   },
   {
     "id": "HT2",
-    "name": "青灵",
+    "name": "青靈",
     "sourcePinyin": "Qīnglíng",
     "standard": "GB/T 12346-2021",
     "pdfPage": 23,
@@ -1310,7 +1310,7 @@
   },
   {
     "id": "HT4",
-    "name": "灵道",
+    "name": "靈道",
     "sourcePinyin": "Língdào",
     "standard": "GB/T 12346-2021",
     "pdfPage": 23,
@@ -1323,7 +1323,7 @@
   },
   {
     "id": "HT5",
-    "name": "通里",
+    "name": "通裏",
     "sourcePinyin": "Tōnglǐ",
     "standard": "GB/T 12346-2021",
     "pdfPage": 23,
@@ -1336,7 +1336,7 @@
   },
   {
     "id": "HT6",
-    "name": "阴郄",
+    "name": "陰郄",
     "sourcePinyin": "Yīnxì",
     "standard": "GB/T 12346-2021",
     "pdfPage": 23,
@@ -1349,7 +1349,7 @@
   },
   {
     "id": "HT7",
-    "name": "神门",
+    "name": "神門",
     "sourcePinyin": "Shénmén",
     "standard": "GB/T 12346-2021",
     "pdfPage": 23,
@@ -1375,7 +1375,7 @@
   },
   {
     "id": "HT9",
-    "name": "少冲",
+    "name": "少衝",
     "sourcePinyin": "Shàochōng",
     "standard": "GB/T 12346-2021",
     "pdfPage": 23,
@@ -1388,7 +1388,7 @@
   },
   {
     "id": "SI1",
-    "name": "少泽",
+    "name": "少澤",
     "sourcePinyin": "Shàozé",
     "standard": "GB/T 12346-2021",
     "pdfPage": 23,
@@ -1414,7 +1414,7 @@
   },
   {
     "id": "SI3",
-    "name": "后溪",
+    "name": "後溪",
     "sourcePinyin": "Hòuxī",
     "standard": "GB/T 12346-2021",
     "pdfPage": 24,
@@ -1440,7 +1440,7 @@
   },
   {
     "id": "SI5",
-    "name": "阳谷",
+    "name": "陽穀",
     "sourcePinyin": "Yánggǔ",
     "standard": "GB/T 12346-2021",
     "pdfPage": 24,
@@ -1453,7 +1453,7 @@
   },
   {
     "id": "SI6",
-    "name": "养老",
+    "name": "養老",
     "sourcePinyin": "Yǎnglǎo",
     "standard": "GB/T 12346-2021",
     "pdfPage": 24,
@@ -1492,7 +1492,7 @@
   },
   {
     "id": "SI9",
-    "name": "肩贞",
+    "name": "肩貞",
     "sourcePinyin": "Jiānzhēn",
     "standard": "GB/T 12346-2021",
     "pdfPage": 24,
@@ -1515,7 +1515,7 @@
       "nào",
       "shū"
     ],
-    "note": "本工具按国标穴名标注 shū；字典中“俞”通“腧”另读 shù，保留这一用音差异。"
+    "note": "本工具按國標穴名標註 shū；字典中“俞”通“腧”另讀 shù，保留這一用音差異。"
   },
   {
     "id": "SI11",
@@ -1532,7 +1532,7 @@
   },
   {
     "id": "SI12",
-    "name": "秉风",
+    "name": "秉風",
     "sourcePinyin": "Bǐngfēng",
     "standard": "GB/T 12346-2021",
     "pdfPage": 24,
@@ -1569,7 +1569,7 @@
       "wài",
       "shū"
     ],
-    "note": "本工具按国标穴名标注 shū；字典中“俞”通“腧”另读 shù，保留这一用音差异。"
+    "note": "本工具按國標穴名標註 shū；字典中“俞”通“腧”另讀 shù，保留這一用音差異。"
   },
   {
     "id": "SI15",
@@ -1584,7 +1584,7 @@
       "zhōng",
       "shū"
     ],
-    "note": "本工具按国标穴名标注 shū；字典中“俞”通“腧”另读 shù，保留这一用音差异。"
+    "note": "本工具按國標穴名標註 shū；字典中“俞”通“腧”另讀 shù，保留這一用音差異。"
   },
   {
     "id": "SI16",
@@ -1614,7 +1614,7 @@
   },
   {
     "id": "SI18",
-    "name": "颧髎",
+    "name": "顴髎",
     "sourcePinyin": "Quánliáo",
     "standard": "GB/T 12346-2021",
     "pdfPage": 25,
@@ -1627,7 +1627,7 @@
   },
   {
     "id": "SI19",
-    "name": "听宫",
+    "name": "聽宮",
     "sourcePinyin": "Tīnggōng",
     "standard": "GB/T 12346-2021",
     "pdfPage": 25,
@@ -1653,7 +1653,7 @@
   },
   {
     "id": "BL2",
-    "name": "攒竹",
+    "name": "攢竹",
     "sourcePinyin": "Cuánzhú",
     "standard": "GB/T 12346-2021",
     "pdfPage": 25,
@@ -1666,7 +1666,7 @@
   },
   {
     "id": "BL3",
-    "name": "眉冲",
+    "name": "眉衝",
     "sourcePinyin": "Méichōng",
     "standard": "GB/T 12346-2021",
     "pdfPage": 25,
@@ -1692,7 +1692,7 @@
   },
   {
     "id": "BL5",
-    "name": "五处",
+    "name": "五處",
     "sourcePinyin": "Wǔchù",
     "standard": "GB/T 12346-2021",
     "pdfPage": 26,
@@ -1731,7 +1731,7 @@
   },
   {
     "id": "BL8",
-    "name": "络却",
+    "name": "絡卻",
     "sourcePinyin": "Luòquè",
     "standard": "GB/T 12346-2021",
     "pdfPage": 26,
@@ -1783,7 +1783,7 @@
   },
   {
     "id": "BL12",
-    "name": "风门",
+    "name": "風門",
     "sourcePinyin": "Fēngmén",
     "standard": "GB/T 12346-2021",
     "pdfPage": 26,
@@ -1806,11 +1806,11 @@
       "fèi",
       "shū"
     ],
-    "note": "本工具按国标穴名标注 shū；字典中“俞”通“腧”另读 shù，保留这一用音差异。"
+    "note": "本工具按國標穴名標註 shū；字典中“俞”通“腧”另讀 shù，保留這一用音差異。"
   },
   {
     "id": "BL14",
-    "name": "厥阴俞",
+    "name": "厥陰俞",
     "sourcePinyin": "Juéyīnshū",
     "standard": "GB/T 12346-2021",
     "pdfPage": 26,
@@ -1821,7 +1821,7 @@
       "yīn",
       "shū"
     ],
-    "note": "本工具按国标穴名标注 shū；字典中“俞”通“腧”另读 shù，保留这一用音差异。"
+    "note": "本工具按國標穴名標註 shū；字典中“俞”通“腧”另讀 shù，保留這一用音差異。"
   },
   {
     "id": "BL15",
@@ -1835,7 +1835,7 @@
       "xīn",
       "shū"
     ],
-    "note": "本工具按国标穴名标注 shū；字典中“俞”通“腧”另读 shù，保留这一用音差异。"
+    "note": "本工具按國標穴名標註 shū；字典中“俞”通“腧”另讀 shù，保留這一用音差異。"
   },
   {
     "id": "BL16",
@@ -1849,7 +1849,7 @@
       "dū",
       "shū"
     ],
-    "note": "本工具按国标穴名标注 shū；字典中“俞”通“腧”另读 shù，保留这一用音差异。"
+    "note": "本工具按國標穴名標註 shū；字典中“俞”通“腧”另讀 shù，保留這一用音差異。"
   },
   {
     "id": "BL17",
@@ -1863,7 +1863,7 @@
       "gé",
       "shū"
     ],
-    "note": "本工具按国标穴名标注 shū；字典中“俞”通“腧”另读 shù，保留这一用音差异。"
+    "note": "本工具按國標穴名標註 shū；字典中“俞”通“腧”另讀 shù，保留這一用音差異。"
   },
   {
     "id": "BL18",
@@ -1877,11 +1877,11 @@
       "gān",
       "shū"
     ],
-    "note": "本工具按国标穴名标注 shū；字典中“俞”通“腧”另读 shù，保留这一用音差异。"
+    "note": "本工具按國標穴名標註 shū；字典中“俞”通“腧”另讀 shù，保留這一用音差異。"
   },
   {
     "id": "BL19",
-    "name": "胆俞",
+    "name": "膽俞",
     "sourcePinyin": "Dǎnshū",
     "standard": "GB/T 12346-2021",
     "pdfPage": 27,
@@ -1891,7 +1891,7 @@
       "dǎn",
       "shū"
     ],
-    "note": "本工具按国标穴名标注 shū；字典中“俞”通“腧”另读 shù，保留这一用音差异。"
+    "note": "本工具按國標穴名標註 shū；字典中“俞”通“腧”另讀 shù，保留這一用音差異。"
   },
   {
     "id": "BL20",
@@ -1905,7 +1905,7 @@
       "pí",
       "shū"
     ],
-    "note": "本工具按国标穴名标注 shū；字典中“俞”通“腧”另读 shù，保留这一用音差异。"
+    "note": "本工具按國標穴名標註 shū；字典中“俞”通“腧”另讀 shù，保留這一用音差異。"
   },
   {
     "id": "BL21",
@@ -1919,7 +1919,7 @@
       "wèi",
       "shū"
     ],
-    "note": "本工具按国标穴名标注 shū；字典中“俞”通“腧”另读 shù，保留这一用音差异。"
+    "note": "本工具按國標穴名標註 shū；字典中“俞”通“腧”另讀 shù，保留這一用音差異。"
   },
   {
     "id": "BL22",
@@ -1934,11 +1934,11 @@
       "jiāo",
       "shū"
     ],
-    "note": "本工具按国标穴名标注 shū；字典中“俞”通“腧”另读 shù，保留这一用音差异。"
+    "note": "本工具按國標穴名標註 shū；字典中“俞”通“腧”另讀 shù，保留這一用音差異。"
   },
   {
     "id": "BL23",
-    "name": "肾俞",
+    "name": "腎俞",
     "sourcePinyin": "Shènshū",
     "standard": "GB/T 12346-2021",
     "pdfPage": 27,
@@ -1948,11 +1948,11 @@
       "shèn",
       "shū"
     ],
-    "note": "本工具按国标穴名标注 shū；字典中“俞”通“腧”另读 shù，保留这一用音差异。"
+    "note": "本工具按國標穴名標註 shū；字典中“俞”通“腧”另讀 shù，保留這一用音差異。"
   },
   {
     "id": "BL24",
-    "name": "气海俞",
+    "name": "氣海俞",
     "sourcePinyin": "Qìhǎishū",
     "standard": "GB/T 12346-2021",
     "pdfPage": 27,
@@ -1963,11 +1963,11 @@
       "hǎi",
       "shū"
     ],
-    "note": "本工具按国标穴名标注 shū；字典中“俞”通“腧”另读 shù，保留这一用音差异。"
+    "note": "本工具按國標穴名標註 shū；字典中“俞”通“腧”另讀 shù，保留這一用音差異。"
   },
   {
     "id": "BL25",
-    "name": "大肠俞",
+    "name": "大腸俞",
     "sourcePinyin": "Dàchángshū",
     "standard": "GB/T 12346-2021",
     "pdfPage": 27,
@@ -1978,11 +1978,11 @@
       "cháng",
       "shū"
     ],
-    "note": "本工具按国标穴名标注 shū；字典中“俞”通“腧”另读 shù，保留这一用音差异。"
+    "note": "本工具按國標穴名標註 shū；字典中“俞”通“腧”另讀 shù，保留這一用音差異。"
   },
   {
     "id": "BL26",
-    "name": "关元俞",
+    "name": "關元俞",
     "sourcePinyin": "Guānyuánshū",
     "standard": "GB/T 12346-2021",
     "pdfPage": 27,
@@ -1993,11 +1993,11 @@
       "yuán",
       "shū"
     ],
-    "note": "本工具按国标穴名标注 shū；字典中“俞”通“腧”另读 shù，保留这一用音差异。"
+    "note": "本工具按國標穴名標註 shū；字典中“俞”通“腧”另讀 shù，保留這一用音差異。"
   },
   {
     "id": "BL27",
-    "name": "小肠俞",
+    "name": "小腸俞",
     "sourcePinyin": "Xiǎochángshū",
     "standard": "GB/T 12346-2021",
     "pdfPage": 27,
@@ -2008,7 +2008,7 @@
       "cháng",
       "shū"
     ],
-    "note": "本工具按国标穴名标注 shū；字典中“俞”通“腧”另读 shù，保留这一用音差异。"
+    "note": "本工具按國標穴名標註 shū；字典中“俞”通“腧”另讀 shù，保留這一用音差異。"
   },
   {
     "id": "BL28",
@@ -2023,7 +2023,7 @@
       "guāng",
       "shū"
     ],
-    "note": "本工具按国标穴名标注 shū；字典中“俞”通“腧”另读 shù，保留这一用音差异。"
+    "note": "本工具按國標穴名標註 shū；字典中“俞”通“腧”另讀 shù，保留這一用音差異。"
   },
   {
     "id": "BL29",
@@ -2038,11 +2038,11 @@
       "lǚ",
       "shū"
     ],
-    "note": "本工具按国标穴名标注 shū；字典中“俞”通“腧”另读 shù，保留这一用音差异。"
+    "note": "本工具按國標穴名標註 shū；字典中“俞”通“腧”另讀 shù，保留這一用音差異。"
   },
   {
     "id": "BL30",
-    "name": "白环俞",
+    "name": "白環俞",
     "sourcePinyin": "Báihuánshū",
     "standard": "GB/T 12346-2021",
     "pdfPage": 28,
@@ -2053,7 +2053,7 @@
       "huán",
       "shū"
     ],
-    "note": "本工具按国标穴名标注 shū；字典中“俞”通“腧”另读 shù，保留这一用音差异。"
+    "note": "本工具按國標穴名標註 shū；字典中“俞”通“腧”另讀 shù，保留這一用音差異。"
   },
   {
     "id": "BL31",
@@ -2109,7 +2109,7 @@
   },
   {
     "id": "BL35",
-    "name": "会阳",
+    "name": "會陽",
     "sourcePinyin": "Huìyáng",
     "standard": "GB/T 12346-2021",
     "pdfPage": 28,
@@ -2135,7 +2135,7 @@
   },
   {
     "id": "BL37",
-    "name": "殷门",
+    "name": "殷門",
     "sourcePinyin": "Yīnmén",
     "standard": "GB/T 12346-2021",
     "pdfPage": 28,
@@ -2161,7 +2161,7 @@
   },
   {
     "id": "BL39",
-    "name": "委阳",
+    "name": "委陽",
     "sourcePinyin": "Wěiyáng",
     "standard": "GB/T 12346-2021",
     "pdfPage": 28,
@@ -2249,11 +2249,11 @@
       "yì",
       "xǐ"
     ],
-    "note": "国标穴名标注 Yìxǐ，与通用字库的 yī xī 不同；此处保留国标标注。"
+    "note": "國標穴名標註 Yìxǐ，與通用字庫的 yī xī 不同；此處保留國標標註。"
   },
   {
     "id": "BL46",
-    "name": "膈关",
+    "name": "膈關",
     "sourcePinyin": "Géguān",
     "standard": "GB/T 12346-2021",
     "pdfPage": 29,
@@ -2266,7 +2266,7 @@
   },
   {
     "id": "BL47",
-    "name": "魂门",
+    "name": "魂門",
     "sourcePinyin": "Húnmén",
     "standard": "GB/T 12346-2021",
     "pdfPage": 29,
@@ -2279,7 +2279,7 @@
   },
   {
     "id": "BL48",
-    "name": "阳纲",
+    "name": "陽綱",
     "sourcePinyin": "Yánggāng",
     "standard": "GB/T 12346-2021",
     "pdfPage": 29,
@@ -2305,7 +2305,7 @@
   },
   {
     "id": "BL50",
-    "name": "胃仓",
+    "name": "胃倉",
     "sourcePinyin": "Wèicāng",
     "standard": "GB/T 12346-2021",
     "pdfPage": 29,
@@ -2318,7 +2318,7 @@
   },
   {
     "id": "BL51",
-    "name": "肓门",
+    "name": "肓門",
     "sourcePinyin": "Huāngmén",
     "standard": "GB/T 12346-2021",
     "pdfPage": 29,
@@ -2357,7 +2357,7 @@
   },
   {
     "id": "BL54",
-    "name": "秩边",
+    "name": "秩邊",
     "sourcePinyin": "Zhìbiān",
     "standard": "GB/T 12346-2021",
     "pdfPage": 30,
@@ -2370,7 +2370,7 @@
   },
   {
     "id": "BL55",
-    "name": "合阳",
+    "name": "合陽",
     "sourcePinyin": "Héyáng",
     "standard": "GB/T 12346-2021",
     "pdfPage": 30,
@@ -2409,7 +2409,7 @@
   },
   {
     "id": "BL58",
-    "name": "飞扬",
+    "name": "飛揚",
     "sourcePinyin": "Fēiyáng",
     "standard": "GB/T 12346-2021",
     "pdfPage": 30,
@@ -2422,7 +2422,7 @@
   },
   {
     "id": "BL59",
-    "name": "跗阳",
+    "name": "跗陽",
     "sourcePinyin": "Fūyáng",
     "standard": "GB/T 12346-2021",
     "pdfPage": 30,
@@ -2435,7 +2435,7 @@
   },
   {
     "id": "BL60",
-    "name": "昆仑",
+    "name": "崑崙",
     "sourcePinyin": "Kūnlún",
     "standard": "GB/T 12346-2021",
     "pdfPage": 30,
@@ -2448,7 +2448,7 @@
   },
   {
     "id": "BL61",
-    "name": "仆参",
+    "name": "僕參",
     "sourcePinyin": "Púcān",
     "standard": "GB/T 12346-2021",
     "pdfPage": 30,
@@ -2461,7 +2461,7 @@
   },
   {
     "id": "BL62",
-    "name": "申脉",
+    "name": "申脈",
     "sourcePinyin": "Shēnmài",
     "standard": "GB/T 12346-2021",
     "pdfPage": 30,
@@ -2474,7 +2474,7 @@
   },
   {
     "id": "BL63",
-    "name": "金门",
+    "name": "金門",
     "sourcePinyin": "Jīnmén",
     "standard": "GB/T 12346-2021",
     "pdfPage": 30,
@@ -2527,7 +2527,7 @@
   },
   {
     "id": "BL67",
-    "name": "至阴",
+    "name": "至陰",
     "sourcePinyin": "Zhìyīn",
     "standard": "GB/T 12346-2021",
     "pdfPage": 31,
@@ -2540,7 +2540,7 @@
   },
   {
     "id": "KI1",
-    "name": "涌泉",
+    "name": "湧泉",
     "sourcePinyin": "Yǒngquán",
     "standard": "GB/T 12346-2021",
     "pdfPage": 31,
@@ -2579,7 +2579,7 @@
   },
   {
     "id": "KI4",
-    "name": "大钟",
+    "name": "大鐘",
     "sourcePinyin": "Dàzhōng",
     "standard": "GB/T 12346-2021",
     "pdfPage": 31,
@@ -2618,7 +2618,7 @@
   },
   {
     "id": "KI7",
-    "name": "复溜",
+    "name": "復溜",
     "sourcePinyin": "Fùliū",
     "standard": "GB/T 12346-2021",
     "pdfPage": 31,
@@ -2644,7 +2644,7 @@
   },
   {
     "id": "KI9",
-    "name": "筑宾",
+    "name": "築賓",
     "sourcePinyin": "Zhùbīn",
     "standard": "GB/T 12346-2021",
     "pdfPage": 32,
@@ -2657,7 +2657,7 @@
   },
   {
     "id": "KI10",
-    "name": "阴谷",
+    "name": "陰谷",
     "sourcePinyin": "Yīngǔ",
     "standard": "GB/T 12346-2021",
     "pdfPage": 32,
@@ -2670,7 +2670,7 @@
   },
   {
     "id": "KI11",
-    "name": "横骨",
+    "name": "橫骨",
     "sourcePinyin": "Hénggǔ",
     "standard": "GB/T 12346-2021",
     "pdfPage": 32,
@@ -2696,7 +2696,7 @@
   },
   {
     "id": "KI13",
-    "name": "气穴",
+    "name": "氣穴",
     "sourcePinyin": "Qìxué",
     "standard": "GB/T 12346-2021",
     "pdfPage": 32,
@@ -2709,7 +2709,7 @@
   },
   {
     "id": "KI14",
-    "name": "四满",
+    "name": "四滿",
     "sourcePinyin": "Sìmǎn",
     "standard": "GB/T 12346-2021",
     "pdfPage": 32,
@@ -2745,7 +2745,7 @@
       "huāng",
       "shū"
     ],
-    "note": "本工具按国标穴名标注 shū；字典中“俞”通“腧”另读 shù，保留这一用音差异。"
+    "note": "本工具按國標穴名標註 shū；字典中“俞”通“腧”另讀 shù，保留這一用音差異。"
   },
   {
     "id": "KI17",
@@ -2762,7 +2762,7 @@
   },
   {
     "id": "KI18",
-    "name": "石关",
+    "name": "石關",
     "sourcePinyin": "Shíguān",
     "standard": "GB/T 12346-2021",
     "pdfPage": 32,
@@ -2775,7 +2775,7 @@
   },
   {
     "id": "KI19",
-    "name": "阴都",
+    "name": "陰都",
     "sourcePinyin": "Yīndū",
     "standard": "GB/T 12346-2021",
     "pdfPage": 32,
@@ -2802,7 +2802,7 @@
   },
   {
     "id": "KI21",
-    "name": "幽门",
+    "name": "幽門",
     "sourcePinyin": "Yōumén",
     "standard": "GB/T 12346-2021",
     "pdfPage": 32,
@@ -2841,7 +2841,7 @@
   },
   {
     "id": "KI24",
-    "name": "灵墟",
+    "name": "靈墟",
     "sourcePinyin": "Língxū",
     "standard": "GB/T 12346-2021",
     "pdfPage": 33,
@@ -2890,7 +2890,7 @@
       "shū",
       "fǔ"
     ],
-    "note": "本工具按国标穴名标注 shū；字典中“俞”通“腧”另读 shù，保留这一用音差异。"
+    "note": "本工具按國標穴名標註 shū；字典中“俞”通“腧”另讀 shù，保留這一用音差異。"
   },
   {
     "id": "PC1",
@@ -2920,7 +2920,7 @@
   },
   {
     "id": "PC3",
-    "name": "曲泽",
+    "name": "曲澤",
     "sourcePinyin": "Qūzé",
     "standard": "GB/T 12346-2021",
     "pdfPage": 33,
@@ -2933,7 +2933,7 @@
   },
   {
     "id": "PC4",
-    "name": "郄门",
+    "name": "郄門",
     "sourcePinyin": "Xìmén",
     "standard": "GB/T 12346-2021",
     "pdfPage": 33,
@@ -2946,7 +2946,7 @@
   },
   {
     "id": "PC5",
-    "name": "间使",
+    "name": "間使",
     "sourcePinyin": "Jiānshǐ",
     "standard": "GB/T 12346-2021",
     "pdfPage": 33,
@@ -2959,7 +2959,7 @@
   },
   {
     "id": "PC6",
-    "name": "内关",
+    "name": "內關",
     "sourcePinyin": "Nèiguān",
     "standard": "GB/T 12346-2021",
     "pdfPage": 33,
@@ -2985,7 +2985,7 @@
   },
   {
     "id": "PC8",
-    "name": "劳宫",
+    "name": "勞宮",
     "sourcePinyin": "Láogōng",
     "standard": "GB/T 12346-2021",
     "pdfPage": 34,
@@ -2998,7 +2998,7 @@
   },
   {
     "id": "PC9",
-    "name": "中冲",
+    "name": "中衝",
     "sourcePinyin": "Zhōngchōng",
     "standard": "GB/T 12346-2021",
     "pdfPage": 34,
@@ -3011,7 +3011,7 @@
   },
   {
     "id": "TE1",
-    "name": "关冲",
+    "name": "關衝",
     "sourcePinyin": "Guānchōng",
     "standard": "GB/T 12346-2021",
     "pdfPage": 34,
@@ -3024,7 +3024,7 @@
   },
   {
     "id": "TE2",
-    "name": "液门",
+    "name": "液門",
     "sourcePinyin": "Yèmén",
     "standard": "GB/T 12346-2021",
     "pdfPage": 34,
@@ -3050,7 +3050,7 @@
   },
   {
     "id": "TE4",
-    "name": "阳池",
+    "name": "陽池",
     "sourcePinyin": "Yángchí",
     "standard": "GB/T 12346-2021",
     "pdfPage": 34,
@@ -3063,7 +3063,7 @@
   },
   {
     "id": "TE5",
-    "name": "外关",
+    "name": "外關",
     "sourcePinyin": "Wàiguān",
     "standard": "GB/T 12346-2021",
     "pdfPage": 34,
@@ -3076,7 +3076,7 @@
   },
   {
     "id": "TE6",
-    "name": "支沟",
+    "name": "支溝",
     "sourcePinyin": "Zhīgōu",
     "standard": "GB/T 12346-2021",
     "pdfPage": 34,
@@ -3089,7 +3089,7 @@
   },
   {
     "id": "TE7",
-    "name": "会宗",
+    "name": "會宗",
     "sourcePinyin": "Huìzōng",
     "standard": "GB/T 12346-2021",
     "pdfPage": 34,
@@ -3102,7 +3102,7 @@
   },
   {
     "id": "TE8",
-    "name": "三阳络",
+    "name": "三陽絡",
     "sourcePinyin": "Sānyángluò",
     "standard": "GB/T 12346-2021",
     "pdfPage": 35,
@@ -3116,7 +3116,7 @@
   },
   {
     "id": "TE9",
-    "name": "四渎",
+    "name": "四瀆",
     "sourcePinyin": "Sìdú",
     "standard": "GB/T 12346-2021",
     "pdfPage": 35,
@@ -3142,7 +3142,7 @@
   },
   {
     "id": "TE11",
-    "name": "清泠渊",
+    "name": "清泠淵",
     "sourcePinyin": "Qīnglíngyuān",
     "standard": "GB/T 12346-2021",
     "pdfPage": 35,
@@ -3156,7 +3156,7 @@
   },
   {
     "id": "TE12",
-    "name": "消泺",
+    "name": "消濼",
     "sourcePinyin": "Xiāoluò",
     "standard": "GB/T 12346-2021",
     "pdfPage": 35,
@@ -3169,7 +3169,7 @@
   },
   {
     "id": "TE13",
-    "name": "臑会",
+    "name": "臑會",
     "sourcePinyin": "Nàohuì",
     "standard": "GB/T 12346-2021",
     "pdfPage": 35,
@@ -3221,7 +3221,7 @@
   },
   {
     "id": "TE17",
-    "name": "翳风",
+    "name": "翳風",
     "sourcePinyin": "Yìfēng",
     "standard": "GB/T 12346-2021",
     "pdfPage": 35,
@@ -3234,7 +3234,7 @@
   },
   {
     "id": "TE18",
-    "name": "瘈脉",
+    "name": "瘈脈",
     "sourcePinyin": "Chìmài",
     "standard": "GB/T 12346-2021",
     "pdfPage": 35,
@@ -3247,7 +3247,7 @@
   },
   {
     "id": "TE19",
-    "name": "颅息",
+    "name": "顱息",
     "sourcePinyin": "Lúxī",
     "standard": "GB/T 12346-2021",
     "pdfPage": 35,
@@ -3260,7 +3260,7 @@
   },
   {
     "id": "TE20",
-    "name": "角孙",
+    "name": "角孫",
     "sourcePinyin": "Jiǎosūn",
     "standard": "GB/T 12346-2021",
     "pdfPage": 36,
@@ -3273,7 +3273,7 @@
   },
   {
     "id": "TE21",
-    "name": "耳门",
+    "name": "耳門",
     "sourcePinyin": "Ěrmén",
     "standard": "GB/T 12346-2021",
     "pdfPage": 36,
@@ -3300,7 +3300,7 @@
   },
   {
     "id": "TE23",
-    "name": "丝竹空",
+    "name": "絲竹空",
     "sourcePinyin": "Sīzhúkōng",
     "standard": "GB/T 12346-2021",
     "pdfPage": 36,
@@ -3328,7 +3328,7 @@
   },
   {
     "id": "GB2",
-    "name": "听会",
+    "name": "聽會",
     "sourcePinyin": "Tīnghuì",
     "standard": "GB/T 12346-2021",
     "pdfPage": 36,
@@ -3341,7 +3341,7 @@
   },
   {
     "id": "GB3",
-    "name": "上关",
+    "name": "上關",
     "sourcePinyin": "Shàngguān",
     "standard": "GB/T 12346-2021",
     "pdfPage": 36,
@@ -3354,7 +3354,7 @@
   },
   {
     "id": "GB4",
-    "name": "颔厌",
+    "name": "頷厭",
     "sourcePinyin": "Hànyàn",
     "standard": "GB/T 12346-2021",
     "pdfPage": 36,
@@ -3367,7 +3367,7 @@
   },
   {
     "id": "GB5",
-    "name": "悬颅",
+    "name": "懸顱",
     "sourcePinyin": "Xuánlú",
     "standard": "GB/T 12346-2021",
     "pdfPage": 36,
@@ -3380,7 +3380,7 @@
   },
   {
     "id": "GB6",
-    "name": "悬厘",
+    "name": "懸釐",
     "sourcePinyin": "Xuánlí",
     "standard": "GB/T 12346-2021",
     "pdfPage": 36,
@@ -3393,7 +3393,7 @@
   },
   {
     "id": "GB7",
-    "name": "曲鬓",
+    "name": "曲鬢",
     "sourcePinyin": "Qūbìn",
     "standard": "GB/T 12346-2021",
     "pdfPage": 36,
@@ -3419,7 +3419,7 @@
   },
   {
     "id": "GB9",
-    "name": "天冲",
+    "name": "天衝",
     "sourcePinyin": "Tiānchōng",
     "standard": "GB/T 12346-2021",
     "pdfPage": 37,
@@ -3445,7 +3445,7 @@
   },
   {
     "id": "GB11",
-    "name": "头窍阴",
+    "name": "頭竅陰",
     "sourcePinyin": "Tóuqiàoyīn",
     "standard": "GB/T 12346-2021",
     "pdfPage": 37,
@@ -3485,7 +3485,7 @@
   },
   {
     "id": "GB14",
-    "name": "阳白",
+    "name": "陽白",
     "sourcePinyin": "Yángbái",
     "standard": "GB/T 12346-2021",
     "pdfPage": 37,
@@ -3498,7 +3498,7 @@
   },
   {
     "id": "GB15",
-    "name": "头临泣",
+    "name": "頭臨泣",
     "sourcePinyin": "Tóulínqì",
     "standard": "GB/T 12346-2021",
     "pdfPage": 37,
@@ -3525,7 +3525,7 @@
   },
   {
     "id": "GB17",
-    "name": "正营",
+    "name": "正營",
     "sourcePinyin": "Zhèngyíng",
     "standard": "GB/T 12346-2021",
     "pdfPage": 37,
@@ -3538,7 +3538,7 @@
   },
   {
     "id": "GB18",
-    "name": "承灵",
+    "name": "承靈",
     "sourcePinyin": "Chénglíng",
     "standard": "GB/T 12346-2021",
     "pdfPage": 37,
@@ -3551,7 +3551,7 @@
   },
   {
     "id": "GB19",
-    "name": "脑空",
+    "name": "腦空",
     "sourcePinyin": "Nǎokōng",
     "standard": "GB/T 12346-2021",
     "pdfPage": 37,
@@ -3564,7 +3564,7 @@
   },
   {
     "id": "GB20",
-    "name": "风池",
+    "name": "風池",
     "sourcePinyin": "Fēngchí",
     "standard": "GB/T 12346-2021",
     "pdfPage": 38,
@@ -3590,7 +3590,7 @@
   },
   {
     "id": "GB22",
-    "name": "渊腋",
+    "name": "淵腋",
     "sourcePinyin": "Yuānyè",
     "standard": "GB/T 12346-2021",
     "pdfPage": 38,
@@ -3603,7 +3603,7 @@
   },
   {
     "id": "GB23",
-    "name": "辄筋",
+    "name": "輒筋",
     "sourcePinyin": "Zhéjīn",
     "standard": "GB/T 12346-2021",
     "pdfPage": 38,
@@ -3629,7 +3629,7 @@
   },
   {
     "id": "GB25",
-    "name": "京门",
+    "name": "京門",
     "sourcePinyin": "Jīngmén",
     "standard": "GB/T 12346-2021",
     "pdfPage": 38,
@@ -3642,7 +3642,7 @@
   },
   {
     "id": "GB26",
-    "name": "带脉",
+    "name": "帶脈",
     "sourcePinyin": "Dàimài",
     "standard": "GB/T 12346-2021",
     "pdfPage": 38,
@@ -3655,7 +3655,7 @@
   },
   {
     "id": "GB27",
-    "name": "五枢",
+    "name": "五樞",
     "sourcePinyin": "Wǔshū",
     "standard": "GB/T 12346-2021",
     "pdfPage": 38,
@@ -3668,7 +3668,7 @@
   },
   {
     "id": "GB28",
-    "name": "维道",
+    "name": "維道",
     "sourcePinyin": "Wéidào",
     "standard": "GB/T 12346-2021",
     "pdfPage": 38,
@@ -3694,7 +3694,7 @@
   },
   {
     "id": "GB30",
-    "name": "环跳",
+    "name": "環跳",
     "sourcePinyin": "Huántiào",
     "standard": "GB/T 12346-2021",
     "pdfPage": 38,
@@ -3707,7 +3707,7 @@
   },
   {
     "id": "GB31",
-    "name": "风市",
+    "name": "風市",
     "sourcePinyin": "Fēngshì",
     "standard": "GB/T 12346-2021",
     "pdfPage": 39,
@@ -3720,7 +3720,7 @@
   },
   {
     "id": "GB32",
-    "name": "中渎",
+    "name": "中瀆",
     "sourcePinyin": "Zhōngdú",
     "standard": "GB/T 12346-2021",
     "pdfPage": 39,
@@ -3733,7 +3733,7 @@
   },
   {
     "id": "GB33",
-    "name": "膝阳关",
+    "name": "膝陽關",
     "sourcePinyin": "Xīyángguān",
     "standard": "GB/T 12346-2021",
     "pdfPage": 39,
@@ -3747,7 +3747,7 @@
   },
   {
     "id": "GB34",
-    "name": "阳陵泉",
+    "name": "陽陵泉",
     "sourcePinyin": "Yánglíngquán",
     "standard": "GB/T 12346-2021",
     "pdfPage": 39,
@@ -3761,7 +3761,7 @@
   },
   {
     "id": "GB35",
-    "name": "阳交",
+    "name": "陽交",
     "sourcePinyin": "Yángjiāo",
     "standard": "GB/T 12346-2021",
     "pdfPage": 39,
@@ -3800,7 +3800,7 @@
   },
   {
     "id": "GB38",
-    "name": "阳辅",
+    "name": "陽輔",
     "sourcePinyin": "Yángfǔ",
     "standard": "GB/T 12346-2021",
     "pdfPage": 39,
@@ -3813,7 +3813,7 @@
   },
   {
     "id": "GB39",
-    "name": "悬钟",
+    "name": "懸鐘",
     "sourcePinyin": "Xuánzhōng",
     "standard": "GB/T 12346-2021",
     "pdfPage": 39,
@@ -3839,7 +3839,7 @@
   },
   {
     "id": "GB41",
-    "name": "足临泣",
+    "name": "足臨泣",
     "sourcePinyin": "Zúlínqì",
     "standard": "GB/T 12346-2021",
     "pdfPage": 39,
@@ -3853,7 +3853,7 @@
   },
   {
     "id": "GB42",
-    "name": "地五会",
+    "name": "地五會",
     "sourcePinyin": "Dìwǔhuì",
     "standard": "GB/T 12346-2021",
     "pdfPage": 39,
@@ -3867,7 +3867,7 @@
   },
   {
     "id": "GB43",
-    "name": "侠溪",
+    "name": "俠溪",
     "sourcePinyin": "Xiáxī",
     "standard": "GB/T 12346-2021",
     "pdfPage": 39,
@@ -3880,7 +3880,7 @@
   },
   {
     "id": "GB44",
-    "name": "足窍阴",
+    "name": "足竅陰",
     "sourcePinyin": "Zúqiàoyīn",
     "standard": "GB/T 12346-2021",
     "pdfPage": 40,
@@ -3907,7 +3907,7 @@
   },
   {
     "id": "LR2",
-    "name": "行间",
+    "name": "行間",
     "sourcePinyin": "Xíngjiān",
     "standard": "GB/T 12346-2021",
     "pdfPage": 40,
@@ -3920,7 +3920,7 @@
   },
   {
     "id": "LR3",
-    "name": "太冲",
+    "name": "太沖",
     "sourcePinyin": "Tàichōng",
     "standard": "GB/T 12346-2021",
     "pdfPage": 40,
@@ -3946,7 +3946,7 @@
   },
   {
     "id": "LR5",
-    "name": "蠡沟",
+    "name": "蠡溝",
     "sourcePinyin": "Lígōu",
     "standard": "GB/T 12346-2021",
     "pdfPage": 40,
@@ -3972,7 +3972,7 @@
   },
   {
     "id": "LR7",
-    "name": "膝关",
+    "name": "膝關",
     "sourcePinyin": "Xīguān",
     "standard": "GB/T 12346-2021",
     "pdfPage": 40,
@@ -3998,7 +3998,7 @@
   },
   {
     "id": "LR9",
-    "name": "阴包",
+    "name": "陰包",
     "sourcePinyin": "Yīnbāo",
     "standard": "GB/T 12346-2021",
     "pdfPage": 40,
@@ -4025,7 +4025,7 @@
   },
   {
     "id": "LR11",
-    "name": "阴廉",
+    "name": "陰廉",
     "sourcePinyin": "Yīnlián",
     "standard": "GB/T 12346-2021",
     "pdfPage": 41,
@@ -4038,7 +4038,7 @@
   },
   {
     "id": "LR12",
-    "name": "急脉",
+    "name": "急脈",
     "sourcePinyin": "Jímài",
     "standard": "GB/T 12346-2021",
     "pdfPage": 41,
@@ -4051,7 +4051,7 @@
   },
   {
     "id": "LR13",
-    "name": "章门",
+    "name": "章門",
     "sourcePinyin": "Zhāngmén",
     "standard": "GB/T 12346-2021",
     "pdfPage": 41,
@@ -4064,7 +4064,7 @@
   },
   {
     "id": "LR14",
-    "name": "期门",
+    "name": "期門",
     "sourcePinyin": "Qīmén",
     "standard": "GB/T 12346-2021",
     "pdfPage": 41,
@@ -4077,7 +4077,7 @@
   },
   {
     "id": "GV1",
-    "name": "长强",
+    "name": "長強",
     "sourcePinyin": "Chángqiáng",
     "standard": "GB/T 12346-2021",
     "pdfPage": 41,
@@ -4100,11 +4100,11 @@
       "yāo",
       "shū"
     ],
-    "note": "本工具按国标穴名标注 shū；字典中“俞”通“腧”另读 shù，保留这一用音差异。"
+    "note": "本工具按國標穴名標註 shū；字典中“俞”通“腧”另讀 shù，保留這一用音差異。"
   },
   {
     "id": "GV3",
-    "name": "腰阳关",
+    "name": "腰陽關",
     "sourcePinyin": "Yāoyángguān",
     "standard": "GB/T 12346-2021",
     "pdfPage": 41,
@@ -4118,7 +4118,7 @@
   },
   {
     "id": "GV4",
-    "name": "命门",
+    "name": "命門",
     "sourcePinyin": "Mìngmén",
     "standard": "GB/T 12346-2021",
     "pdfPage": 41,
@@ -4131,7 +4131,7 @@
   },
   {
     "id": "GV5",
-    "name": "悬枢",
+    "name": "懸樞",
     "sourcePinyin": "Xuánshū",
     "standard": "GB/T 12346-2021",
     "pdfPage": 41,
@@ -4157,7 +4157,7 @@
   },
   {
     "id": "GV7",
-    "name": "中枢",
+    "name": "中樞",
     "sourcePinyin": "Zhōngshū",
     "standard": "GB/T 12346-2021",
     "pdfPage": 41,
@@ -4170,7 +4170,7 @@
   },
   {
     "id": "GV8",
-    "name": "筋缩",
+    "name": "筋縮",
     "sourcePinyin": "Jīnsuō",
     "standard": "GB/T 12346-2021",
     "pdfPage": 42,
@@ -4183,7 +4183,7 @@
   },
   {
     "id": "GV9",
-    "name": "至阳",
+    "name": "至陽",
     "sourcePinyin": "Zhìyáng",
     "standard": "GB/T 12346-2021",
     "pdfPage": 42,
@@ -4196,7 +4196,7 @@
   },
   {
     "id": "GV10",
-    "name": "灵台",
+    "name": "靈台",
     "sourcePinyin": "Língtái",
     "standard": "GB/T 12346-2021",
     "pdfPage": 42,
@@ -4261,7 +4261,7 @@
   },
   {
     "id": "GV15",
-    "name": "哑门",
+    "name": "啞門",
     "sourcePinyin": "Yǎmén",
     "standard": "GB/T 12346-2021",
     "pdfPage": 42,
@@ -4274,7 +4274,7 @@
   },
   {
     "id": "GV16",
-    "name": "风府",
+    "name": "風府",
     "sourcePinyin": "Fēngfǔ",
     "standard": "GB/T 12346-2021",
     "pdfPage": 42,
@@ -4287,7 +4287,7 @@
   },
   {
     "id": "GV17",
-    "name": "脑户",
+    "name": "腦户",
     "sourcePinyin": "Nǎohù",
     "standard": "GB/T 12346-2021",
     "pdfPage": 42,
@@ -4300,7 +4300,7 @@
   },
   {
     "id": "GV18",
-    "name": "强间",
+    "name": "強間",
     "sourcePinyin": "Qiángjiān",
     "standard": "GB/T 12346-2021",
     "pdfPage": 42,
@@ -4313,7 +4313,7 @@
   },
   {
     "id": "GV19",
-    "name": "后顶",
+    "name": "後頂",
     "sourcePinyin": "Hòudǐng",
     "standard": "GB/T 12346-2021",
     "pdfPage": 43,
@@ -4326,7 +4326,7 @@
   },
   {
     "id": "GV20",
-    "name": "百会",
+    "name": "百會",
     "sourcePinyin": "Bǎihuì",
     "standard": "GB/T 12346-2021",
     "pdfPage": 43,
@@ -4339,7 +4339,7 @@
   },
   {
     "id": "GV21",
-    "name": "前顶",
+    "name": "前頂",
     "sourcePinyin": "Qiándǐng",
     "standard": "GB/T 12346-2021",
     "pdfPage": 43,
@@ -4352,7 +4352,7 @@
   },
   {
     "id": "GV22",
-    "name": "囟会",
+    "name": "囟會",
     "sourcePinyin": "Xìnhuì",
     "standard": "GB/T 12346-2021",
     "pdfPage": 43,
@@ -4417,7 +4417,7 @@
   },
   {
     "id": "GV26",
-    "name": "水沟",
+    "name": "水溝",
     "sourcePinyin": "Shuǐgōu",
     "standard": "GB/T 12346-2021",
     "pdfPage": 43,
@@ -4443,7 +4443,7 @@
   },
   {
     "id": "GV28",
-    "name": "龈交",
+    "name": "齦交",
     "sourcePinyin": "Yínjiāo",
     "standard": "GB/T 12346-2021",
     "pdfPage": 43,
@@ -4456,7 +4456,7 @@
   },
   {
     "id": "CV1",
-    "name": "会阴",
+    "name": "會陰",
     "sourcePinyin": "Huìyīn",
     "standard": "GB/T 12346-2021",
     "pdfPage": 43,
@@ -4482,7 +4482,7 @@
   },
   {
     "id": "CV3",
-    "name": "中极",
+    "name": "中極",
     "sourcePinyin": "Zhōngjí",
     "standard": "GB/T 12346-2021",
     "pdfPage": 44,
@@ -4495,7 +4495,7 @@
   },
   {
     "id": "CV4",
-    "name": "关元",
+    "name": "關元",
     "sourcePinyin": "Guānyuán",
     "standard": "GB/T 12346-2021",
     "pdfPage": 44,
@@ -4508,7 +4508,7 @@
   },
   {
     "id": "CV5",
-    "name": "石门",
+    "name": "石門",
     "sourcePinyin": "Shímén",
     "standard": "GB/T 12346-2021",
     "pdfPage": 44,
@@ -4521,7 +4521,7 @@
   },
   {
     "id": "CV6",
-    "name": "气海",
+    "name": "氣海",
     "sourcePinyin": "Qìhǎi",
     "standard": "GB/T 12346-2021",
     "pdfPage": 44,
@@ -4534,7 +4534,7 @@
   },
   {
     "id": "CV7",
-    "name": "阴交",
+    "name": "陰交",
     "sourcePinyin": "Yīnjiāo",
     "standard": "GB/T 12346-2021",
     "pdfPage": 44,
@@ -4547,7 +4547,7 @@
   },
   {
     "id": "CV8",
-    "name": "神阙",
+    "name": "神闕",
     "sourcePinyin": "Shénquè",
     "standard": "GB/T 12346-2021",
     "pdfPage": 44,
@@ -4586,7 +4586,7 @@
   },
   {
     "id": "CV11",
-    "name": "建里",
+    "name": "建裏",
     "sourcePinyin": "Jiànlǐ",
     "standard": "GB/T 12346-2021",
     "pdfPage": 44,
@@ -4625,7 +4625,7 @@
   },
   {
     "id": "CV14",
-    "name": "巨阙",
+    "name": "巨闕",
     "sourcePinyin": "Jùquè",
     "standard": "GB/T 12346-2021",
     "pdfPage": 44,
@@ -4638,7 +4638,7 @@
   },
   {
     "id": "CV15",
-    "name": "鸠尾",
+    "name": "鳩尾",
     "sourcePinyin": "Jiūwěi",
     "standard": "GB/T 12346-2021",
     "pdfPage": 44,
@@ -4690,7 +4690,7 @@
   },
   {
     "id": "CV19",
-    "name": "紫宫",
+    "name": "紫宮",
     "sourcePinyin": "Zǐgōng",
     "standard": "GB/T 12346-2021",
     "pdfPage": 45,
@@ -4703,7 +4703,7 @@
   },
   {
     "id": "CV20",
-    "name": "华盖",
+    "name": "華蓋",
     "sourcePinyin": "Huágài",
     "standard": "GB/T 12346-2021",
     "pdfPage": 45,
@@ -4716,7 +4716,7 @@
   },
   {
     "id": "CV21",
-    "name": "璇玑",
+    "name": "璇璣",
     "sourcePinyin": "Xuánjī",
     "standard": "GB/T 12346-2021",
     "pdfPage": 45,
@@ -4755,7 +4755,7 @@
   },
   {
     "id": "CV24",
-    "name": "承浆",
+    "name": "承漿",
     "sourcePinyin": "Chéngjiāng",
     "standard": "GB/T 12346-2021",
     "pdfPage": 45,
@@ -4768,7 +4768,7 @@
   },
   {
     "id": "EX-HN1",
-    "name": "四神聪",
+    "name": "四神聰",
     "sourcePinyin": "Sìshéncōng",
     "standard": "GB/T 40997-2021",
     "pdfPage": 6,
@@ -4782,7 +4782,7 @@
   },
   {
     "id": "EX-HN2",
-    "name": "当阳",
+    "name": "當陽",
     "sourcePinyin": "Dāngyáng",
     "standard": "GB/T 40997-2021",
     "pdfPage": 6,
@@ -4795,7 +4795,7 @@
   },
   {
     "id": "EX-HN4",
-    "name": "鱼腰",
+    "name": "魚腰",
     "sourcePinyin": "Yúyāo",
     "standard": "GB/T 40997-2021",
     "pdfPage": 6,
@@ -4808,7 +4808,7 @@
   },
   {
     "id": "EX-HN5",
-    "name": "太阳",
+    "name": "太陽",
     "sourcePinyin": "Tàiyáng",
     "standard": "GB/T 40997-2021",
     "pdfPage": 6,
@@ -4861,7 +4861,7 @@
   },
   {
     "id": "EX-HN9",
-    "name": "内迎香",
+    "name": "內迎香",
     "sourcePinyin": "Nèiyíngxiāng",
     "standard": "GB/T 40997-2021",
     "pdfPage": 7,
@@ -4942,7 +4942,7 @@
   },
   {
     "id": "N-HN20",
-    "name": "牵正",
+    "name": "牽正",
     "sourcePinyin": "Qiānzhènɡ",
     "standard": "GB/T 40997-2021",
     "pdfPage": 7,
@@ -4955,7 +4955,7 @@
   },
   {
     "id": "EXTRA-XINSHE",
-    "name": "新设",
+    "name": "新設",
     "sourcePinyin": "Xīnshè",
     "standard": "GB/T 40997-2021",
     "pdfPage": 7,
@@ -4968,7 +4968,7 @@
   },
   {
     "id": "EX-HN15",
-    "name": "颈百劳",
+    "name": "頸百勞",
     "sourcePinyin": "Jìngbǎiláo",
     "standard": "GB/T 40997-2021",
     "pdfPage": 8,
@@ -4979,11 +4979,11 @@
       "bǎi",
       "láo"
     ],
-    "note": "原 PDF 标作 Jìngbǎiláo；此处“颈”按字典颈部义读 jǐng，并保留原标注供核对。"
+    "note": "原 PDF 標作 Jìngbǎiláo；此處“頸”按字典頸部義讀 jǐng，並保留原標註供核對。"
   },
   {
     "id": "EXTRA-XUEYADIAN",
-    "name": "血压点",
+    "name": "血壓點",
     "sourcePinyin": "Xuèyādiǎn",
     "standard": "GB/T 40997-2021",
     "pdfPage": 8,
@@ -4997,7 +4997,7 @@
   },
   {
     "id": "EXTRA-TITUO",
-    "name": "提托",
+    "name": "提託",
     "sourcePinyin": "Títuō",
     "standard": "GB/T 40997-2021",
     "pdfPage": 8,
@@ -5010,7 +5010,7 @@
   },
   {
     "id": "EX-CA1",
-    "name": "子宫",
+    "name": "子宮",
     "sourcePinyin": "Zǐgōng",
     "standard": "GB/T 40997-2021",
     "pdfPage": 8,
@@ -5036,7 +5036,7 @@
   },
   {
     "id": "EX-B2",
-    "name": "夹脊",
+    "name": "夾脊",
     "sourcePinyin": "Jiájǐ",
     "standard": "GB/T 40997-2021",
     "pdfPage": 9,
@@ -5061,7 +5061,7 @@
       "xià",
       "shū"
     ],
-    "note": "本工具按国标穴名标注 shū；字典中“俞”通“腧”另读 shù，保留这一用音差异。"
+    "note": "本工具按國標穴名標註 shū；字典中“俞”通“腧”另讀 shù，保留這一用音差異。"
   },
   {
     "id": "EXTRA-JIEJI",
@@ -5224,7 +5224,7 @@
   },
   {
     "id": "EX-UE7",
-    "name": "腰痛点",
+    "name": "腰痛點",
     "sourcePinyin": "Yāotòngdiǎn",
     "standard": "GB/T 40997-2021",
     "pdfPage": 10,
@@ -5238,7 +5238,7 @@
   },
   {
     "id": "EX-UE8",
-    "name": "外劳宫",
+    "name": "外勞宮",
     "sourcePinyin": "Wàiláogōng",
     "standard": "GB/T 40997-2021",
     "pdfPage": 10,
@@ -5265,7 +5265,7 @@
   },
   {
     "id": "EX-UE10",
-    "name": "四缝",
+    "name": "四縫",
     "sourcePinyin": "Sìfèng",
     "standard": "GB/T 40997-2021",
     "pdfPage": 11,
@@ -5291,7 +5291,7 @@
   },
   {
     "id": "EX-LE1",
-    "name": "髋骨",
+    "name": "髖骨",
     "sourcePinyin": "Kuāngǔ",
     "standard": "GB/T 40997-2021",
     "pdfPage": 11,
@@ -5304,7 +5304,7 @@
   },
   {
     "id": "EX-LE2",
-    "name": "鹤顶",
+    "name": "鶴頂",
     "sourcePinyin": "Hèdǐng",
     "standard": "GB/T 40997-2021",
     "pdfPage": 11,
@@ -5317,7 +5317,7 @@
   },
   {
     "id": "EX-LE3",
-    "name": "百虫窝",
+    "name": "百蟲窩",
     "sourcePinyin": "Bǎichóngwō",
     "standard": "GB/T 40997-2021",
     "pdfPage": 11,
@@ -5331,7 +5331,7 @@
   },
   {
     "id": "EX-LE4",
-    "name": "内膝眼",
+    "name": "內膝眼",
     "sourcePinyin": "Nèixīyǎn",
     "standard": "GB/T 40997-2021",
     "pdfPage": 11,
@@ -5345,7 +5345,7 @@
   },
   {
     "id": "EX-LE6",
-    "name": "胆囊",
+    "name": "膽囊",
     "sourcePinyin": "Dǎnnáng",
     "standard": "GB/T 40997-2021",
     "pdfPage": 11,
@@ -5358,7 +5358,7 @@
   },
   {
     "id": "EX-LE7",
-    "name": "阑尾",
+    "name": "闌尾",
     "sourcePinyin": "Lánwěi",
     "standard": "GB/T 40997-2021",
     "pdfPage": 11,
@@ -5371,7 +5371,7 @@
   },
   {
     "id": "EX-LE8",
-    "name": "内踝尖",
+    "name": "內踝尖",
     "sourcePinyin": "Nèihuáijiān",
     "standard": "GB/T 40997-2021",
     "pdfPage": 11,
@@ -5399,7 +5399,7 @@
   },
   {
     "id": "EX-LE10",
-    "name": "八风",
+    "name": "八風",
     "sourcePinyin": "Bāfēng",
     "standard": "GB/T 40997-2021",
     "pdfPage": 11,
@@ -5412,7 +5412,7 @@
   },
   {
     "id": "EXTRA-LINEITING",
-    "name": "里内庭",
+    "name": "裏內庭",
     "sourcePinyin": "Lǐnèitínɡ",
     "standard": "GB/T 40997-2021",
     "pdfPage": 12,
@@ -5426,7 +5426,7 @@
   },
   {
     "id": "EX-LE11",
-    "name": "独阴",
+    "name": "獨陰",
     "sourcePinyin": "Dúyīn",
     "standard": "GB/T 40997-2021",
     "pdfPage": 12,
@@ -5439,7 +5439,7 @@
   },
   {
     "id": "EX-LE12",
-    "name": "气端",
+    "name": "氣端",
     "sourcePinyin": "Qìduān",
     "standard": "GB/T 40997-2021",
     "pdfPage": 12,
