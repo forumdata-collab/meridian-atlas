@@ -270,7 +270,7 @@ export default function AtlasApp({
           </button>
           <a
             className="text-link"
-            href="https://github.com/galaxy-hzy/meridian-atlas"
+            href="https://github.com/forumdata-collab/meridian-atlas"
             target="_blank"
             rel="noreferrer"
           >
