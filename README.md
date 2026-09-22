@@ -143,7 +143,9 @@ npm start          # wrangler dev，預設 http://localhost:8787
 - 古歌穴數、穴序與現代標準不同的地方單獨解釋，不靜默改寫古文。
 - **逐穴帶讀**按現代穴序做視覺高亮，幫助把文字記憶與空間位置聯繫起來。
 - **查讀音**支援輸入生字、詞語、穴名、歌訣，也可查詢頁面選中文字。
-- **普通話拼音 + 粵語粵拼（Jyutping）雙行對照**：每個字同時顯示國標拼音與粵拼；粵拼按字／穴名查表（Unicode Unihan `kCantonese` 及漢語多功能字庫），可複製整句粵拼。
+- **普通話拼音 + 粵語粵拼（Jyutping）雙行對照**：每個字同時顯示國標拼音與粵拼，並可複製整句粵拼。
+- **多音字列出其他讀音**：單字查詢會顯示該字的其他粵讀（例如「中」zung1／zung3、「差」caa1／caai1／ci1），不會靜默選一個。
+- **穴位粵讀校正表**：字典最常見讀音未必等於穴位讀音。系統按 **GB/T 12346-2021 的普通話讀音**定音（例：膻中＝daan6 zung1 而非 zin1；少商＝siu3 而非 siu2；大椎＝zeoi1；膀胱俞＝pong4），共 27 個字的校正規則見 [`lib/jyutping-overrides.json`](lib/jyutping-overrides.json)。
 - **雙語朗讀**：`普通話朗讀` 與 `粵語朗讀` 分別使用系統的普通話與粵語（yue-HK／zh-HK）語音；未安裝粵語語音時仍可顯示粵拼。
 - 413 個標準穴名帶原拼音和來源索引；其餘文本用隨應用載入的拼音字庫處理，單字可展示多音項。
 - 可調用瀏覽器或系統中文語音輔助朗讀；實際聲音與多音字讀法取決於運行環境。
@@ -183,7 +185,7 @@ npm start          # wrangler dev，預設 http://localhost:8787
 | --- | --- |
 | 繁體化 | 全站介面與穴位資料轉為**香港繁體**（OpenCC `s2hk`）；`html lang` 與 manifest 改為 `zh-Hant`；外部連結網址原樣保留 |
 | 新增頁面 | `/learn` 認識穴位（初學者指南）、`/care` 都市人保健專區（4 主題 18 穴，附 `/?points=` 三維深層連結） |
-| 粵語讀音 | 查讀音加入**粵語粵拼（Jyutping）雙行對照**與「粵語朗讀」按鈕；粵拼字表由 Unicode Unihan `kCantonese` ＋ 漢語多功能字庫生成（`lib/jyutping.json`、`lib/jyutping-names.json`），只在開啟面板時載入 |
+| 粵語讀音 | 查讀音加入**粵語粵拼（Jyutping）雙行對照**、多音字其他讀音、27 字穴位粵讀校正表與「粵語朗讀」按鈕；字表由 Unicode Unihan `kCantonese` 生成（`lib/jyutping.json`、`lib/jyutping-overrides.json`、`scripts/build-jyutping.py`），只在開啟面板時載入 |
 | 主導覽 | 新增「認識穴位」「都市保健」兩項 |
 | 標題描述 | 網站標題與描述改為教學定位（經絡穴位 3D 教學） |
 | 建置要求 | `engines.node` 由 `>=24` 放寬至 `>=22`，便於一般環境建置 |

@@ -67,10 +67,18 @@ export default function Pronunciation({
     Promise.all([import('@/lib/pronunciation'), import('@/lib/cantonese')])
       .then(([mandarin, yue]) => {
         if (!active) return;
+        const mandarinResult = mandarin.lookupPronunciation(query);
+        const chars = Array.from(mandarinResult.text);
+        // Only use Mandarin readings for Cantonese disambiguation when the unit
+        // arrays align 1:1 with the characters (they normally do).
+        const align =
+          mandarinResult.units.length === chars.length
+            ? mandarinResult.units.map((u) => u.reading)
+            : undefined;
         setLookup(mandarin);
-        setResult(mandarin.lookupPronunciation(query));
+        setResult(mandarinResult);
         setCantonese(yue);
-        setJyutping(yue.lookupJyutping(query));
+        setJyutping(yue.lookupJyutping(query, align));
         setError('');
       })
       .catch(() => {
@@ -241,6 +249,19 @@ export default function Pronunciation({
                 粵拼：<b>{jyutping.jyutping}</b>
               </p>
             )}
+            {cantonese && cantonese.otherReadings(jyutping).length > 0 && (
+              <p className="pronunciation-note">
+                粵語多讀：{jyutping!.units[0].reading} /{' '}
+                {cantonese.otherReadings(jyutping).join(' / ')}
+                。輸入完整穴位名，可按國標普通話讀音定音。
+              </p>
+            )}
+            {!!jyutping?.corrected && (
+              <p className="pronunciation-note">
+                已依 GB/T 12346-2021 普通話讀音校正 {jyutping.corrected}{' '}
+                字的粵讀——字典最常見讀音未必適用於穴位名稱。
+              </p>
+            )}
           </>
         )}
       </div>
@@ -286,13 +307,14 @@ export default function Pronunciation({
       </output>
       {cantonese && (
         <p className="pronunciation-note">
-          粵拼依據：{cantonese.jyutpingAttribution.label}。
+          粵拼依據：{cantonese.jyutpingAttribution.primary}；
+          {cantonese.jyutpingAttribution.alternates}；{cantonese.jyutpingAttribution.overrides}。
           <a
             href={cantonese.jyutpingAttribution.url}
             target="_blank"
             rel="noreferrer"
           >
-            來源 ↗
+            字庫來源 ↗
           </a>
           GB/T 12346-2021 只規定普通話讀音；粵語讀音屬參考，個別穴位讀法或有不同。
         </p>

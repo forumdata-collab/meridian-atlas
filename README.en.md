@@ -34,7 +34,9 @@ Meridian Atlas is a Chinese-first, interactive learning application for traditio
 - **Search** by Chinese name, channel, identifier and aliases. Point groups can be shared through links such as `/?points=LU7,LI4`.
 - **Classical mnemonics above the model**, visual point-by-point recitation, and explicit notes on differences between historical verses and modern point catalogs.
 - **Pronunciation lookup:** pinyin for characters, point names and verses; 413 standardized names carry source-indexed readings. Optional browser/system speech assists reading.
-- **Mandarin + Cantonese side by side:** every character shows its national-standard pinyin *and* its Cantonese Jyutping; the Jyutping table is generated from Unicode Unihan `kCantonese` plus the CUHK Chinese Character Database, and the whole input is also given as a copyable Jyutping string.
+- **Mandarin + Cantonese side by side:** every character shows its national-standard pinyin *and* its Cantonese Jyutping, plus a copyable Jyutping string for the whole input.
+- **Polyphones list their other readings** instead of silently picking one (`中` zung1/zung3, `差` caa1/caai1/ci1).
+- **Acupoint reading corrections:** the dictionary's most common reading is not always the acupoint reading. Readings are pinned by the **GB/T 12346-2021 Mandarin syllable** (膻中 = daan6 zung1, not zin1; 少商 = siu3, not siu2; 大椎 = zeoi1; 膀胱俞 = pong4). The 27 rules live in [`lib/jyutping-overrides.json`](lib/jyutping-overrides.json); tables are built by [`scripts/build-jyutping.py`](scripts/build-jyutping.py) from Unicode Unihan `kCantonese`.
 - **Two read-aloud buttons:** `普通話朗讀` and `粵語朗讀` pick the system Mandarin or Cantonese (yue-HK / zh-HK) voice; Jyutping still displays when the device has no Cantonese voice.
 - **Daily-cycle learning:** per-channel animation, a 24-hour slider, two-hour period selection, playback and cross-midnight handling.
 - **Internal courses and branches:** regional illustrations alongside selected passages from the *Lingshu*, distinct from the surface point sequence.
@@ -83,7 +85,7 @@ This repository keeps the upstream native iPhone project (`mobile/`): the model 
 | --- | --- |
 | Traditional Chinese | Whole interface and acupoint dataset converted to **Hong Kong Traditional** (OpenCC `s2hk`); `html lang` and manifest set to `zh-Hant`; external URLs preserved verbatim |
 | New pages | `/learn` beginner's guide and `/care` city-wellness section (4 topics, 18 points, deep links via `/?points=`) |
-| Cantonese | Pronunciation panel adds **Jyutping side-by-side** with pinyin and a 粵語朗讀 button; the Jyutping tables come from Unicode Unihan `kCantonese` + the CUHK database (`lib/jyutping.json`, `lib/jyutping-names.json`) and load only when the panel opens |
+| Cantonese | Pronunciation panel adds **Jyutping side-by-side** with pinyin, polyphone alternatives, a 27-rule acupoint correction table, and a 粵語朗讀 button; tables built from Unicode Unihan `kCantonese` (`lib/jyutping.json`, `lib/jyutping-overrides.json`, `scripts/build-jyutping.py`) and loaded only when the panel opens |
 | Navigation | Two new primary-nav entries |
 | Metadata | Site title/description reframed for teaching |
 | Build | `engines.node` relaxed from `>=24` to `>=22` |
