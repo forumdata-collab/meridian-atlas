@@ -563,7 +563,7 @@
   },
   {
     "id": "ST13",
-    "name": "氣户",
+    "name": "氣戶",
     "sourcePinyin": "Qìhù",
     "standard": "GB/T 12346-2021",
     "pdfPage": 18,
@@ -2200,7 +2200,7 @@
   },
   {
     "id": "BL42",
-    "name": "魄户",
+    "name": "魄戶",
     "sourcePinyin": "Pòhù",
     "standard": "GB/T 12346-2021",
     "pdfPage": 29,
@@ -4287,7 +4287,7 @@
   },
   {
     "id": "GV17",
-    "name": "腦户",
+    "name": "腦戶",
     "sourcePinyin": "Nǎohù",
     "standard": "GB/T 12346-2021",
     "pdfPage": 42,
