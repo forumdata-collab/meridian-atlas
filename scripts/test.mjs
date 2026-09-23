@@ -172,10 +172,10 @@ test('all 362 national entries expose basic Chinese anatomical facts with matchi
     assert.equal(facts.clause, nationalStandard.points[id].clause);
     assert.equal(facts.pdfPage, nationalStandard.points[id].pdfPage);
     assert.ok(facts.region && facts.relations.length > 0);
-    assert.ok(pointById[id].location.includes('区域：'));
+    assert.ok(pointById[id].location.includes('區域：'));
     assert.doesNotMatch(
       pointById[id].location,
-      /体表区域：|完整文字定位见 WHO|正在核对/,
+      /體表區域：|完整文字定位見 WHO|正在核對/,
     );
     if (!id.startsWith('LI'))
       assert.equal(pointById[id].location, describeStandardLocation(facts));
@@ -188,21 +188,21 @@ test('all 362 national entries expose basic Chinese anatomical facts with matchi
   }
 });
 test('national digests retain clinically distinct sides, proximal/distal locations, modern landmarks and reviewed PDF corrections', () => {
-  assert.match(pointById.SP1.location, /末节内侧/);
-  assert.match(pointById.LR1.location, /末节外侧/);
-  assert.match(pointById.SI2.location, /尺侧远端/);
-  assert.match(pointById.SI3.location, /尺侧近端/);
-  assert.match(pointById.ST30.location, /耻骨联合上缘/);
-  assert.match(pointById.ST30.location, /动脉搏动/);
-  assert.match(pointById.ST41.location, /拇长伸肌腱与趾长伸肌腱/);
-  assert.match(pointById.GB31.location, /腘横纹上 9 寸/);
-  assert.match(pointById.GB31.location, /髂胫束后缘/);
-  assert.match(pointById.TE13.location, /三角肌后缘相交/);
-  assert.match(pointById.PC8.location, /偏于第3掌骨/);
-  assert.match(pointById.CV15.location, /剑突尖下 1 寸/);
-  assert.match(pointById.CV16.location, /剑突尖所在/);
+  assert.match(pointById.SP1.location, /末節內側/);
+  assert.match(pointById.LR1.location, /末節外側/);
+  assert.match(pointById.SI2.location, /尺側遠端/);
+  assert.match(pointById.SI3.location, /尺側近端/);
+  assert.match(pointById.ST30.location, /恥骨聯合上緣/);
+  assert.match(pointById.ST30.location, /動脈搏動/);
+  assert.match(pointById.ST41.location, /拇長伸肌腱與趾長伸肌腱/);
+  assert.match(pointById.GB31.location, /膕橫紋上 9 寸/);
+  assert.match(pointById.GB31.location, /髂脛束後緣/);
+  assert.match(pointById.TE13.location, /三角肌後緣相交/);
+  assert.match(pointById.PC8.location, /偏於第3掌骨/);
+  assert.match(pointById.CV15.location, /劍突尖下 1 寸/);
+  assert.match(pointById.CV16.location, /劍突尖所在/);
   assert.match(pointById.CV1.location, /男性.*女性/);
-  assert.match(pointById.ST26.location, /脐中下 1 寸/);
+  assert.match(pointById.ST26.location, /臍中下 1 寸/);
   assert.equal(standardLocationData.extractionCorrections.length, 2);
 });
 const { diabetesCore, diabetesPatterns, classicalDiabetes, confluentPairs } =
@@ -304,15 +304,15 @@ test('Five-Shu and Yuan/Luo are separate, multi-role classifications', () => {
     const peer = channels.find((p) => p.id === c.pair);
     assert.equal(peer.pair, c.id);
   }
-  assert.deepEqual(pointById.LU9.roles, ['输', '原']);
-  assert.deepEqual(pointById.LU7.roles, ['络']);
+  assert.deepEqual(pointById.LU9.roles, ['輸', '原']);
+  assert.deepEqual(pointById.LU7.roles, ['絡']);
   assert.ok(pointById.SI8.roles.includes('合'));
   assert.ok(pointById.HT3.roles.includes('合'));
-  assert.ok(pointById.GB38.roles.includes('经'));
+  assert.ok(pointById.GB38.roles.includes('經'));
   assert.deepEqual(pointById.CV1.roles, []);
-  assert.deepEqual(pointById.GV1.roles, ['络']);
-  assert.deepEqual(pointById.CV15.roles, ['络']);
-  assert.deepEqual(pointById.SP21.roles, ['大络']);
+  assert.deepEqual(pointById.GV1.roles, ['絡']);
+  assert.deepEqual(pointById.CV15.roles, ['絡']);
+  assert.deepEqual(pointById.SP21.roles, ['大絡']);
 });
 test('a point is only detailed after selecting its meridian (or an associated extraordinary vessel)', () => {
   assert.equal(canInspectPoint(null, pointById.LU9), false);
@@ -358,7 +358,7 @@ test('51 standard extra entries and six supplements preserve real groups without
   assert.equal(pointById['EX-HN12'].bilateral, false);
   for (const p of extraPoints) {
     assert.ok(p.location);
-    assert.ok(p.indications || p.source.includes('主治另待文献核对'));
+    assert.ok(p.indications || p.source.includes('主治另待文獻核對'));
     for (const pos of p.positions || [p.position])
       assert.ok(pos.every(Number.isFinite));
   }
@@ -418,7 +418,7 @@ test('Yintang aliases resolve to a single governor point and encoded comparison 
 test('large-intestine location facts retain distal/proximal distinctions, forearm offsets and current arm landmarks', async () => {
   const { locationFacts } = await import('../lib/location-facts.ts');
   assert.equal(Object.keys(locationFacts).length, 20);
-  assert.match(pointById.LI2.location, /远端/);
+  assert.match(pointById.LI2.location, /遠端/);
   assert.match(pointById.LI3.location, /近端/);
   for (const [id, distance] of [
     ['LI6', 3],
@@ -428,11 +428,11 @@ test('large-intestine location facts retain distal/proximal distinctions, forear
     ['LI10', 2],
   ]) {
     assert.ok(pointById[id].location.includes(`${distance} 寸`));
-    assert.ok(pointById[id].location.includes('阳溪—曲池'));
+    assert.ok(pointById[id].location.includes('陽溪—曲池'));
   }
-  assert.ok(locationFacts.LI14.landmarks.includes('三角肌前缘'));
-  assert.equal(pointById.TE11.name, '清泠渊');
-  assert.match(pointById.LU7.location, /拇短伸肌腱与拇长展肌腱/);
+  assert.ok(locationFacts.LI14.landmarks.includes('三角肌前緣'));
+  assert.equal(pointById.TE11.name, '清泠淵');
+  assert.match(pointById.LU7.location, /拇短伸肌腱與拇長展肌腱/);
 });
 test('all sourced combinations resolve across meridians and can be opened as comparison links', () => {
   const groups = [
@@ -511,7 +511,7 @@ test('all displayed mesh attachments reconstruct from the actual GLB triangles, 
     verify(binding);
     assert.deepEqual(pointById[id].position, binding.position);
     assert.ok(pointById[id].templatePosition);
-    assert.match(pointById[id].modelPlacement, /不代表解剖定位已经校准/);
+    assert.match(pointById[id].modelPlacement, /不代表解剖定位已經校準/);
     if (binding.groupBindings) {
       assert.equal(
         binding.groupBindings.length,
@@ -727,15 +727,15 @@ test('extra standard has all 51 clauses, preserves uncoded entries and separates
     );
     assert.ok(p.location.includes(entry.region));
     if (!entry.standardCodes.length)
-      assert.equal(p.displayCode, '国标未设代码');
+      assert.equal(p.displayCode, '國標未設代碼');
   }
   for (const p of extraPoints.filter((p) => p.catalog === 'supplement-extra')) {
     assert.equal(p.locationReference, undefined);
-    assert.match(p.catalogNote, /未收入|不计入/);
+    assert.match(p.catalogNote, /未收入|不計入/);
   }
-  assert.match(pointById['EX-UE5'].location, /拇指背面；掌指关节/);
+  assert.match(pointById['EX-UE5'].location, /拇指背面；掌指關節/);
   assert.match(pointById['EXTRA-LINEITING'].location, /足底/);
-  assert.match(pointById['EX-LE11'].location, /远端趾间关节/);
+  assert.match(pointById['EX-LE11'].location, /遠端趾間關節/);
 });
 test('extra aliases and paired Jinjin/Yuye preserve old URLs without duplicate points or lost classical names', () => {
   for (const [alias, id] of Object.entries(extraCodeAliases)) {
@@ -754,7 +754,7 @@ test('extra aliases and paired Jinjin/Yuye preserve old URLs without duplicate p
   assert.match(pair.aliases, /金津；玉液/);
   assert.equal(classicalDiabetes.points.length, 10);
   assert.ok(classicalDiabetes.points.includes('EX-HN12'));
-  assert.match(classicalDiabetes.note, /左右两个穴点/);
+  assert.match(classicalDiabetes.note, /左右兩個穴點/);
   assert.equal(pointById['EX-LE1'].positions.length, 2);
   assert.equal(pointById['EX-LE12'].positions.length, 5);
 });
@@ -773,7 +773,7 @@ test('new extra mesh placement retains abdominal proportions and sole versus dor
     pointById['EX-B3'].position[1],
     (pointById.BL17.position[1] + pointById.BL18.position[1]) / 2,
   );
-  assert.match(pointById['EX-HN10'].modelPlacement, /没有黏膜与舌部解剖层/);
+  assert.match(pointById['EX-HN10'].modelPlacement, /沒有黏膜與舌部解剖層/);
 });
 
 test('extra indication references remain separate from location standards and respect the detail gate', () => {
@@ -821,15 +821,15 @@ test('extra indication references remain separate from location standards and re
       }
     }
   }
-  assert.match(pointById['EX-HN11'].indicationStudy.note, /并非完全对应/);
-  assert.match(pointById['EX-LE1'].indicationStudy.note, /资料性附录/);
-  assert.match(pointById['EX-LE12'].indicationStudy.note, /病证语境/);
-  assert.equal(pointById['EXTRA-LINEITING'].displayCode, '国标未设代码');
+  assert.match(pointById['EX-HN11'].indicationStudy.note, /並非完全對應/);
+  assert.match(pointById['EX-LE1'].indicationStudy.note, /資料性附錄/);
+  assert.match(pointById['EX-LE12'].indicationStudy.note, /病證語境/);
+  assert.equal(pointById['EXTRA-LINEITING'].displayCode, '國標未設代碼');
   assert.notEqual(
     pointById['EXTRA-LINEITING'].indications,
     pointById.ST44.indications,
   );
-  assert.ok(!pointById['EXTRA-XUEYADIAN'].indications.includes('头像强痛'));
+  assert.ok(!pointById['EXTRA-XUEYADIAN'].indications.includes('頭像強痛'));
 });
 
 const {
@@ -1139,10 +1139,10 @@ test('point readings override generic heteronyms, including consecutive names in
       .units.map((u) => u.reading || u.text)
       .join(' ');
   assert.equal(reading('膻中'), 'dàn zhōng');
-  assert.equal(reading('少商曲池攒竹'), 'shào shāng qū chí cuán zhú');
-  assert.equal(reading('肩髎郄门蠡沟'), 'jiān liáo xì mén lí gōu');
+  assert.equal(reading('少商曲池攢竹'), 'shào shāng qū chí cuán zhú');
+  assert.equal(reading('肩髎郄門蠡溝'), 'jiān liáo xì mén lí gōu');
   assert.equal(reading('胃脘下俞肺俞'), 'wèi wǎn xià shū fèi shū');
-  assert.equal(reading('颈百劳'), 'jǐng bǎi láo');
+  assert.equal(reading('頸百勞'), 'jǐng bǎi láo');
   assert.equal(lookupPronunciation('俞').units[0].reading, 'yú');
   assert.ok(lookupPronunciation('俞').units[0].readings.includes('shù'));
   assert.match(lookupPronunciation('肺俞').sources[0].note, /shù/);
@@ -1212,7 +1212,7 @@ test('each route study has distinct source prose, resolvable surface references 
     );
     assert.ok(study.sections.length >= 3);
     assert.match(jingmaiSource.passages[c.id], /其支者/);
-    assert.doesNotMatch(jingmaiSource.passages[c.id], /是动则病|为此诸病/);
+    assert.doesNotMatch(jingmaiSource.passages[c.id], /是動則病|為此諸病/);
     assert.ok(Array.from(jingmaiSource.passages[c.id]).length <= 500);
     for (const section of study.sections)
       for (const id of section.pointIds) {
@@ -1224,14 +1224,14 @@ test('each route study has distinct source prose, resolvable surface references 
 });
 test('course summaries retain wrist branches, facial crossing and source variants without inventing point-to-point continuity', () => {
   assert.equal(jingmaiStudies.LU.origin, '中焦');
-  assert.match(jingmaiStudies.LU.sections[2].summary, /腕后.*食指/);
+  assert.match(jingmaiStudies.LU.sections[2].summary, /腕後.*食指/);
   assert.deepEqual(jingmaiStudies.LU.sections[2].pointIds, []);
-  assert.match(jingmaiStudies.LI.sections[2].summary, /下齿.*左右交叉/);
-  assert.match(jingmaiStudies.PC.sections[2].summary, /无名指/);
-  assert.match(jingmaiStudies.BL.sections[2].summary, /腘窝会合/);
-  assert.match(jingmaiSource.passages.ST, /〔一作“次指外间”〕/);
+  assert.match(jingmaiStudies.LI.sections[2].summary, /下齒.*左右交叉/);
+  assert.match(jingmaiStudies.PC.sections[2].summary, /無名指/);
+  assert.match(jingmaiStudies.BL.sections[2].summary, /膕窩會合/);
+  assert.match(jingmaiSource.passages.ST, /〔一作“次指外間”〕/);
   assert.match(jingmaiSource.passages.SI, /䪼 䪼/);
-  assert.match(jingmaiStudies.SI.note, /重复/);
+  assert.match(jingmaiStudies.SI.note, /重複/);
 });
 
 const closeLegLevel = (a, b) =>
@@ -1340,9 +1340,9 @@ test('front leg points follow the ST35-ST41 projected line and dependent extra p
   );
   assert.equal(humanMesh.lowerLeg.pointIds.length, 34);
   for (const id of humanMesh.lowerLeg.pointIds)
-    assert.match(pointById[id].modelPlacement, /端点仍为模型估计/);
-  assert.match(pointById.BL57.modelPlacement, /推导模型层级/);
-  assert.match(pointById.BL58.modelPlacement, /约当关系/);
+    assert.match(pointById[id].modelPlacement, /端點仍為模型估計/);
+  assert.match(pointById.BL57.modelPlacement, /推導模型層級/);
+  assert.match(pointById.BL58.modelPlacement, /約當關系/);
 });
 
 const { lungCourse, lungCourseTimelines } =
@@ -1366,7 +1366,7 @@ test('lung course preserves fixed original, paired mesh, wrist fork and thumb/in
   assert.ok(!lungCourse.surfaceReferences.includes('LU11'));
   assert.equal(pointById.LI1.channel, 'LI');
   assert.equal(channels.find((c) => c.id === 'LU').points.length, 11);
-  assert.match(lungCourse.note, /不是古籍对现代穴名的指定/);
+  assert.match(lungCourse.note, /不是古籍對現代穴名的指定/);
   assert.ok(lungCourse.nodes[1].position[1] < lungCourse.nodes[0].position[1]);
   for (const p of [...lungCourse.internal, ...lungCourse.branch])
     assert.ok(p.length === 3 && p.every(Number.isFinite));
@@ -1423,14 +1423,14 @@ test('lung animation enters the surface once then splits at the actual wrist, ne
 
 const { pointLabel } = await import('../lib/point-labels.ts');
 test('model labels retain combined categories without changing the external role order', () => {
-  assert.equal(pointLabel('太渊', ['原', '输', '原']), '太渊（输、原）');
-  assert.equal(pointLabel('尺泽', ['合']), '尺泽（合）');
-  assert.equal(pointLabel('列缺', ['络']), '列缺（络）');
-  assert.equal(pointLabel('大包', pointById.SP21.roles), '大包（大络）');
-  assert.equal(pointLabel('鸠尾', pointById.CV15.roles), '鸠尾（络）');
-  assert.equal(pointLabel('长强', pointById.GV1.roles), '长强（络）');
+  assert.equal(pointLabel('太淵', ['原', '輸', '原']), '太淵（輸、原）');
+  assert.equal(pointLabel('尺澤', ['合']), '尺澤（合）');
+  assert.equal(pointLabel('列缺', ['絡']), '列缺（絡）');
+  assert.equal(pointLabel('大包', pointById.SP21.roles), '大包（大絡）');
+  assert.equal(pointLabel('鳩尾', pointById.CV15.roles), '鳩尾（絡）');
+  assert.equal(pointLabel('長強', pointById.GV1.roles), '長強（絡）');
   assert.equal(pointLabel('中府', []), '中府');
-  assert.deepEqual(roleNames, ['井', '荥', '输', '经', '合', '原', '络']);
+  assert.deepEqual(roleNames, ['井', '滎', '輸', '經', '合', '原', '絡']);
   for (const c of primaryChannels)
     for (const p of c.points)
       for (const role of p.roles)
@@ -2173,7 +2173,7 @@ test('ST preserves source toe variants and calibrated leg points while adding di
   assert.deepEqual(p.second.points.at(-1), pointById.ST45.position);
   assert.deepEqual(p.great.points.at(-1), pointById.SP1.position);
   assert.notDeepEqual(p.third.points.at(-1), pointById.ST45.position);
-  assert.match(stCourse.passage, /中指内间〔一作“次指外间”〕/);
+  assert.match(stCourse.passage, /中指內間〔一作“次指外間”〕/);
   assert.equal(pointById.SP1.channel, 'SP');
   assert.equal(channels.find((c) => c.id === 'ST').points.length, 45);
 });
@@ -2229,7 +2229,7 @@ test('CV preserves a single trunk with explicit bilateral face paths and edition
   assert.equal(cvCourse.source.sourceSha256, renmaiSource.sourceSha256);
   assert.equal(cvCourse.source.revision, '119706');
   assert.match(cvCourse.passage, /二十七穴/);
-  assert.match(cvCourse.passage, /并无循面以下之说/);
+  assert.match(cvCourse.passage, /並無循面以下之説/);
   assert.equal(cvCourse.assetSha256, humanMesh.assetSha256);
   assert.equal(
     cvCourse.registrationSha256,
@@ -2290,7 +2290,7 @@ const { gvCourse, gvCourseTimelines } = await import('../lib/gv-course.ts');
 test('GV separates the book collateral from the midline route and preserves modern point ownership', () => {
   assert.equal(gvCourse.source.revision, '119708');
   assert.match(gvCourse.passage, /凡三十一穴/);
-  assert.match(gvCourse.passage, /督脉别络/);
+  assert.match(gvCourse.passage, /督脈別絡/);
   assert.equal(gvCourse.assetSha256, humanMesh.assetSha256);
   assert.equal(
     gvCourse.registrationSha256,
@@ -2356,7 +2356,7 @@ const { chongCourse, chongCourseTimelines } =
 test('CHONG retains the abdominal route and distinguishes source variants from point ownership', () => {
   assert.equal(chongCourse.source.revision, '2084064');
   assert.match(chongCourse.passage, /循腹右上行/);
-  assert.match(chongCourse.passage, /挟脐左右/);
+  assert.match(chongCourse.passage, /挾臍左右/);
   assert.equal(chongCourse.assetSha256, humanMesh.assetSha256);
   assert.equal(
     chongCourse.registrationSha256,
@@ -2484,7 +2484,7 @@ test('Yang-qiao source preserves missing characters and uses the correct vessel 
   assert.doesNotMatch(source.passage, /陽維起於諸陽之會/);
   assert.equal(source.lineIds[0], '817');
   assert.equal(source.lineIds.at(-1), '826');
-  assert.match(source.note, /跟中起始与肩面回行/);
+  assert.match(source.note, /跟中起始與肩面回行/);
 });
 
 const { yangqiaoCourse, yangqiaoCourseTimelines } =
@@ -2614,9 +2614,9 @@ test('DAI source distinguishes its nondirectional belt from kidney divergent con
     readFileSync(new URL('../lib/daimai-source.json', import.meta.url)),
   );
   assert.equal(source.revision, '119710');
-  assert.match(source.passage, /圍身一周/);
+  assert.match(source.passage, /圍身一週/);
   assert.match(source.kidneyDivergent, /足少陰之正/);
-  assert.match(source.relationNote, /不能把腘中當作|不能把腘中当作/);
+  assert.match(source.relationNote, /不能把膕中當作|不能把膕中當作/);
   const specs = JSON.parse(
     readFileSync(new URL('../lib/vessel-route-specs.json', import.meta.url)),
   );
@@ -2626,7 +2626,7 @@ test('DAI source distinguishes its nondirectional belt from kidney divergent con
 });
 
 test('HT2 indication is tied to its reviewed scan rather than inherited manual cardiac pain', () => {
-  assert.match(pointById.HT2.indications, /目黄/);
+  assert.match(pointById.HT2.indications, /目黃/);
   assert.doesNotMatch(pointById.HT2.indications, /心痛/);
   assert.match(pointById.HT2.indicationStudy.excerpt, /肩臂不舉/);
   assert.match(pointById.HT2.indicationStudy.references[0].url, /#page=112$/);
@@ -2636,7 +2636,7 @@ test('HT2 indication is tied to its reviewed scan rather than inherited manual c
 test('SI shoulder indications retain distinct scan entries and cross-page attribution', () => {
   assert.match(pointById.SI10.indicationStudy.excerpt, /臂痠無力/);
   assert.match(pointById.SI14.indicationStudy.excerpt, /肩胛痛/);
-  assert.doesNotMatch(pointById.SI14.indications, /颈项拘急/);
+  assert.doesNotMatch(pointById.SI14.indications, /頸項拘急/);
   assert.match(pointById.SI15.indicationStudy.excerpt, /目視不明/);
   assert.doesNotMatch(pointById.SI15.indications, /肩背痛/);
   assert.match(pointById.SI15.indicationStudy.references[0].url, /#page=120$/);
@@ -2648,8 +2648,8 @@ test('BL back-shu manual summaries now point to their individual scan entries', 
   assert.match(pointById.BL16.indicationStudy.excerpt, /雷鳴氣逆/);
   assert.match(pointById.BL26.indicationStudy.excerpt, /小便難/);
   assert.match(pointById.BL27.indicationStudy.excerpt, /淋瀝遺溺/);
-  assert.doesNotMatch(pointById.BL27.indications, /遗精/);
-  assert.match(pointById.BL28.indications, /脚膝无力/);
+  assert.doesNotMatch(pointById.BL27.indications, /遺精/);
+  assert.match(pointById.BL28.indications, /腳膝無力/);
   for (const id of ['BL16', 'BL26', 'BL27', 'BL28']) {
     assert.equal(pointById[id].channel, 'BL');
     assert.match(
@@ -2660,9 +2660,9 @@ test('BL back-shu manual summaries now point to their individual scan entries', 
 });
 
 test('ST17 is a landmark note and does not treat historical operative text as modern guidance', () => {
-  assert.match(pointById.ST17.indications, /定位参照/);
-  assert.match(pointById.ST17.indications, /不列治疗主治/);
-  assert.doesNotMatch(pointById.ST17.indications, /现代针灸标准通常/);
+  assert.match(pointById.ST17.indications, /定位參照/);
+  assert.match(pointById.ST17.indications, /不列治療主治/);
+  assert.doesNotMatch(pointById.ST17.indications, /現代針灸標準通常/);
   assert.match(pointById.ST17.indicationStudy.references[0].url, /#page=91$/);
   assert.equal(pointById.ST17.channel, 'ST');
 });
@@ -2675,15 +2675,15 @@ test('volume four scan records resolve their own document and preserve volume th
   ]) {
     const study = pointById[id].indicationStudy;
     assert.ok(study.excerpt.length > 0);
-    assert.match(study.references[0].label, /第四册/);
+    assert.match(study.references[0].label, /第四冊/);
     assert.ok(study.references[0].url.includes('1215_'));
     assert.ok(study.references[0].url.endsWith(`#page=${page}`));
     assert.equal(pointById[id].indications, study.summary);
   }
-  assert.match(pointById.ST17.indicationStudy.references[0].label, /第三册/);
+  assert.match(pointById.ST17.indicationStudy.references[0].label, /第三冊/);
   assert.ok(pointById.ST17.indicationStudy.references[0].url.includes('1214_'));
-  assert.doesNotMatch(pointById.TE11.indications, /头痛/);
-  assert.doesNotMatch(pointById.GB34.indications, /口苦|胁痛/);
+  assert.doesNotMatch(pointById.TE11.indications, /頭痛/);
+  assert.doesNotMatch(pointById.GB34.indications, /口苦|脅痛/);
 });
 
 test('remaining manual scan summaries distinguish canonical points from historical names', () => {
@@ -2694,13 +2694,13 @@ test('remaining manual scan summaries distinguish canonical points from historic
   ]) {
     const p = pointById[id];
     assert.ok(p.indicationStudy.references[0].url.endsWith(`#page=${page}`));
-    assert.match(p.indicationStudy.references[0].label, /第四册/);
+    assert.match(p.indicationStudy.references[0].label, /第四冊/);
     assert.equal(p.indications, p.indicationStudy.summary);
   }
-  assert.equal(pointById.GV3.name, '腰阳关');
+  assert.equal(pointById.GV3.name, '腰陽關');
   assert.equal(pointById.GV3.channel, 'GV');
-  assert.match(pointById.GV3.indicationStudy.note, /不与胆经膝阳关混同/);
-  assert.match(pointById.GV26.indicationStudy.note, /消渴不等同于现代糖尿病/);
+  assert.match(pointById.GV3.indicationStudy.note, /不與膽經膝陽關混同/);
+  assert.match(pointById.GV26.indicationStudy.note, /消渴不等同於現代糖尿病/);
 });
 
 test('carousel navigation releases both subscriptions and reflects changing scroll limits', async () => {
@@ -2792,12 +2792,12 @@ test('all eleven lung points have individual scan citations with unchanged canon
     assert.equal(p.id, `LU${i + 1}`);
     assert.ok(p.indicationStudy.excerpt.length > 0);
     assert.equal(p.indications, p.indicationStudy.summary);
-    assert.match(p.indicationStudy.references[0].label, /第三册/);
+    assert.match(p.indicationStudy.references[0].label, /第三冊/);
     assert.ok(
       p.indicationStudy.references[0].url.endsWith(`#page=${pages[i]}`),
     );
   });
-  assert.match(pointById.LU9.indicationStudy.note, /续至第77页/);
+  assert.match(pointById.LU9.indicationStudy.note, /續至第77頁/);
 });
 
 test('all twenty large intestine points cite their own scanned entries', () => {
@@ -2831,7 +2831,7 @@ test('all nine heart points cite scanned entries without changing Qingling scope
     assert.ok(p.indicationStudy.excerpt.length > 0);
   });
   assert.doesNotMatch(pointById.HT2.indications, /心痛/);
-  assert.match(pointById.HT9.indicationStudy.note, /续左半页首/);
+  assert.match(pointById.HT9.indicationStudy.note, /續左半頁首/);
 });
 
 test('four extra point scans preserve incomplete Taiyang wording and separate adjacent entries', () => {
@@ -2847,9 +2847,9 @@ test('four extra point scans preserve incomplete Taiyang wording and separate ad
     assert.match(study.references[0].label, /卷七/);
   }
   assert.equal(pointById['EX-HN5'].indicationStudy.excerpt, '治眼紅腫');
-  assert.doesNotMatch(pointById['EX-HN5'].indications, /头痛/);
-  assert.match(pointById['EX-HN5'].indicationStudy.note, /沒有|没有完整/);
-  assert.doesNotMatch(pointById['EX-HN12'].indications, /咳喘|久嗽|舌强/);
+  assert.doesNotMatch(pointById['EX-HN5'].indications, /頭痛/);
+  assert.match(pointById['EX-HN5'].indicationStudy.note, /沒有|沒有完整/);
+  assert.doesNotMatch(pointById['EX-HN12'].indications, /咳喘|久嗽|舌強/);
 });
 
 test('extra chapter scan batch preserves page mapping and historical name distinctions', () => {
@@ -2877,13 +2877,13 @@ test('extra chapter scan batch preserves page mapping and historical name distin
   }
   assert.match(
     pointById['EX-UE2'].indicationStudy.note,
-    /不把二白与心包经郄门PC4合并/,
+    /不把二白與心包經郄門PC4合併/,
   );
   assert.match(
     pointById['EX-UE5'].indicationStudy.note,
-    /不由古文覆盖现代位置/,
+    /不由古文覆蓋現代位置/,
   );
-  assert.match(pointById['EX-LE9'].indicationStudy.note, /不等同于足癣/);
+  assert.match(pointById['EX-LE9'].indicationStudy.note, /不等同於足癬/);
   assert.doesNotMatch(pointById['EX-UE11'].indications, /昏厥|急救/);
   assert.equal(
     pointById['EX-UE10'].indicationStudy.excerpt,
@@ -2927,9 +2927,9 @@ test('all small intestine points link the scanned entry including page continuat
     );
     assert.ok(p.indicationStudy.excerpt.length > 0);
   });
-  assert.match(pointById.SI3.indicationStudy.note, /第118页/);
-  assert.match(pointById.SI8.indicationStudy.note, /主治位于第119页/);
-  assert.match(pointById.SI18.indicationStudy.note, /续左半页首/);
+  assert.match(pointById.SI3.indicationStudy.note, /第118頁/);
+  assert.match(pointById.SI8.indicationStudy.note, /主治位於第119頁/);
+  assert.match(pointById.SI18.indicationStudy.note, /續左半頁首/);
 });
 
 test('pericardium scanned entries use volume four and preserve continuation notes', () => {
@@ -2944,8 +2944,8 @@ test('pericardium scanned entries use volume four and preserve continuation note
     );
     assert.ok(p.indicationStudy.excerpt.length > 0);
   });
-  assert.match(pointById.PC5.indicationStudy.note, /主治续至第8页/);
-  assert.match(pointById.PC8.indicationStudy.note, /未用古文覆盖现代坐标/);
+  assert.match(pointById.PC5.indicationStudy.note, /主治續至第8頁/);
+  assert.match(pointById.PC8.indicationStudy.note, /未用古文覆蓋現代座標/);
 });
 
 test('liver scan coverage preserves fourteen modern points without inventing Jimai entry', () => {
@@ -2971,9 +2971,9 @@ test('liver scan coverage preserves fourteen modern points without inventing Jim
     assert.match(p.indicationStudy.references[0].url, /1215_/);
     assert.ok(p.indicationStudy.references[0].url.endsWith(`#page=${page}`));
   }
-  assert.equal(pointById.LR12.name, '急脉');
-  assert.match(pointById.LR10.indicationStudy.note, /手五里分开/);
-  assert.match(pointById.LR11.indicationStudy.note, /不把该断言转写为疗效承诺/);
+  assert.equal(pointById.LR12.name, '急脈');
+  assert.match(pointById.LR10.indicationStudy.note, /手五里分開/);
+  assert.match(pointById.LR11.indicationStudy.note, /不把該斷言轉寫為療效承諾/);
 });
 
 test('triple energizer scanned entries preserve modern order and Qinglengyuan record', () => {
@@ -2990,8 +2990,8 @@ test('triple energizer scanned entries preserve modern order and Qinglengyuan re
       p.indicationStudy.references[0].url.endsWith(`#page=${pages[i]}`),
     );
   });
-  assert.equal(pointById.TE11.name, '清泠渊');
-  assert.match(pointById.TE23.indicationStudy.note, /现代目录顺序保留/);
+  assert.equal(pointById.TE11.name, '清泠淵');
+  assert.match(pointById.TE23.indicationStudy.note, /現代目錄順序保留/);
 });
 
 test('all spleen point studies use scan pages and keep appended cases separate', () => {
@@ -3008,9 +3008,9 @@ test('all spleen point studies use scan pages and keep appended cases separate',
       p.indicationStudy.references[0].url.endsWith(`#page=${pages[i]}`),
     );
   });
-  assert.match(pointById.SP6.indicationStudy.note, /后附妊娠医案/);
-  assert.match(pointById.SP16.indicationStudy.note, /主治续至第107页首/);
-  assert.match(pointById.SP21.indicationStudy.note, /分别置于实、虚语境/);
+  assert.match(pointById.SP6.indicationStudy.note, /後附妊娠醫案/);
+  assert.match(pointById.SP16.indicationStudy.note, /主治續至第107頁首/);
+  assert.match(pointById.SP21.indicationStudy.note, /分別置於實、虛語境/);
 });
 
 test('all kidney scans map to modern point IDs with historical title notes', () => {
@@ -3027,9 +3027,9 @@ test('all kidney scans map to modern point IDs with historical title notes', () 
       p.indicationStudy.references[0].url.endsWith(`#page=${pages[i]}`),
     );
   });
-  assert.match(pointById.KI20.indicationStudy.note, /足通谷分开/);
+  assert.match(pointById.KI20.indicationStudy.note, /足通谷分開/);
   assert.match(pointById.KI26.indicationStudy.note, /保留彧中/);
-  assert.match(pointById.KI3.indicationStudy.note, /脉诊预后论述未并入/);
+  assert.match(pointById.KI3.indicationStudy.note, /脈診預後論述未併入/);
 });
 
 test('all conception vessel scans point to their own entry or continuation', () => {
@@ -3046,8 +3046,8 @@ test('all conception vessel scans point to their own entry or continuation', () 
       p.indicationStudy.references[0].url.endsWith(`#page=${pages[i]}`),
     );
   });
-  assert.match(pointById.CV15.indicationStudy.note, /条目起于第42页/);
-  assert.match(pointById.CV22.indicationStudy.note, /疗效论述未并入/);
+  assert.match(pointById.CV15.indicationStudy.note, /條目起於第42頁/);
+  assert.match(pointById.CV22.indicationStudy.note, /療效論述未併入/);
 });
 
 test('governing vessel scans preserve the modern catalog and historical omissions', () => {
@@ -3089,9 +3089,9 @@ test('governing vessel scans preserve the modern catalog and historical omission
   assert.ok(pointById['GV24+']);
   assert.match(
     pointById.GV10.indicationStudy.note,
-    /不能据此归为《素问》直接引文/,
+    /不能據此歸為《素問》直接引文/,
   );
-  assert.match(pointById.GV24.indicationStudy.note, /条起于第51页/);
+  assert.match(pointById.GV24.indicationStudy.note, /條起於第51頁/);
 });
 
 test('posture-dependent small intestine landmarks reach point details without changing mesh bindings', () => {
@@ -3099,13 +3099,13 @@ test('posture-dependent small intestine landmarks reach point details without ch
     assert.ok(standardLocations[id].postureNote);
     assert.ok(
       pointById[id].location.includes(
-        `体位提示：${standardLocations[id].postureNote}`,
+        `體位提示：${standardLocations[id].postureNote}`,
       ),
     );
     assert.equal(standardLocations[id].pdfPage, 24);
   }
-  assert.match(pointById.SI6.location, /手掌旋后/);
-  assert.match(pointById.SI9.location, /臂内收/);
+  assert.match(pointById.SI6.location, /手掌旋後/);
+  assert.match(pointById.SI9.location, /臂內收/);
   assert.doesNotMatch(
     describeStandardLocation({
       region: '手',
@@ -3113,7 +3113,7 @@ test('posture-dependent small intestine landmarks reach point details without ch
       clause: 'test',
       pdfPage: 1,
     }),
-    /体位提示|undefined/,
+    /體位提示|undefined/,
   );
 });
 
@@ -3124,14 +3124,14 @@ test('national posture notes survive both standard and authored LI location rend
   assert.equal(notes.length, 50);
   for (const [id, p] of notes) {
     assert.ok(pointById[id].location.includes(p.postureNote), id);
-    assert.equal(pointById[id].location.split('体位提示：').length, 2, id);
+    assert.equal(pointById[id].location.split('體位提示：').length, 2, id);
   }
-  assert.match(pointById.LI15.location, /前方较深者对应肩髃/);
-  assert.match(pointById.TE14.location, /后方者对应肩髎/);
-  assert.match(pointById.ST7.location, /闭口/);
-  assert.match(pointById.SI19.location, /微张口/);
-  assert.match(pointById.PC6.location, /续于PDF第34页/);
-  assert.match(pointById.CV1.location, /续于PDF第44页/);
+  assert.match(pointById.LI15.location, /前方較深者對應肩髃/);
+  assert.match(pointById.TE14.location, /後方者對應肩髎/);
+  assert.match(pointById.ST7.location, /閉口/);
+  assert.match(pointById.SI19.location, /微張口/);
+  assert.match(pointById.PC6.location, /續於PDF第34頁/);
+  assert.match(pointById.CV1.location, /續於PDF第44頁/);
 });
 
 test('upper stomach scans follow historical entry order and preserve ST17 landmark status', () => {
@@ -3159,7 +3159,7 @@ test('upper stomach scans follow historical entry order and preserve ST17 landma
     assert.match(p.indicationStudy.references[0].url, /1214_/);
     assert.ok(p.indicationStudy.references[0].url.endsWith(`#page=${page}`));
   }
-  assert.match(pointById.ST15.indicationStudy.note, /续至第91页/);
+  assert.match(pointById.ST15.indicationStudy.note, /續至第91頁/);
   assert.match(pointById.ST17.indicationStudy.references[0].url, /#page=91$/);
   assert.equal(channels.find((c) => c.id === 'ST').points.length, 45);
 });
@@ -3181,7 +3181,7 @@ test('all stomach points now link to their own scan including historical lower l
   });
   assert.match(pointById.ST37.indicationStudy.note, /古籍上廉/);
   assert.match(pointById.ST39.indicationStudy.note, /古籍下廉/);
-  assert.match(pointById.ST25.indicationStudy.note, /续至第93页/);
+  assert.match(pointById.ST25.indicationStudy.note, /續至第93頁/);
 });
 
 test('gallbladder scans cover all 44 modern points without conflating shared historical names', () => {
@@ -3199,11 +3199,11 @@ test('gallbladder scans cover all 44 modern points without conflating shared his
       p.indicationStudy.references[0].url.endsWith(`#page=${pages[i]}`),
     );
   });
-  assert.match(pointById.GB11.indicationStudy.note, /头窍阴/);
-  assert.match(pointById.GB44.indicationStudy.note, /足窍阴/);
-  assert.match(pointById.GB15.indicationStudy.note, /头临泣/);
-  assert.match(pointById.GB41.indicationStudy.note, /足临泣/);
-  assert.match(pointById.GB33.indicationStudy.note, /不与督脉腰阳关混同/);
+  assert.match(pointById.GB11.indicationStudy.note, /頭竅陰/);
+  assert.match(pointById.GB44.indicationStudy.note, /足竅陰/);
+  assert.match(pointById.GB15.indicationStudy.note, /頭臨泣/);
+  assert.match(pointById.GB41.indicationStudy.note, /足臨泣/);
+  assert.match(pointById.GB33.indicationStudy.note, /不與督脈腰陽關混同/);
 });
 
 test('upper bladder scans use each entry including cross-page back shu summaries', () => {
@@ -3216,8 +3216,8 @@ test('upper bladder scans use each entry including cross-page back shu summaries
     assert.match(p.indicationStudy.references[0].url, /1214_/);
     assert.ok(p.indicationStudy.references[0].url.endsWith(`#page=${page}`));
   });
-  assert.match(pointById.BL11.indicationStudy.note, /条目起于第125页/);
-  assert.match(pointById.BL19.indicationStudy.note, /未将四花等同单个胆俞穴/);
+  assert.match(pointById.BL11.indicationStudy.note, /條目起於第125頁/);
+  assert.match(pointById.BL19.indicationStudy.note, /未將四花等同單個膽俞穴/);
   assert.equal(channels.find((c) => c.id === 'BL').points.length, 67);
 });
 
@@ -3257,9 +3257,9 @@ test('middle bladder scans distinguish sacral and outer back entries', () => {
     assert.match(p.indicationStudy.references[0].url, /1214_/);
     assert.ok(p.indicationStudy.references[0].url.endsWith(`#page=${page}`));
   }
-  assert.match(pointById.BL33.indicationStudy.note, /与此前中膂俞分开/);
-  assert.match(pointById.BL43.indicationStudy.note, /不作现代疗效证据/);
-  assert.match(pointById.BL44.indicationStudy.note, /续至第134页/);
+  assert.match(pointById.BL33.indicationStudy.note, /與此前中膂俞分開/);
+  assert.match(pointById.BL43.indicationStudy.note, /不作現代療效證據/);
+  assert.match(pointById.BL44.indicationStudy.note, /續至第134頁/);
 });
 
 test('all 67 bladder entries now have scan references and lower leg cross-pages remain explicit', () => {
@@ -3297,8 +3297,8 @@ test('all 67 bladder entries now have scan references and lower leg cross-pages 
       ),
     );
   }
-  assert.match(pointById.BL66.indicationStudy.note, /不与肾经腹通谷混同/);
-  assert.match(pointById.BL60.indicationStudy.note, /续至第138页/);
+  assert.match(pointById.BL66.indicationStudy.note, /不與腎經腹通谷混同/);
+  assert.match(pointById.BL60.indicationStudy.note, /續至第138頁/);
 });
 
 test('standard indication references reach the actual atlas without changing location or classic sources', () => {
@@ -3338,8 +3338,8 @@ test('standard indication references reach the actual atlas without changing loc
 test('Sishencong and Dingchuan prioritize checked standard clauses and preserve separate hospital accounts', async () => {
   const { getIndicationStudies } = await import('../lib/indication-studies.ts');
   const expected = [
-    ['EX-HN1', '5.1.1', 33, 'yxhospital.com', '头痛、眩晕；失眠、健忘；癫痫。'],
-    ['EX-B1', '5.3.1', 34, 'yantai.gov.cn', '气喘、咳嗽。'],
+    ['EX-HN1', '5.1.1', 33, 'yxhospital.com', '頭痛、眩暈；失眠、健忘；癲癇。'],
+    ['EX-B1', '5.3.1', 34, 'yantai.gov.cn', '氣喘、咳嗽。'],
   ];
   for (const [id, clause, page, hospitalHost, summary] of expected) {
     const point = pointById[id];
@@ -3638,7 +3638,7 @@ test('thyroid level keeps the standard anterior middle posterior point relations
     assert.ok(
       Math.abs(pointById[id].position[1] - pointById.ST9.position[1]) < 1e-9,
     );
-    assert.match(pointById[id].modelPlacement, /肌肉边界仍待复核/);
+    assert.match(pointById[id].modelPlacement, /肌肉邊界仍待複核/);
   }
   assert.ok(pointById.ST9.position[2] > pointById.LI18.position[2]);
   assert.ok(pointById.LI18.position[2] > pointById.SI16.position[2]);
@@ -3665,7 +3665,7 @@ test('LI17 shares the ST10 level and remains posterior without moving its transv
   assert.equal(position[0], data.cricoidLevel.previousPosition[0]);
   assert.ok(position[2] < pointById.ST10.position[2]);
   assert.ok(position[1] < pointById.LI18.position[1]);
-  assert.match(pointById.LI17.modelPlacement, /扶突直下关系仍需解剖复核/);
+  assert.match(pointById.LI17.modelPlacement, /扶突直下關係仍需解剖複核/);
   for (const path of [data.routes.LI[0], liCourse.paths.neck.points]) {
     assert.ok(
       path.some((p) => p.every((v, i) => Math.abs(v - position[i]) < 1e-9)),
@@ -3683,7 +3683,7 @@ test('LI17 shares the ST10 level and remains posterior without moving its transv
 test('checked WHO illustrations retain edition page mapping and the point detail gate', async () => {
   const { getLocationIllustration, whoLocationIllustrationSource } =
     await import('../lib/location-illustrations.ts');
-  assert.equal(whoLocationIllustrationSource.edition, '2009 修订重印版');
+  assert.equal(whoLocationIllustrationSource.edition, '2009 修訂重印版');
   assert.equal(whoLocationIllustrationSource.pdfPages, 258);
   for (const [id, page, printed] of [
     ['LI17', 51, 42],
@@ -3725,7 +3725,7 @@ test('supplemental scans preserve independently attributed primary accounts and 
     pointById['GV24+'].additionalIndicationStudies[0].excerpt,
     '治小兒驚風',
   );
-  assert.match(pointById['EX-LE1'].indications, /膝部红肿/);
+  assert.match(pointById['EX-LE1'].indications, /膝部紅腫/);
   assert.equal(
     pointById['EX-LE1'].additionalIndicationStudies[0].excerpt,
     '治腿痛',
@@ -3785,7 +3785,7 @@ test('kidney collateral wraps the retained heel surface without cutting through 
     fitted.heelBinding.position[2] < Math.min(route[0][2], route.at(-1)[2]),
   );
   assert.equal(luoChannels.find((c) => c.id === 'LUO-KI').points.length, 1);
-  assert.match(getLuoStudy('LUO-KI').note, /不认定为固定终点/);
+  assert.match(getLuoStudy('LUO-KI').note, /不認定為固定終點/);
   const glb = readFileSync(
     new URL('../public/models/human-learning.glb', import.meta.url),
   );
@@ -4006,7 +4006,7 @@ test('anterior thigh levels follow standard 2/3/4/6-cun relationships and shared
         id,
       );
     });
-    assert.match(p.modelPlacement, /真实骨点、肌缘及横向距离仍需解剖校准/);
+    assert.match(p.modelPlacement, /真實骨點、肌緣及橫向距離仍需解剖校準/);
   }
   assert.ok(
     y('ST32') > y('LR9') && y('LR9') > y('ST33') && y('ST33') > y('ST34'),
@@ -4073,7 +4073,7 @@ test('shared finger, toe and knee group markers coincide with their canonical an
         );
     }
     assert.deepEqual(p.position, p.positions[0]);
-    assert.match(p.modelPlacement, /同位的标记已共用对应模型坐标/);
+    assert.match(p.modelPlacement, /同位的標記已共用對應模型座標/);
     assert.notEqual(
       p,
       pointById[Object.values(refs)[0]],
@@ -4084,7 +4084,7 @@ test('shared finger, toe and knee group markers coincide with their canonical an
   assert.ok(pointById['EX-LE4'].position[0] < pointById.ST35.position[0]);
   assert.match(
     pointById['EX-LE4'].modelPlacement,
-    /实际髌韧带边缘和凹陷仍待解剖校核/,
+    /實際髕韌帶邊緣和凹陷仍待解剖校核/,
   );
   assert.equal(canInspectPoint('EX', pointById.ST35), false);
   assert.equal(canInspectPoint('ST', pointById['EX-LE5']), false);
@@ -4117,10 +4117,10 @@ test('GB32 and SP11 respect their explicit longitudinal reference ratios', () =>
     Math.abs(pointById.SP11.position[0] - audit.previousPositions.SP11[0]) <
       1e-8,
   );
-  assert.match(pointById.GB32.modelPlacement, /髂胫束后缘仍为待核对/);
+  assert.match(pointById.GB32.modelPlacement, /髂脛束後緣仍為待核對/);
   assert.match(
     pointById.SP11.modelPlacement,
-    /完整连线及肌缘动脉标志仍需解剖校核/,
+    /完整連線及肌緣動脈標誌仍需解剖校核/,
   );
   for (const [ch, id, key] of [
     ['GB', 'GB32', 'leg'],
@@ -4169,7 +4169,7 @@ test('nail-root points use proximal same-source borders instead of the free nail
     assert.ok(projected[1] < 0);
     const old = ref.previousBinding.position.map((v, k) => v - ref.previousBinding.offset[k]);
     assert.ok(local(old)[1] > 0, id + ' former distal placement');
-    assert.match(pointById[id].modelPlacement, /0.1指寸距离及真实甲沟边界仍待核对/);
+    assert.match(pointById[id].modelPlacement, /0.1指寸距離及真實甲溝邊界仍待核對/);
     assert.equal(data.points[id].regionRule, 'provisional-nail-root');
   }
   assert.equal(r.nailGroupSource.sourceObjSha256, '8e761e6624b8f54536409135d1636da63b32486a90d4897f84e121d144f6fb4c');
@@ -4193,8 +4193,8 @@ test('middle fingertip and its shared Shixuan member use the reviewed terminal s
   skin.forEach((v, k) => assert.ok(Math.abs(bound.position[k] - bound.offset[k] - v) < 1e-12));
   assert.ok(r.surfaceSeparationMm > 5 && r.surfaceSeparationMm < 7);
   assert.deepEqual(pointById['EX-UE11'].positions[2], pointById.PC9.position);
-  assert.match(pointById.PC9.modelPlacement, /中指末端顶点/);
-  assert.match(pointById.PC9.modelPlacement, /不代表骨骼、甲根或个体临床定位均已校准/);
+  assert.match(pointById.PC9.modelPlacement, /中指末端頂點/);
+  assert.match(pointById.PC9.modelPlacement, /不代表骨骼、甲根或個體臨牀定位均已校準/);
   const pc = JSON.parse(readFileSync(new URL('../lib/pc-course.json', import.meta.url)));
   assert.deepEqual(pc.paths.middle.points.at(-1), pointById.PC9.position);
   assert.ok(!pc.paths.middle.points.some((p) => p.every((v, k) => v === r.previousBinding.position[k])));
@@ -4219,8 +4219,8 @@ test('reviewed lip landmarks bind to retained surface morphology and all affecte
     assert.ok(item.extremum === 'maximum' ? neighbors.every((p) => p[2] < skin[2]) : neighbors.every((p) => p[2] > skin[2]));
     assert.deepEqual(pointById[id].position, [skin[0], skin[1], skin[2] + .003]);
     assert.equal(item.reviewStatus, 'model-surface-reviewed');
-    assert.match(pointById[id].modelPlacement, /仅完成此模型的体表形态对应/);
-    assert.match(pointById[id].modelPlacement, /非个体临床定位验证/);
+    assert.match(pointById[id].modelPlacement, /僅完成此模型的體表形態對應/);
+    assert.match(pointById[id].modelPlacement, /非個體臨牀定位驗證/);
   }
   assert.equal(review.points.GV27.glbVertex, 466);
   assert.equal(review.points.CV24.glbVertex, 724);
@@ -4268,9 +4268,9 @@ test('nasal tip uses its mesh landmark while philtrum and mouth corrections rema
   assert.ok(distance(pointById.GV26.position, [skin[0], skin[1], skin[2] + .003]) < 1e-7);
   const y = (id) => pointById[id].position[1];
   assert.ok(y('GV25') > y('GV26') && y('GV26') > y('GV27') && y('GV27') > y('ST4') && y('ST4') > y('CV24'));
-  assert.match(pointById.GV26.modelPlacement, /模型沟界仍待独立校核/);
-  assert.match(pointById.ST4.modelPlacement, /口角旁开0.4寸及沟线形态仍需独立核实/);
-  for (const id of ['GV26', 'ST4']) assert.match(pointById[id].modelPlacement, /尚不列为完整解剖校准通过/);
+  assert.match(pointById.GV26.modelPlacement, /模型溝界仍待獨立校核/);
+  assert.match(pointById.ST4.modelPlacement, /口角旁開0.4寸及溝線形態仍需獨立核實/);
+  for (const id of ['GV26', 'ST4']) assert.match(pointById[id].modelPlacement, /尚不列為完整解剖校準通過/);
   for (const { ch, key, ids } of [{ ch: 'gv', key: 'head', ids: ['GV25', 'GV26'] }, { ch: 'li', key: 'oral', ids: ['ST4'] }, { ch: 'li', key: 'face', ids: ['ST4', 'GV26'] }, { ch: 'yangqiao', key: 'body', ids: ['ST4'] }]) {
     const course = JSON.parse(readFileSync(new URL(`../lib/${ch}-course.json`, import.meta.url)));
     for (const id of ids) {
@@ -4298,8 +4298,8 @@ test('infraorbital points share the same-source eye reference while anatomical l
     assert.ok(Math.abs(pointById[id].position[0] - axis) < 1e-10);
     assert.ok(Math.abs(pointById[id].position[1] - r.previousPositions[id][1]) < 1e-10);
     assert.ok(pointById[id].position[2] > .145);
-    assert.match(pointById[id].modelPlacement, /眼部前极只是模型参考/);
-    assert.match(pointById[id].modelPlacement, /仍待解剖核对/);
+    assert.match(pointById[id].modelPlacement, /眼部前極只是模型參考/);
+    assert.match(pointById[id].modelPlacement, /仍待解剖核對/);
   }
   assert.equal(r.rejectedST1UpwardProbe.dy, .0005);
   assert.ok(r.rejectedST1UpwardProbe.position[2] < r.eyes.l.frontPoleCenter[2] - .02);
@@ -4374,13 +4374,13 @@ test('postauricular scalp arc preserves surface edges, standard fractions and br
     const covered = lengths.slice(0, p.segment).reduce((a, b) => a + b, 0) + lengths[p.segment] * p.segmentFraction;
     assert.ok(Math.abs(covered / total - fraction) < 1e-10);
     assert.equal(data.points[id].regionRule, 'provisional-ear-arc');
-    assert.match(pointById[id].modelPlacement, /两端、耳轮弧线及乳突标志仍待解剖核对/);
+    assert.match(pointById[id].modelPlacement, /兩端、耳輪弧線及乳突標誌仍待解剖核對/);
     assert.ok(pointById[id].position[2] > r.previousPositions[id][2] + .02, 'old posterior displacement removed');
   }
   assert.ok(pointById.TE20.position[1] > pointById.TE19.position[1]);
   assert.ok(pointById.TE19.position[1] > pointById.TE18.position[1]);
   assert.ok(pointById.TE18.position[1] > pointById.TE17.position[1]);
-  assert.match(pointById.TE20.modelPlacement, /耳郭向前对折后的耳尖正对发际/);
+  assert.match(pointById.TE20.modelPlacement, /耳郭向前對摺後的耳尖正對髮際/);
   for (const { ch, path, ids } of [{ ch: 'te', path: 'upper', ids: ['TE18', 'TE19', 'TE20'] }, { ch: 'bl', path: 'ear', ids: ['TE20'] }]) {
     const c = JSON.parse(readFileSync(new URL(`../lib/${ch}-course.json`, import.meta.url)));
     for (const id of ids) {
@@ -4405,14 +4405,14 @@ test('ear surface references correct the preauricular row and lobe relation with
     assert.ok(Math.abs(p[1] - vertex(vid)[1]) < 1e-9);
     assert.ok(p[2] > vertex(vid)[2]);
     assert.ok(Math.abs(p[2] - r.earFrontZ) < 1e-9);
-    assert.match(pointById[id].modelPlacement, /下颌骨髁突及微张口凹陷仍待解剖核对/);
+    assert.match(pointById[id].modelPlacement, /下頜骨髁突及微張口凹陷仍待解剖核對/);
   }
   assert.ok(pointById.TE21.position[1] > pointById.SI19.position[1]);
   assert.ok(pointById.SI19.position[1] > pointById.GB2.position[1]);
   const lobeRear = vertex(11883);
   assert.deepEqual(pointById.TE17.position, [lobeRear[0] + .003, lobeRear[1], lobeRear[2]]);
   assert.ok(pointById.TE17.position[2] < vertex(12330)[2]);
-  assert.match(pointById.TE17.modelPlacement, /乳突下端及其前方凹陷仍待解剖核对/);
+  assert.match(pointById.TE17.modelPlacement, /乳突下端及其前方凹陷仍待解剖核對/);
   for (const { ch, path, id } of [
     { ch: 'si', path: 'ear', id: 'SI19' },
     { ch: 'si', path: 'earDepth', id: 'SI19' },
@@ -4452,9 +4452,9 @@ test('canthus review distinguishes retained directions from the corrected cheek 
   assert.equal(pointById.SI18.position[0], outer[0]);
   assert.equal(pointById.SI18.position[1], r.previousPositions.SI18[1]);
   assert.ok(Math.abs(r.previousPositions.SI18[0] - outer[0]) > .01);
-  assert.match(pointById.SI18.modelPlacement, /颧骨下缘凹陷仍待解剖核对/);
-  assert.match(pointById.BL1.modelPlacement, /闭目体位、内上方0.1寸与眶内侧壁凹陷仍待解剖核对/);
-  assert.match(pointById.GB1.modelPlacement, /外侧0.5寸及局部凹陷仍待解剖核对/);
+  assert.match(pointById.SI18.modelPlacement, /顴骨下緣凹陷仍待解剖核對/);
+  assert.match(pointById.BL1.modelPlacement, /閉目體位、內上方0.1寸與眶內側壁凹陷仍待解剖核對/);
+  assert.match(pointById.GB1.modelPlacement, /外側0.5寸及局部凹陷仍待解剖核對/);
   for (const { ch, paths } of [{ ch: 'si', paths: ['neck', 'outer', 'inner', 'cheek'] }, { ch: 'te', paths: ['upper'] }, { ch: 'gb', paths: ['face'] }]) {
     const c = JSON.parse(readFileSync(new URL(`../lib/${ch}-course.json`, import.meta.url)));
     for (const path of paths) {
@@ -4476,7 +4476,7 @@ test('LI19 remains level with its provisional philtrum reference and the crossed
   assert.ok(Math.abs(pointById.LI19.position[0] - r.previousPosition[0]) < 1e-9);
   assert.ok(pointById.LI19.position[1] > pointById.GV27.position[1], 'LI19 above upper lip, not below mouth');
   assert.ok(pointById.LI19.position[1] - r.previousPosition[1] > .03);
-  assert.match(pointById.LI19.modelPlacement, /水沟的人中沟边界、鼻孔外缘及旁开0.5寸仍待解剖核对/);
+  assert.match(pointById.LI19.modelPlacement, /水溝的人中溝邊界、鼻孔外緣及旁開0.5寸仍待解剖核對/);
   const c = JSON.parse(readFileSync(new URL('../lib/li-course.json', import.meta.url)));
   for (const id of ['LI19', 'GV26']) assert.ok(c.paths.face.points.some((p) => p.every((v, k) => v === pointById[id].position[k])), id);
   assert.ok(!c.paths.face.points.some((p) => p.every((v, k) => v === r.previousPosition[k])));
@@ -4491,7 +4491,7 @@ test('abdominal shared levels update bilateral Dai references and preserve uncer
     assert.deepEqual(r.referencePositions[ref], pointById[ref].position);
     assert.deepEqual(data.points[id].sharedLevelRefs, [ref]);
     assert.ok(Math.abs(pointById[id].position[1] - pointById[ref].position[1]) < 1e-9);
-    assert.match(pointById[id].modelPlacement, /仍待解剖核对/);
+    assert.match(pointById[id].modelPlacement, /仍待解剖核對/);
   }
   assert.ok(Math.abs(pointById.GB26.position[0]) < .2, 'GB26 must not project onto a forearm');
   const dai = channels.find((c) => c.id === 'DAI');

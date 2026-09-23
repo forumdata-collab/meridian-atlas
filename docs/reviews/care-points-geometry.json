@@ -1,0 +1,598 @@
+{
+ "scope": "docs/DATA.md 所述層級：表面吸附 + 可重算比例規則 = 幾何證據，非解剖校準。",
+ "source": {
+  "registrationSha256": "7251b2cd800e02a8ae98532507f8057f245e839acb66636f474a7a341518b580",
+  "modelSha256": "1be7f0f1fcb0e79de628fb03ec0d7f6a414813e95798ebfe0140d66c1fb4a579",
+  "scales": {
+   "cunAbdomenUp": 0.019198,
+   "cunCalfLateral16": 0.026228,
+   "cunCalfMedial15": 0.026884,
+   "cunBack3": 0.029327,
+   "meshMaxY": 1.85,
+   "sources": {
+    "cunAbdomenUp": "GB/T 12346-2021 表1（胸劍聯合→臍中 8寸）",
+    "cunCalfLateral16": "GB/T 12346-2021 表1（膝中→外踝尖 16寸）",
+    "cunCalfMedial15": "GB/T 12346-2021 表1（膝中→內踝尖 15寸）",
+    "cunBack3": "GB/T 12346-2021 表1（後正中線→肩胛骨內側緣 3寸），以 BL43 膏肓（旁開3寸）反推"
+   }
+  }
+ },
+ "points": {
+  "LR3": {
+   "id": "LR3",
+   "name": "太衝",
+   "topic": "壓力",
+   "flags": [],
+   "method": "nearest-triangle",
+   "regionRule": "regional-template",
+   "seedDistanceMm": 3.4,
+   "sides": 1,
+   "position": [
+    0.22496,
+    0.04514,
+    0.14262
+   ],
+   "y": 0.04514,
+   "x": 0.22496,
+   "integrity": [
+    {
+     "barySum": 1.0,
+     "baryMin": 0.146777132,
+     "offsetMm": 3.0,
+     "positionErrMm": 0.0
+    }
+   ],
+   "zRayParity": 0
+  },
+  "LI4": {
+   "id": "LI4",
+   "name": "合谷",
+   "topic": "壓力",
+   "flags": [],
+   "method": "nearest-triangle",
+   "regionRule": "digit-landmark",
+   "seedDistanceMm": 9.6,
+   "sides": 1,
+   "position": [
+    0.56185,
+    1.07751,
+    0.00964
+   ],
+   "y": 1.07751,
+   "x": 0.56185,
+   "integrity": [
+    {
+     "barySum": 1.0,
+     "baryMin": 0.038708372,
+     "offsetMm": 3.0,
+     "positionErrMm": 0.0
+    }
+   ],
+   "zRayParity": 2
+  },
+  "PC6": {
+   "id": "PC6",
+   "name": "內關",
+   "topic": "壓力",
+   "flags": [],
+   "method": "nearest-triangle",
+   "regionRule": "joint-forearm",
+   "seedDistanceMm": 6.3,
+   "sides": 1,
+   "position": [
+    0.4806,
+    1.13387,
+    0.0448
+   ],
+   "y": 1.13387,
+   "x": 0.4806,
+   "integrity": [
+    {
+     "barySum": 1.0,
+     "baryMin": 0.0,
+     "offsetMm": 3.0,
+     "positionErrMm": 0.0
+    }
+   ],
+   "zRayParity": 0
+  },
+  "GV20": {
+   "id": "GV20",
+   "name": "百會",
+   "topic": "壓力",
+   "flags": [],
+   "method": "nearest-triangle",
+   "regionRule": "regional-template",
+   "seedDistanceMm": 10.6,
+   "sides": 1,
+   "position": [
+    0.0,
+    1.84303,
+    0.01508
+   ],
+   "y": 1.84303,
+   "x": 0.0,
+   "integrity": [
+    {
+     "barySum": 1.0,
+     "baryMin": 0.0,
+     "offsetMm": 3.0,
+     "positionErrMm": 0.0
+    }
+   ],
+   "zRayParity": 4
+  },
+  "HT7": {
+   "id": "HT7",
+   "name": "神門",
+   "topic": "失眠",
+   "flags": [],
+   "method": "nearest-triangle",
+   "regionRule": "joint-forearm",
+   "seedDistanceMm": 2.3,
+   "sides": 1,
+   "position": [
+    0.48711,
+    1.08477,
+    0.03203
+   ],
+   "y": 1.08477,
+   "x": 0.48711,
+   "integrity": [
+    {
+     "barySum": 1.0,
+     "baryMin": 0.076070551,
+     "offsetMm": 3.0,
+     "positionErrMm": 0.0
+    }
+   ],
+   "zRayParity": 0
+  },
+  "N-HN54": {
+   "id": "N-HN54",
+   "name": "安眠",
+   "topic": "失眠",
+   "flags": [],
+   "method": "nearest-triangle",
+   "regionRule": "regional-template",
+   "seedDistanceMm": 26.4,
+   "sides": 1,
+   "position": [
+    0.05049,
+    1.59359,
+    -0.0096
+   ],
+   "y": 1.59359,
+   "x": 0.05049,
+   "integrity": [
+    {
+     "barySum": 1.0,
+     "baryMin": 0.017863661,
+     "offsetMm": 3.0,
+     "positionErrMm": 0.0
+    }
+   ],
+   "zRayParity": 2
+  },
+  "SP6": {
+   "id": "SP6",
+   "name": "三陰交",
+   "topic": "失眠・水腫",
+   "flags": [],
+   "method": "lower-leg-horizontal-ray",
+   "regionRule": "lower-leg-proportional",
+   "seedDistanceMm": 23.0,
+   "sides": 1,
+   "position": [
+    0.2025,
+    0.1741,
+    0.00725
+   ],
+   "y": 0.1741,
+   "x": 0.2025,
+   "integrity": [
+    {
+     "barySum": 1.0,
+     "baryMin": 0.240840814,
+     "offsetMm": 3.0,
+     "positionErrMm": 0.0
+    }
+   ],
+   "zRayParity": 0
+  },
+  "KI1": {
+   "id": "KI1",
+   "name": "湧泉",
+   "topic": "失眠・增高",
+   "flags": [],
+   "method": "nearest-triangle",
+   "regionRule": "sole-landmark",
+   "seedDistanceMm": 8.5,
+   "sides": 1,
+   "position": [
+    0.24096,
+    -0.00068,
+    0.12632
+   ],
+   "y": -0.00068,
+   "x": 0.24096,
+   "integrity": [
+    {
+     "barySum": 1.0,
+     "baryMin": 0.0,
+     "offsetMm": 3.0,
+     "positionErrMm": 0.0
+    }
+   ],
+   "zRayParity": 0
+  },
+  "GV24+": {
+   "id": "GV24+",
+   "name": "印堂",
+   "topic": "失眠",
+   "flags": [],
+   "method": "front-z-ray",
+   "regionRule": "regional-template",
+   "seedDistanceMm": 14.4,
+   "sides": 1,
+   "position": [
+    0.0,
+    1.742,
+    0.17287
+   ],
+   "y": 1.742,
+   "x": 0.0,
+   "integrity": [
+    {
+     "barySum": 1.0,
+     "baryMin": -0.0,
+     "offsetMm": 3.0,
+     "positionErrMm": 0.0
+    }
+   ],
+   "zRayParity": 0
+  },
+  "CV9": {
+   "id": "CV9",
+   "name": "水分",
+   "topic": "水腫",
+   "flags": [],
+   "method": "front-z-ray",
+   "regionRule": "proportional-torso",
+   "seedDistanceMm": 15.4,
+   "sides": 1,
+   "position": [
+    0.0,
+    1.13061,
+    0.15755
+   ],
+   "y": 1.13061,
+   "x": 0.0,
+   "integrity": [
+    {
+     "barySum": 1.0,
+     "baryMin": 0.0,
+     "offsetMm": 3.0,
+     "positionErrMm": 0.0
+    }
+   ],
+   "zRayParity": 0
+  },
+  "SP9": {
+   "id": "SP9",
+   "name": "陰陵泉",
+   "topic": "水腫",
+   "flags": [],
+   "method": "lower-leg-horizontal-ray",
+   "regionRule": "lower-leg-proportional",
+   "seedDistanceMm": 48.1,
+   "sides": 1,
+   "position": [
+    0.13334,
+    0.44294,
+    0.03085
+   ],
+   "y": 0.44294,
+   "x": 0.13334,
+   "integrity": [
+    {
+     "barySum": 1.0,
+     "baryMin": 0.300207557,
+     "offsetMm": 3.0,
+     "positionErrMm": 0.0
+    }
+   ],
+   "zRayParity": 0
+  },
+  "ST36": {
+   "id": "ST36",
+   "name": "足三里",
+   "topic": "水腫・增高",
+   "flags": [],
+   "method": "front-z-ray",
+   "regionRule": "lower-leg-proportional",
+   "seedDistanceMm": 26.4,
+   "sides": 1,
+   "position": [
+    0.20439,
+    0.41624,
+    0.06721
+   ],
+   "y": 0.41624,
+   "x": 0.20439,
+   "integrity": [
+    {
+     "barySum": 1.0,
+     "baryMin": 0.034649173,
+     "offsetMm": 3.0,
+     "positionErrMm": 0.0
+    }
+   ],
+   "zRayParity": 0
+  },
+  "GV12": {
+   "id": "GV12",
+   "name": "身柱",
+   "topic": "增高",
+   "flags": [],
+   "method": "back-z-ray",
+   "regionRule": "regional-template",
+   "seedDistanceMm": 18.7,
+   "sides": 1,
+   "position": [
+    0.0,
+    1.44574,
+    -0.05712
+   ],
+   "y": 1.44574,
+   "x": 0.0,
+   "integrity": [
+    {
+     "barySum": 1.0,
+     "baryMin": -0.0,
+     "offsetMm": 3.0,
+     "positionErrMm": 0.0
+    }
+   ],
+   "zRayParity": 4
+  },
+  "BL20": {
+   "id": "BL20",
+   "name": "脾俞",
+   "topic": "增高",
+   "flags": [],
+   "method": "back-z-ray",
+   "regionRule": "shared-thoracic-level",
+   "seedDistanceMm": 3.1,
+   "sides": 1,
+   "position": [
+    0.04081,
+    1.22968,
+    -0.02398
+   ],
+   "y": 1.22968,
+   "x": 0.04081,
+   "integrity": [
+    {
+     "barySum": 1.0,
+     "baryMin": 0.238404518,
+     "offsetMm": 3.0,
+     "positionErrMm": 0.0
+    }
+   ],
+   "zRayParity": 2
+  },
+  "BL23": {
+   "id": "BL23",
+   "name": "腎俞",
+   "topic": "增高",
+   "flags": [],
+   "method": "back-z-ray",
+   "regionRule": "shared-lumbosacral-level",
+   "seedDistanceMm": 3.9,
+   "sides": 1,
+   "position": [
+    0.03922,
+    1.1621,
+    -0.03029
+   ],
+   "y": 1.1621,
+   "x": 0.03922,
+   "integrity": [
+    {
+     "barySum": 1.0,
+     "baryMin": 0.070367916,
+     "offsetMm": 3.0,
+     "positionErrMm": 0.0
+    }
+   ],
+   "zRayParity": 2
+  }
+ },
+ "findings": [],
+ "checks": [
+  {
+   "id": "CV9",
+   "rule": "臍中上 1 寸",
+   "expectedY": 1.13061,
+   "actualY": 1.13061,
+   "deviationMm": -0.0,
+   "toleranceMm": 6.0,
+   "ok": true,
+   "citation": "GB/T 12346-2021 5.14.9；臍中高度為網格實測"
+  },
+  {
+   "id": "SP6",
+   "rule": "內踝尖上 3 寸",
+   "expectedY": 0.1741,
+   "actualY": 0.1741,
+   "deviationMm": -0.0,
+   "toleranceMm": 15.0,
+   "ok": true,
+   "citation": "5.4.6；內踝尖取 EX-LE8，寸制沿用 lower-leg-spec.json 小腿內側 15 寸"
+  },
+  {
+   "id": "ST36",
+   "rule": "犢鼻(ST35)下 3 寸",
+   "expectedY": 0.41802,
+   "actualY": 0.41624,
+   "deviationMm": -1.8,
+   "toleranceMm": 15.0,
+   "ok": true,
+   "citation": "5.3.36；犢鼻水平取 lower-leg-spec.json 膝中，寸制用小腿外側 16 寸"
+  },
+  {
+   "id": "SP9",
+   "rule": "內踝尖上 13 寸（脛骨內側髁下方）",
+   "expectedY": 0.44294,
+   "actualY": 0.44294,
+   "deviationMm": -0.0,
+   "toleranceMm": 15.0,
+   "ok": true,
+   "citation": "5.4.9；GB/T 表1 脛骨內側髁下方→內踝尖 13 寸，與 15 寸同制"
+  },
+  {
+   "id": "GV12/BL13",
+   "rule": "第3胸椎棘突下同高（身柱 ↔ 肺俞）",
+   "gapMm": 0.0,
+   "ok": true,
+   "citation": "GB/T 12346-2021 5.13.12 與 5.7.13"
+  },
+  {
+   "id": "BL20",
+   "rule": "後正中線旁開 1.5 寸（對比 3 寸線）",
+   "expectedX": 0.04399,
+   "actualX": 0.04081,
+   "deviationMm": -3.2,
+   "ok": true,
+   "citation": "GB/T 12346-2021 5.7.20／5.7.23，3 寸線由 BL43 反推"
+  },
+  {
+   "id": "BL23",
+   "rule": "後正中線旁開 1.5 寸（對比 3 寸線）",
+   "expectedX": 0.04399,
+   "actualX": 0.03922,
+   "deviationMm": -4.8,
+   "ok": true,
+   "citation": "GB/T 12346-2021 5.7.20／5.7.23，3 寸線由 BL43 反推"
+  },
+  {
+   "id": "PC6/HT7",
+   "rule": "腕橫紋上 2 寸 → 前臂 12 寸應為 0.22–0.33m",
+   "gapMm": 49.1,
+   "impliedForearmM": 0.295,
+   "ok": true,
+   "citation": "GB/T 12346-2021 5.9.6；表1 肘橫紋→腕橫紋 12寸"
+  },
+  {
+   "id": "GV20>GV24+",
+   "rule": "縱向次序",
+   "ok": true,
+   "aY": 1.84303,
+   "bY": 1.742,
+   "gapMm": 101.0
+  },
+  {
+   "id": "GV24+>N-HN54",
+   "rule": "縱向次序",
+   "ok": true,
+   "aY": 1.742,
+   "bY": 1.59359,
+   "gapMm": 148.4
+  },
+  {
+   "id": "GV12>BL20",
+   "rule": "縱向次序",
+   "ok": true,
+   "aY": 1.44574,
+   "bY": 1.22968,
+   "gapMm": 216.1
+  },
+  {
+   "id": "BL20>BL23",
+   "rule": "縱向次序",
+   "ok": true,
+   "aY": 1.22968,
+   "bY": 1.1621,
+   "gapMm": 67.6
+  },
+  {
+   "id": "BL23>CV9",
+   "rule": "縱向次序",
+   "ok": true,
+   "aY": 1.1621,
+   "bY": 1.13061,
+   "gapMm": 31.5
+  },
+  {
+   "id": "CV9>SP9",
+   "rule": "縱向次序",
+   "ok": true,
+   "aY": 1.13061,
+   "bY": 0.44294,
+   "gapMm": 687.7
+  },
+  {
+   "id": "SP9>ST36",
+   "rule": "縱向次序",
+   "ok": true,
+   "aY": 0.44294,
+   "bY": 0.41624,
+   "gapMm": 26.7
+  },
+  {
+   "id": "ST36>SP6",
+   "rule": "縱向次序",
+   "ok": true,
+   "aY": 0.41624,
+   "bY": 0.1741,
+   "gapMm": 242.1
+  },
+  {
+   "id": "SP6>KI1",
+   "rule": "縱向次序",
+   "ok": true,
+   "aY": 0.1741,
+   "bY": -0.00068,
+   "gapMm": 174.8
+  },
+  {
+   "id": "PC6>HT7",
+   "rule": "縱向次序",
+   "ok": true,
+   "aY": 1.13387,
+   "bY": 1.08477,
+   "gapMm": 49.1
+  },
+  {
+   "id": "HT7>LI4",
+   "rule": "縱向次序",
+   "ok": true,
+   "aY": 1.08477,
+   "bY": 1.07751,
+   "gapMm": 7.3
+  },
+  {
+   "id": "LI4>LR3",
+   "rule": "縱向次序",
+   "ok": true,
+   "aY": 1.07751,
+   "bY": 0.04514,
+   "gapMm": 1032.4
+  },
+  {
+   "id": "LR3>KI1",
+   "rule": "縱向次序",
+   "ok": true,
+   "aY": 0.04514,
+   "bY": -0.00068,
+   "gapMm": 45.8
+  }
+ ],
+ "summary": {
+  "pointsReviewed": 15,
+  "checksRun": 21,
+  "severeFindings": 0,
+  "note": "無嚴重問題"
+ }
+}

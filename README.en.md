@@ -67,7 +67,7 @@ No account or external AI API key is required. The runtime dataset and CC0 body 
 | Topic | Points |
 | --- | --- |
 | 🧘 Stress relief | LR3 太沖, LI4 合谷, PC6 內關, GV20 百會 |
-| 🌙 Insomnia | HT7 神門, N-HN54 安眠, SP6 三陰交, KI1 湧泉, EX-HN3 印堂 |
+| 🌙 Insomnia | HT7 神門, N-HN54 安眠, SP6 三陰交, KI1 湧泉, GV24+ 印堂 |
 | 💧 Oedema | CV9 水分, SP9 陰陵泉, ST36 足三里, SP6 三陰交 |
 | 🌱 Childhood growth | GV12 身柱, ST36 足三里, BL20 脾俞, BL23 腎俞, KI1 湧泉 |
 
@@ -85,6 +85,9 @@ This repository keeps the upstream native iPhone project (`mobile/`): the model 
 | Area | Change |
 | --- | --- |
 | Traditional Chinese | Whole interface and acupoint dataset converted to **Hong Kong Traditional** (OpenCC `s2hk`); `html lang` and manifest set to `zh-Hant`; external URLs preserved verbatim |
+| Traditional conversion completed | The first pass only walked literal text in `app/ components/ lib/ public/`, missing two places: `scripts/test.mjs` (assertion strings) and `lib/mesh-registration.json`, whose Chinese is stored as `\uXXXX` escapes (6399 of them), so a text-level conversion could not see it. Both are now converted and every affected recorded SHA-256 (`vesselRoutes.specSha256`, `lowerLeg.specSha256`, `registrationSha256` in 19 `lib/*-course.json`) has been re-pinned, restoring the upstream integrity suite to green |
+| Acupoint geometry review | `scripts/review-care-points.py` runs 21 geometry checks over the 15 `/care` points (binding integrity, Z-ray containment, left/right mirroring, midline, GB/T table-1 proportional recomputation, shared levels, vertical ordering, forearm ratio) and writes `docs/reviews/care-points-geometry.md` plus a three-view evidence image |
+| Yintang code | `EX-HN3` (WHO code) replaced by the standard code **`GV24+`** (GB/T 12346-2021 5.13.25); upstream keeps `EX-HN3` / `GV29` as retrieval aliases only, so the card code now matches the 3D panel |
 | New pages | `/learn` beginner's guide and `/care` city-wellness section (4 topics, 18 points, deep links via `/?points=`) |
 | Cantonese | Pronunciation panel adds **Jyutping side-by-side** with pinyin, polyphone alternatives, a 27-rule acupoint correction table, and a 粵語朗讀 button; tables built from Unicode Unihan `kCantonese` (`lib/jyutping.json`, `lib/jyutping-overrides.json`, `scripts/build-jyutping.py`) and loaded only when the panel opens |
 | Navigation | Two new primary-nav entries |

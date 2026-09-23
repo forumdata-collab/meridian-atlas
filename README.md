@@ -105,7 +105,7 @@ npm start          # wrangler dev，預設 http://localhost:8787
 | 主題 | 穴位 |
 | --- | --- |
 | 🧘 壓力大 · 紓壓安神 | 太沖 LR3、合谷 LI4、內關 PC6、百會 GV20 |
-| 🌙 失眠 · 助眠安神 | 神門 HT7、安眠 N-HN54、三陰交 SP6、湧泉 KI1、印堂 EX-HN3 |
+| 🌙 失眠 · 助眠安神 | 神門 HT7、安眠 N-HN54、三陰交 SP6、湧泉 KI1、印堂 GV24+ |
 | 💧 水腫 · 利水消腫 | 水分 CV9、陰陵泉 SP9、足三里 ST36、三陰交 SP6 |
 | 🌱 小孩增高 · 強身助長 | 身柱 GV12、足三里 ST36、脾俞 BL20、腎俞 BL23、湧泉 KI1 |
 
@@ -187,6 +187,9 @@ npm start          # wrangler dev，預設 http://localhost:8787
 | 項目 | 說明 |
 | --- | --- |
 | 繁體化 | 全站介面與穴位資料轉為**香港繁體**（OpenCC `s2hk`）；`html lang` 與 manifest 改為 `zh-Hant`；外部連結網址原樣保留 |
+| 繁體化補完 | 首輪轉換只掃 `app/ components/ lib/ public/` 的純文字，漏咗兩處：①`scripts/test.mjs`（測試斷言字串）②`lib/mesh-registration.json`（中文以 `\uXXXX` 轉義儲存，6399 處，令純文字轉換完全失效）。已補做，並**重釘所有受影響的 SHA-256 記錄值**（`vesselRoutes.specSha256`、`lowerLeg.specSha256`、19 個 `lib/*-course.json` 的 `registrationSha256`），令上游自帶的完整性測試回復全綠 |
+| 穴位幾何審查 | `scripts/review-care-points.py`：對 `/care` 15 穴做 21 項幾何檢查（綁定完整性、Z 射線包圍、左右對稱、正中線、GB/T 表 1 骨度重算、共享水平、縱向次序、前臂比例），輸出 `docs/reviews/care-points-geometry.md` 與三視圖 `docs/images/care-points-review.png` |
+| 印堂編號 | 由 WHO 舊碼 `EX-HN3` 改為國標正碼 **`GV24+`**（GB/T 12346-2021 5.13.25；`EX-HN3`／`GV29` 在上游僅作檢索別名），令卡片穴碼與三維面板一致 |
 | 新增頁面 | `/learn` 認識穴位（初學者指南）、`/care` 都市人保健專區（4 主題 18 穴，附 `/?points=` 三維深層連結） |
 | 粵語讀音 | 查讀音加入**粵語粵拼（Jyutping）雙行對照**、多音字其他讀音、27 字穴位粵讀校正表與「粵語朗讀」按鈕；字表由 Unicode Unihan `kCantonese` 生成（`lib/jyutping.json`、`lib/jyutping-overrides.json`、`scripts/build-jyutping.py`），只在開啟面板時載入 |
 | 魔法骰 | 查讀音面板新增「魔法骰」：隨機抽 4 個標準穴位，可即查讀音或跳去三維人體（`randomPointPicks()`） |
@@ -205,6 +208,17 @@ npm run build
 ```
 
 首個公開版本包含 **156 項自動測試**，覆蓋穴位目錄與編號、時辰邊界、分類、詳情顯示條件、配穴引用、網格綁定及經絡依賴等。另有實際瀏覽器點選、旋轉、時辰播放和佈局檢查記錄。自動測試不代表醫學或逐穴解剖驗證。
+
+本 fork 現時 **156 / 156 全數通過**。`lib/mesh-registration.json` 等資料檔經繁體化後，其被記錄的 SHA-256（`specSha256`、`registrationSha256` 等）已同步重釘，因此完整性測試仍然有效——它證明「資料與記錄一致」，但唔再等同「與上游位元組相同」，呢點屬本版改動。
+
+### 穴位幾何審查
+
+```bash
+python3 scripts/review-care-points.py --render docs/images/care-points-review.png
+```
+
+對 `/care` 15 穴執行 21 項幾何檢查，輸出 `docs/reviews/care-points-geometry.json` 與三視圖證據圖。此腳本只讀取資料、不會改寫 `lib/mesh-registration.json`；依 `docs/DATA.md` 的層級劃分，結果屬**幾何證據**，非解剖校準。
+
 
 ## 建置與部署（Cloudflare Workers）
 
