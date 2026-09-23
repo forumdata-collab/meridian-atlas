@@ -1,0 +1,223 @@
+{
+ "authoredExtras": 43,
+ "withoutBinding": [
+  {
+   "id": "EX-HN3",
+   "name": "印堂",
+   "nearestVertexMm": 6.5
+  },
+  {
+   "id": "EX-HN13",
+   "name": "玉液",
+   "nearestVertexMm": 8.05
+  },
+  {
+   "id": "M-HN14",
+   "name": "鼻通",
+   "nearestVertexMm": 26.35
+  },
+  {
+   "id": "M-UE24",
+   "name": "落枕",
+   "nearestVertexMm": 263.7
+  },
+  {
+   "id": "M-LE34",
+   "name": "百蟲窩",
+   "nearestVertexMm": 25.37
+  },
+  {
+   "id": "M-LE26",
+   "name": "外膝眼",
+   "nearestVertexMm": 45.94
+  }
+ ],
+ "withBinding": 37,
+ "authoredVsBoundMm": [
+  {
+   "id": "EX-UE11",
+   "name": "十宣",
+   "mm": 493.5
+  },
+  {
+   "id": "EX-UE9",
+   "name": "八邪",
+   "mm": 410.2
+  },
+  {
+   "id": "EX-UE10",
+   "name": "四縫",
+   "mm": 391.0
+  },
+  {
+   "id": "EX-UE7",
+   "name": "腰痛點",
+   "mm": 381.2
+  },
+  {
+   "id": "EX-UE4",
+   "name": "中魁",
+   "mm": 379.5
+  },
+  {
+   "id": "EX-UE3",
+   "name": "中泉",
+   "mm": 377.4
+  },
+  {
+   "id": "M-UE30",
+   "name": "臂中",
+   "mm": 340.8
+  },
+  {
+   "id": "EX-UE2",
+   "name": "二白",
+   "mm": 327.7
+  },
+  {
+   "id": "EX-UE1",
+   "name": "肘尖",
+   "mm": 306.6
+  },
+  {
+   "id": "M-UE48",
+   "name": "肩前",
+   "mm": 173.7
+  },
+  {
+   "id": "EX-B7",
+   "name": "腰眼",
+   "mm": 157.3
+  },
+  {
+   "id": "EX-B4",
+   "name": "痞根",
+   "mm": 148.5
+  },
+  {
+   "id": "EX-B3",
+   "name": "胃脘下俞",
+   "mm": 142.7
+  },
+  {
+   "id": "EX-B8",
+   "name": "十七椎",
+   "mm": 140.8
+  },
+  {
+   "id": "EX-CA1",
+   "name": "子宮",
+   "mm": 127.3
+  },
+  {
+   "id": "EX-B9",
+   "name": "腰奇",
+   "mm": 118.0
+  },
+  {
+   "id": "M-BW34",
+   "name": "環中",
+   "mm": 100.4
+  },
+  {
+   "id": "EX-B2",
+   "name": "夾脊",
+   "mm": 94.0
+  },
+  {
+   "id": "EX-LE5",
+   "name": "膝眼",
+   "mm": 86.8
+  },
+  {
+   "id": "EX-HN14",
+   "name": "翳明",
+   "mm": 81.8
+  },
+  {
+   "id": "EX-HN6",
+   "name": "耳尖",
+   "mm": 72.4
+  },
+  {
+   "id": "N-HN54",
+   "name": "安眠",
+   "mm": 72.3
+  },
+  {
+   "id": "EX-LE10",
+   "name": "八風",
+   "mm": 68.1
+  },
+  {
+   "id": "EX-HN15",
+   "name": "頸百勞",
+   "mm": 63.4
+  },
+  {
+   "id": "EX-HN5",
+   "name": "太陽",
+   "mm": 63.0
+  },
+  {
+   "id": "EX-LE7",
+   "name": "闌尾",
+   "mm": 56.4
+  },
+  {
+   "id": "EX-B1",
+   "name": "定喘",
+   "mm": 55.3
+  },
+  {
+   "id": "N-HN20",
+   "name": "牽正",
+   "mm": 53.8
+  },
+  {
+   "id": "M-HN21",
+   "name": "上廉泉",
+   "mm": 45.0
+  },
+  {
+   "id": "EX-LE2",
+   "name": "鶴頂",
+   "mm": 43.7
+  },
+  {
+   "id": "EX-HN7",
+   "name": "球後",
+   "mm": 38.6
+  },
+  {
+   "id": "EX-LE4",
+   "name": "內膝眼",
+   "mm": 38.2
+  },
+  {
+   "id": "EX-HN4",
+   "name": "魚腰",
+   "mm": 30.9
+  },
+  {
+   "id": "M-HN18",
+   "name": "夾承漿",
+   "mm": 29.5
+  },
+  {
+   "id": "EX-HN12",
+   "name": "金津",
+   "mm": 25.0
+  },
+  {
+   "id": "EX-HN1",
+   "name": "四神聰",
+   "mm": 24.8
+  },
+  {
+   "id": "EX-LE6",
+   "name": "膽囊",
+   "mm": 20.8
+  }
+ ]
+}
